@@ -1,0 +1,320 @@
+openapi: 3.0.2
+info:
+  version: '0.0.1'
+  title: iits chess api
+  contact:
+    email: recruiting@iits-consulting.de
+    url: https://iits-consulting.de/karriere
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  x-logo:
+    url: 'https://iits-consulting.de/wp-content/uploads/2021/08/iits-logo-2021-red-square-xl.png'
+  
+  description: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc. Donec euismod, diam eu aliquam ultricies, nunc nisl ultrices nunc, quis ultricies nisl nunc eget nunc.
+#externalDocs:
+#  description: Find out how to create a GitHub repo for your OpenAPI definition.
+#  url: 'https://github.com/Rebilly/generator-openapi-repo'
+#
+## A list of tags used by the definition with additional metadata.
+## The order of the tags can be used to reflect on their order by the parsing tools.
+#tags:
+#  - name: Echo
+#    description: Example echo operations
+#  - name: User
+#    description: Operations about user
+#servers:
+#  - url: 'http://example.com/api/v1'
+#  - url: 'https://example.com/api/v1'
+
+# Holds the relative paths to the individual endpoints. The path is appended to the
+# basePath in order to construct the full URL. 
+paths:
+  '/users':
+    get:
+      tags:
+        - User
+      summary: Get all users
+      operationId: getUsers
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+        - User
+      summary: Create a new user
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Updated user object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              example:
+                username: foo.bar
+                email: foo.bar@iits-consulting.de
+  '/users/{username}':
+    get:
+      tags:
+        - User
+      summary: Get user by user name
+      description: |
+        Some description of the operation. 
+        You can use `markdown` here.
+      operationId: getUserByUsername
+      parameters:
+        - name: username
+          in: path
+          description: The username of the user
+          required: true
+          schema:
+            type: string
+      responses: # list of responses
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              example:
+                username: foo.bar
+                email: foo.bar@iits-consulting.de
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found
+    put:
+      tags:
+        - User
+      summary: Updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      parameters:
+        - name: username
+          in: path
+          description: The name that needs to be updated
+          required: true
+          schema:
+            type: string
+      security:
+        - main_auth:
+            - 'write:users'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+      # request body documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Updated user object
+        required: true
+  '/users/{username}/elo':
+    get:
+      tags:
+        - User
+      summary: Get user elo by user name
+      description: |
+        Some description of the operation. 
+        You can use `markdown` here.
+      operationId: getEloByUsername
+      parameters:
+        - name: username
+          in: path
+          description: The username of the user
+          required: true
+          schema:
+            type: string
+      responses: # list of responses
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: number
+                example: 1200
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found
+  '/matches':
+    get:
+      tags:
+        - Match
+      summary: Get all matches
+      operationId: getMatches
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Match'
+    post:
+      tags:
+        - Match
+      summary: Create a new match
+      operationId: createMatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Match'
+        description: Updated match object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Match'
+              example:
+                username: foo.bar
+                email:
+  '/rankings':
+    get:
+      tags:
+        - Ranking
+      summary: Top n players
+      operationId: getRankings
+      parameters:
+        - name: top
+          in: query
+          description: Return top N players
+          required: false
+          schema:
+            type: number
+      responses: 
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserRanking'
+
+components:
+  schemas:
+    Email:
+      description: User email address
+      type: string
+      format: test
+      example: foo.bar@iits-consulting.de
+    Elo:
+      description: Elo value of a user
+      type: number
+      minimum: 0
+      example: 1200
+    User:
+      type: object
+      properties:
+        id:
+          description: Database Id of the user
+          type: string
+          example: DFA924F7-98DC-45B7-AD5E-5A8475710B91
+        username:
+          description: Username
+          type: string
+          minLength: 1
+          example: foo.bar
+        displayName:
+          description: Display name of the user
+          type: string
+          minLength: 1
+          example: Foo Bar
+        email:
+          $ref: '#/components/schemas/Email'
+    UserRanking:
+      allOf:
+        - $ref: '#/components/schemas/User'
+        - type: object
+          properties: 
+            elo:
+              $ref: '#/components/schemas/Elo'
+            rank:
+              description: Rank of the user
+              type: number
+              minimum: 1
+              example: 69 
+              
+    Match:
+      type: object
+      properties: 
+        id:
+          description: Database Id of the match
+          type: string
+          example: DFA924F7-98DC-45B7-AD5E-5A8475710B91
+        player1:
+          description: Player 1
+          type: string
+          minLength: 1
+          example: foo.bar
+        player2:
+          description: Player 2
+          type: string
+          minLength: 1
+          example: foo.bar
+        outcome:
+          description: Winner of the match
+          type: string
+          enum: [ player1Win, player2Win, draw ]
+        date:
+          description: Date of the match
+          type: string
+          format: date-time
+          example: 2020-01-01T00:00:00.000Z
+  #  headers:
+  #    ExpiresAfter:
+  #      description: date in UTC when token expires
+  #      schema:
+  #        type: string
+  #        format: date-time
+  # Security scheme definitions that can be used across the definition.
+#  securitySchemes:
+#    main_auth: # security definition name (you can name it as you want)
+#      # the following options are specific to oauth2 type
+#      type: oauth2 # authorization type, one of: oauth2, apiKey, http
+#      flows:
+#        implicit:
+#          authorizationUrl: 'http://example.com/api/oauth/dialog'
+#          scopes:
+#            'read:users': read users info
+#            'write:users': modify or remove users
+#    api_key:  # security definition name (you can name it as you want)
+#      type: apiKey
+#      # The following options are specific to apiKey type
+#      in: header # Where API key will be passed: header or query
+#      name: api_key # API key parameter name
+#    basic_auth: # security definition name (you can name it as you want)
+#      type: http
+#      scheme: basic
