@@ -1,0 +1,43 @@
+# full definition except formatting: https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml
+complexity:
+  LongParameterList:
+    excludes: [ '**SearchQuery.kt', '**/controller/resource/**', '**/model/**', '**KafkaResource.kt' ]
+  TooManyFunctions:
+    excludes: ['**SearchQuery.kt', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']
+
+performance:
+  SpreadOperator:
+    active: false
+
+style:
+  ExpressionBodySyntax:
+    active: true
+    includeLineWrapping: false
+  MaxLineLength:
+    maxLineLength: 160
+    excludeCommentStatements: true
+  MagicNumber:
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**', '**/**SeedService**']
+    ignoreAnnotation: true
+    ignoreRanges: true
+  UnusedPrivateMember:
+    active: true
+    allowedNames: '(_|ignored|expected|serialVersionUID|description|germanLabel|germanDescription)'
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+
+# full definition detekt formatting: https://github.com/detekt/detekt/blob/main/detekt-formatting/src/main/resources/config/config.yml
+formatting:
+  AnnotationSpacing:
+    active: false
+  AnnotationOnSeparateLine:
+    active: false
+  ArgumentListWrapping:
+    maxLineLength: 160
+  ContextReceiverMapping:
+    maxLineLength: 160
+  MaximumLineLength:
+    maxLineLength: 160
+  ParameterListWrapping:
+    maxLineLength: 160

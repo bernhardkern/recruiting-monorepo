@@ -1,1 +1,1 @@
-rootProject.name = "elo"
+rootProject.name = "springboot-kotlin"
