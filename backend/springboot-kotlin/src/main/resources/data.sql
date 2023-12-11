@@ -1,0 +1,1 @@
+INSERT INTO user (username, displayName, email, elo) VALUES ('Max Mustermann', 'Maxi', 'max.mustermann@iits-consulting.de', 42);

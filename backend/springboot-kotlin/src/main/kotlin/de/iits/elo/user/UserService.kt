@@ -1,6 +1,7 @@
 package de.iits.elo.user
 
 import org.springframework.stereotype.Service
+import kotlin.jvm.optionals.getOrNull
 
 @Service
 class UserService(
@@ -11,11 +12,11 @@ class UserService(
         userRepository.findAll()
 
     fun findByUsername(userName: String) =
-        userRepository.findUserByUsername(userName)
+        userRepository.findById(userName).getOrNull()
 
     fun update(user: User): User {
-        val databaseObject = userRepository.findById(user.id)
-        check(databaseObject.isPresent) { "No user exists with id ${user.id}" }
+        val databaseObject = userRepository.findById(user.username)
+        check(databaseObject.isPresent) { "No user exists with username ${user.username}" }
         return save(user)
     }
 
