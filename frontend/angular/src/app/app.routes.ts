@@ -3,6 +3,9 @@ import { UsersComponent } from './users/users.component';
 import { UserGridComponent } from './users/user-grid/user-grid.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
+import {MatchesComponent} from "./matches/matches.component";
+import {MatchGridComponent} from "./matches/match-grid/match-grid.component";
+import {MatchFormComponent} from "./matches/match-form/match-form.component";
 
 export const routes: Routes = [
   {
@@ -34,7 +37,7 @@ export const routes: Routes = [
   },
   {
     path: 'matches',
-    component: UsersComponent,
+    component: MatchesComponent,
     children: [
       {
         path: '',
@@ -43,11 +46,11 @@ export const routes: Routes = [
       },
       {
         path: 'overview',
-        component: UserGridComponent,
+        component: MatchGridComponent,
       },
       {
         path: 'new',
-        component: UserFormComponent,
+        component: MatchFormComponent,
       },
     ],
   },
