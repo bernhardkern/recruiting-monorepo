@@ -3,10 +3,10 @@ import { UsersComponent } from './users/users.component';
 import { UserGridComponent } from './users/user-grid/user-grid.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
-import {MatchesComponent} from "./matches/matches.component";
-import {MatchGridComponent} from "./matches/match-grid/match-grid.component";
-import {MatchFormComponent} from "./matches/match-form/match-form.component";
-import {RankingGridComponent} from "./ranking-grid/ranking-grid.component";
+import { MatchesComponent } from './matches/matches.component';
+import { MatchGridComponent } from './matches/match-grid/match-grid.component';
+import { MatchFormComponent } from './matches/match-form/match-form.component';
+import { RankingGridComponent } from './ranking-grid/ranking-grid.component';
 
 export const routes: Routes = [
   {
@@ -57,7 +57,7 @@ export const routes: Routes = [
   },
   {
     path: 'ranking',
-    component: RankingGridComponent
+    component: RankingGridComponent,
   },
   {
     path: '**',

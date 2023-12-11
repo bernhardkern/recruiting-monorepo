@@ -1,4 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/variables';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .app-content {
+    flex: 1;
+    padding: $app-padding;
+    overflow: auto;
+  }
+  .app-detail-grid-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .app-detail-grid {
+      flex: 1;
+    }
+  }
+}

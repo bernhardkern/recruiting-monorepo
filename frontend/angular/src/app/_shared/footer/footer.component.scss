@@ -1,0 +1,18 @@
+@import "./../../../styles/variables";
+
+mat-toolbar {
+  padding: 0;
+
+  div.footer-content {
+    width: 100%;
+
+    div.button-group {
+      text-align: right;
+      margin-right: $app-padding;
+
+      button {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
