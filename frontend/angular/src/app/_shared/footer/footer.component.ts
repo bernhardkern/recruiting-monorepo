@@ -32,7 +32,6 @@ export class FooterComponent {
 
   private navigateBack(): void {
     let navigateCommand: string[];
-    debugger;
 
     if (this.isEditForm && !this.isGridComponent) {
       navigateCommand = ['../../'];

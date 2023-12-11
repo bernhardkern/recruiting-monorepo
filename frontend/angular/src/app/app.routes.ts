@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UserGridComponent } from './users/user-grid/user-grid.component';
-import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { MatchesComponent } from './matches/matches.component';
 import { MatchGridComponent } from './matches/match-grid/match-grid.component';
@@ -29,10 +28,6 @@ export const routes: Routes = [
       {
         path: 'new',
         component: UserFormComponent,
-      },
-      {
-        path: ':id',
-        component: UserDetailsComponent,
       },
     ],
   },
