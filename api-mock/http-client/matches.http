@@ -1,0 +1,15 @@
+### find all matches
+GET {{host}}:{{port}}/matches
+
+
+### create match
+POST {{host}}:{{port}}/users
+Content-Type: application/json
+
+{
+  "id": "ea8c63ad-a4ed-4960-b685-78442e10d345",
+  "player1": "careBear3000",
+  "player2": "lovingAndCaring4Bears",
+  "outcome": "TWO_WINS",
+  "date": "2023-12-01T00:00:00.000Z"
+}

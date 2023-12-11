@@ -1,0 +1,204 @@
+[
+  {
+    "httpRequest": {
+      "path": "/users",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "body": [
+        {
+          "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
+          "username": "careBear3000",
+          "displayName": "Carey Bar",
+          "email": "care4bears@barbar.com"
+        },
+        {
+          "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
+          "username": "lovingAndCaring4Bears",
+          "displayName": "Berthold Kehr",
+          "email": "bearthold@care.de"
+        },
+        {
+          "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
+          "username": "BearChessCare",
+          "displayName": "Barholomaeus Baer",
+          "email": "bartholomaeus@bear.de"
+        },
+        {
+          "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+          "username": "AppleBearCare",
+          "displayName": "Apple Carebear",
+          "email": "keepAppleAway@care.de"
+        },
+        {
+          "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
+          "username": "KenningBaerAlter",
+          "displayName": "Kenning Bär",
+          "email": "kenningBärRecords@carebär.de"
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/users",
+      "method": "POST"
+    },
+    "httpResponse": {
+      "body": {
+        "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
+        "username": "lovingAndCaring4Bears",
+        "displayName": "Berthold Kehr",
+        "email": "bearthold@care.de"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/users/[a-zA-Z]+",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "body": {
+        "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+        "username": "AppleBearCare",
+        "displayName": "Apple Carebear",
+        "email": "keepAppleAway@care.de"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/users/[a-zA-Z]+",
+      "method": "PUT"
+    },
+    "httpResponse": {
+      "body": {
+        "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
+        "username": "KenningBaerAlter",
+        "displayName": "Kenning Bär",
+        "email": "kenningBärRecords@carebär.de"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/secondExampleExpectation"
+    },
+    "httpResponse": {
+      "body": "some response"
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/users/[a-zA-Z]+/elo",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "body": "1200"
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/matches",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "body": [
+        {
+          "id": "a6bb7dfb-64f3-4015-835e-906a750cd8b9",
+          "player1": "careBear3000",
+          "player2": "lovingAndCaring4Bears",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-01T00:00:00.000Z"
+        },
+        {
+          "id": "707fa739-f8c9-420e-8753-aafe4f57d223",
+          "player1": "lovingAndCaring4Bears",
+          "player2": "careBear3000",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-01T00:00:00.000Z"
+        },
+        {
+          "id": "3ec5e4fe-a0d4-4489-bd7c-e50e2f1ee163",
+          "player1": "careBear3000",
+          "player2": "lovingAndCaring4Bears",
+          "outcome": "DRAW",
+          "date": "2023-12-01T00:00:00.000Z"
+        },
+        {
+          "id": "ea8c63ad-a4ed-4960-b685-78442e10d345",
+          "player1": "careBear3000",
+          "player2": "lovingAndCaring4Bears",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-01T00:00:00.000Z"
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/matches",
+      "method": "POST"
+    },
+    "httpResponse": {
+      "body": {
+        "id": "a6bb7dfb-64f3-4015-835e-906a750cd8b9",
+        "player1": "careBear3000",
+        "player2": "lovingAndCaring4Bears",
+        "outcome": "ONE_WINS",
+        "date": "2023-12-01T00:00:00.000Z"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/rankings",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "body": [
+        {
+          "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
+          "username": "careBear3000",
+          "displayName": "Carey Bar",
+          "email": "care4bears@barbar.com",
+          "elo": 2345,
+          "rank": 1
+        },
+        {
+          "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
+          "username": "lovingAndCaring4Bears",
+          "displayName": "Berthold Kehr",
+          "email": "bearthold@care.de",
+          "elo": 1200,
+          "rank": 2
+        },
+        {
+          "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
+          "username": "BearChessCare",
+          "displayName": "Barholomaeus Baer",
+          "email": "bartholomaeus@bear.de",
+          "elo": 1200,
+          "rank": 2
+        },
+        {
+          "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+          "username": "AppleBearCare",
+          "displayName": "Apple Carebear",
+          "email": "keepAppleAway@care.de",
+          "elo": 1000,
+          "rank": 4
+        },
+        {
+          "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
+          "username": "KenningBaerAlter",
+          "displayName": "Kenning Bär",
+          "email": "kenningBärRecords@carebär.de",
+          "elo": 800,
+          "rank": 5
+        }
+      ]
+    }
+  }
+]
