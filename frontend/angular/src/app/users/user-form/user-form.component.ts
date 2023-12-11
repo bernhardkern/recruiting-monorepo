@@ -44,8 +44,4 @@ export class UserFormComponent {
   isValidEmail(email: string): boolean {
     return !!email;
   }
-
-  save() {
-    return new Observable();
-  }
 }

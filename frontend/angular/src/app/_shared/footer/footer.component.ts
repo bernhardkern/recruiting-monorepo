@@ -16,7 +16,6 @@ export class FooterComponent {
   @Input() isGridComponent = false;
   @Input() isEditForm = false;
   @Input() saveDisabled = false;
-  @Input() save?: Observable<any>;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -24,10 +23,6 @@ export class FooterComponent {
 
   onCancelClicked() {
     this.navigateBack();
-  }
-
-  onSaveClicked() {
-    this.emitSave();
   }
 
   private navigateBack(): void {
@@ -42,10 +37,5 @@ export class FooterComponent {
     this.router.navigate(navigateCommand, {
       relativeTo: this.route,
     });
-  }
-
-  private emitSave() {
-    // navigate to edit page
-    this.save?.subscribe();
   }
 }

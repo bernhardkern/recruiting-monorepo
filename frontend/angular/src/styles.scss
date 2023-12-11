@@ -22,6 +22,11 @@ body {
     flex: 1;
     padding: $app-padding;
     overflow: auto;
+
+    &.app-content__form {
+        display: flex;
+        flex-direction: column;
+    }
   }
   .app-detail-grid-wrapper {
     flex: 1;
