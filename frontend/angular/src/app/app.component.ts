@@ -28,11 +28,11 @@ export class AppComponent {
   navList = [
     {
       title: 'Users',
-      routerLink: '/users/overview',
+      routerLink: '/users',
     },
     {
       title: 'Matches',
-      routerLink: '/matches/overview',
+      routerLink: '/matches',
     },
     {
       title: 'Ranking',
