@@ -1,0 +1,23 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  mat-sidenav-container{
+    flex: 1;
+
+    mat-sidenav {
+      padding: 1rem;
+      width: 25rem;
+
+      mat-nav-list > a.active {
+        background-color: #353535;
+      }
+    }
+
+    mat-sidenav-content {
+      padding: 2.5rem;
+      overflow: auto;
+    }
+  }
+}
