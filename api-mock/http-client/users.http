@@ -1,0 +1,32 @@
+### find all users
+GET {{host}}:{{port}}/users
+
+
+### create user
+POST {{host}}:{{port}}/users
+Content-Type: application/json
+
+{
+  "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
+  "username": "lovingAndCaring4Bears",
+  "displayName": "Berthold Kehr",
+  "email": "bearthold@care.de"
+}
+
+### get user by name
+GET {{host}}:{{port}}/users/carebear
+
+### update user by name
+PUT {{host}}:{{port}}/users/carebear
+Content-Type: application/json
+
+{
+  "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
+  "username": "KenningBaerAlter",
+  "displayName": "Kenning Bär",
+  "email": "kenningBärRecords@carebär.de"
+}
+
+### get elo of user
+GET {{host}}:{{port}}/users/carebear/elo
+
