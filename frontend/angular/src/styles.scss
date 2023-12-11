@@ -1,4 +1,4 @@
-@import './styles/variables';
+@import "./styles/variables";
 
 html,
 body {
@@ -24,17 +24,8 @@ body {
     overflow: auto;
 
     &.app-content__form {
-        display: flex;
-        flex-direction: column;
-    }
-  }
-  .app-detail-grid-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-
-    .app-detail-grid {
-      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

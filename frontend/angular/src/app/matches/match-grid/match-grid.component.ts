@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../../_shared/footer/footer.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-match-grid',
@@ -14,6 +15,7 @@ import { FooterComponent } from '../../_shared/footer/footer.component';
     MatTableModule,
     RouterLink,
     FooterComponent,
+    MatToolbarModule,
   ],
   templateUrl: './match-grid.component.html',
   styleUrl: './match-grid.component.scss',

@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from '../../_shared/footer/footer.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-user-grid',
@@ -16,6 +17,7 @@ import { FooterComponent } from '../../_shared/footer/footer.component';
     MatIconModule,
     MatButtonModule,
     FooterComponent,
+    MatToolbarModule,
   ],
   host: { class: 'app-wrapper' },
 })
