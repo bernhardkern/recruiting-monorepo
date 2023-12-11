@@ -1,8 +1,8 @@
 create table if not exists match
 (
+    id           uuid not null,
     outcome      varchar(10),
     black_player uuid,
-    id           uuid not null,
     white_player uuid,
     played_on    varchar(255),
     primary key (id)

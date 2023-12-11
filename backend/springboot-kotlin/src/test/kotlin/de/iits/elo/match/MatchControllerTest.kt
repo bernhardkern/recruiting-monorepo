@@ -16,7 +16,7 @@ import java.util.*
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class MatchApiTest {
+class MatchControllerTest {
     @LocalServerPort
     private var port: Int = -1
 
