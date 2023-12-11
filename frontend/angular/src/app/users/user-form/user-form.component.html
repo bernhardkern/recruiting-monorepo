@@ -1,4 +1,39 @@
-<p>user-form works!</p>
-<div *ngIf="!!id;else noId">{{ "id:" + id}}</div>
-<ng-template #noId>No Id</ng-template>
+<div *ngIf="!!id;else noId">{{ "Edit User with id:" + id}}</div>
+<ng-template #noId>Create new User</ng-template>
 
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>User Creation Form</mat-card-title>
+  </mat-card-header>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+
+      <!-- User Name -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Name" name="userName" [(ngModel)]="user.userName" required>
+        <mat-error *ngIf="userForm.submitted && !user.userName">User Name is required</mat-error>
+      </mat-form-field>
+
+      <!-- Display Name -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Display Name" name="displayName" [(ngModel)]="user.displayName" required>
+        <mat-error *ngIf="userForm.submitted && !user.displayName">Display Name is required</mat-error>
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required>
+        <mat-error *ngIf="userForm.submitted && !user.email">Email is required</mat-error>
+        <mat-error *ngIf="userForm.submitted && user.email && !isValidEmail(user.email)">Invalid email format</mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Create User</button>
+    </mat-card-actions>
+  </form>
+
+</mat-card>
