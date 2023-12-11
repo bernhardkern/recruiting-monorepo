@@ -32,4 +32,31 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'matches',
+    component: UsersComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'overview',
+        pathMatch: 'full',
+      },
+      {
+        path: 'overview',
+        component: UserGridComponent,
+      },
+      {
+        path: 'new',
+        component: UserFormComponent,
+      },
+    ],
+  },
+  {
+    path: 'ranking',
+    component: UsersComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
