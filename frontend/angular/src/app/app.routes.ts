@@ -6,6 +6,7 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import {MatchesComponent} from "./matches/matches.component";
 import {MatchGridComponent} from "./matches/match-grid/match-grid.component";
 import {MatchFormComponent} from "./matches/match-form/match-form.component";
+import {RankingGridComponent} from "./ranking-grid/ranking-grid.component";
 
 export const routes: Routes = [
   {
@@ -56,7 +57,7 @@ export const routes: Routes = [
   },
   {
     path: 'ranking',
-    component: UsersComponent
+    component: RankingGridComponent
   },
   {
     path: '**',
