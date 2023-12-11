@@ -1,5 +1,5 @@
 import {Component, inject, Input} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {NgIf} from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
@@ -19,7 +19,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.scss'

@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
 import {RouterLink} from "@angular/router";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-user-grid',
   standalone: true,
   imports: [
     MatTableModule,
-    RouterLink
+    RouterLink,
+    MatIconModule,
+    MatButtonModule
   ],
   templateUrl: './user-grid.component.html',
   styleUrl: './user-grid.component.scss'
@@ -27,6 +31,6 @@ export class UserGridComponent {
     {id: 10, userName: 'Neon', displayName: 'Hydrogen', email: "Hydrogen@Hydrogen.de"},
   ];
 
-  displayColumns = ['id', 'userName', 'displayName', 'email'  ];
+  displayColumns = ['id', 'userName', 'displayName', 'email', 'actions'  ];
 
 }
