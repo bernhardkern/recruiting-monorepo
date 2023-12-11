@@ -1,6 +1,8 @@
 package de.iits.elo.match
 
-import org.springframework.data.repository.CrudRepository
-import java.util.UUID
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+import java.util.*
 
-interface MatchRepository : CrudRepository<Match, UUID>
+@Repository
+interface MatchRepository : JpaRepository<Match, UUID>

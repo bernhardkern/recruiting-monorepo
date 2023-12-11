@@ -16,8 +16,7 @@ import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.http.HttpHeaders
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
-class UserApiTests {
+class UserControllerIntegrationTests {
     @LocalServerPort
     private var port: Int = -1
 

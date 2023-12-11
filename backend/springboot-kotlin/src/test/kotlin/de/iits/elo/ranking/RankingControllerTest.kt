@@ -12,7 +12,7 @@ import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.http.HttpHeaders
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class RankingApiTest {
+class RankingControllerTest {
 
     @LocalServerPort
     private var port: Int = -1

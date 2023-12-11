@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class RankingApi {
+class RankingController {
 
     @GetMapping("/ranking")
     fun ranking(@RequestParam top: Int): ResponseEntity<List<Ranking>> {

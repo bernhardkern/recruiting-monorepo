@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class MatchApi(
+class MatchController(
     private val matchCreateOrUpdateService: MatchCreateOrUpdateService,
     private val matchReadingService: MatchReadingService,
 ) {
