@@ -2,7 +2,7 @@
   @if (!id) { Create new user } @else { Edit user with id: {{ id }} }
 </mat-toolbar>
 
-<form #userForm="ngForm" (ngSubmit)="onSubmit()" class="app-content">
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" class="app-content app-content__form">
   <!-- User Name -->
   <mat-form-field>
     <mat-label>User Name</mat-label>
@@ -54,4 +54,4 @@
   </mat-form-field>
 </form>
 
-<app-footer [isEditForm]="!!id" [saveDisabled]="userForm.invalid!" [save]="save()"></app-footer>
+<app-footer [isEditForm]="!!id" [saveDisabled]="userForm.invalid!"></app-footer>
