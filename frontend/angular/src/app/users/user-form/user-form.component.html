@@ -1,8 +1,12 @@
-<mat-toolbar class="mat-toolbar-header" color="secondary">
+<mat-toolbar color="secondary">
   @if (!id) { Create new user } @else { Edit user with id: {{ id }} }
 </mat-toolbar>
 
-<form #userForm="ngForm" (ngSubmit)="onSubmit()" class="app-content app-content__form">
+<form
+  #userForm="ngForm"
+  (ngSubmit)="onSubmit()"
+  class="app-content app-content__form"
+>
   <!-- User Name -->
   <mat-form-field>
     <mat-label>User Name</mat-label>
