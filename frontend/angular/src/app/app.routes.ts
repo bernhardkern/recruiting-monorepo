@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import {UsersComponent} from "./users/users.component";
-import {UserGridComponent} from "./users/user-grid/user-grid.component";
-import {UserDetailsComponent} from "./users/user-details/user-details.component";
-import {UserFormComponent} from "./users/user-form/user-form.component";
+import { UsersComponent } from './users/users.component';
+import { UserGridComponent } from './users/user-grid/user-grid.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
 
 export const routes: Routes = [
   {
@@ -10,22 +10,26 @@ export const routes: Routes = [
     component: UsersComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'overview',
+        pathMatch: 'full',
+      },
+      {
         path: 'overview',
-        component: UserGridComponent
+        component: UserGridComponent,
       },
       {
         path: ':id/edit',
-        component: UserFormComponent
+        component: UserFormComponent,
       },
       {
         path: 'new',
-        component: UserFormComponent
+        component: UserFormComponent,
       },
       {
         path: ':id',
-        component: UserDetailsComponent
+        component: UserDetailsComponent,
       },
-
-    ]
-  }
+    ],
+  },
 ];
