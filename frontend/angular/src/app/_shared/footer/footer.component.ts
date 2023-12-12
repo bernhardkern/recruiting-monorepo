@@ -3,8 +3,7 @@ import {Component, Input} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
-import { EMPTY, Observable } from 'rxjs';
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {EMPTY, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -19,7 +18,7 @@ export class FooterComponent {
   @Input() saveDisabled = false;
   @Input() save: Observable<any> = EMPTY;
 
-  constructor(private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar) {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -48,14 +47,6 @@ export class FooterComponent {
   }
 
   private emitSave() {
-    this.save.subscribe({
-      next: (data) => this.snackBar.open('Save successful!', 'Dismiss', {
-        duration: 3000,
-
-      }),
-      error: () => this.snackBar.open('Save error!', 'Dismiss', {
-        duration: 3000,
-      },)
-    });
+    this.save.subscribe();
   }
 }
