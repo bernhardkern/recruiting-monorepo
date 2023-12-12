@@ -32,6 +32,8 @@ import {User} from "../../models/user.model";
 export class UserFormComponent {
   @Input() userName = '';
 
+  constructor(private apiService: ApiService) {}
+
   elo: number | null = null
   user: User = {
     id: '',
@@ -47,8 +49,8 @@ export class UserFormComponent {
   isValidEmail(email: string): boolean {
     return !!email;
   }
-  constructor(private apiService: ApiService) {}
 
+  submit = () => this.userName ? this.apiService.updateUser(this.user) : this.apiService.createUser(this.user)
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes)
@@ -60,6 +62,5 @@ export class UserFormComponent {
         this.user = data;
       });
     }
-
   }
 }
