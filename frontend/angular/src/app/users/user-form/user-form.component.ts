@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, SimpleChanges} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from '../../_shared/footer/footer.component';
 import { Observable } from 'rxjs';
+import {ApiService} from "../../services/api.service";
+import {User} from "../../models/user.model";
 
 @Component({
   selector: 'app-user-form',
@@ -28,14 +30,15 @@ import { Observable } from 'rxjs';
   ],
 })
 export class UserFormComponent {
-  @Input() id = '';
+  @Input() userName = '';
 
-  user = {
-    id: 1,
-    userName: 'Hydrogen',
-    displayName: 'Neon',
-    email: 'Neon@Neon.de',
-  };
+  elo: number | null = null
+  user: User = {
+    id: '',
+    userName: '',
+    displayName: '',
+    email: ''
+  }
 
   onSubmit() {
     console.log('Form submitted:', this.user);
@@ -43,5 +46,20 @@ export class UserFormComponent {
 
   isValidEmail(email: string): boolean {
     return !!email;
+  }
+  constructor(private apiService: ApiService) {}
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+    if (changes['userName'].currentValue) {
+      this.apiService.getUserElo(this.userName).subscribe((data: number) => {
+        this.elo = data;
+      });
+      this.apiService.getUser(this.userName).subscribe((data: User) => {
+        this.user = data;
+      });
+    }
+
   }
 }

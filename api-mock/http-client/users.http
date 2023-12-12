@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### get user by name
-GET {{host}}:{{port}}/users/carebear
+GET {{host}}:{{port}}/users/careBear3000
 
 ### update user by name
 PUT {{host}}:{{port}}/users/carebear

@@ -1,5 +1,9 @@
 <mat-toolbar color="secondary">
-  @if (!!id) { Edit user with id: {{ id }} } @else { Create new user }
+  @if (!!userName) {
+    Edit user with userName: {{ userName }}
+  } @else {
+    Create new user
+  }
 </mat-toolbar>
 
 <form
@@ -16,9 +20,11 @@
       name="userName"
       [(ngModel)]="user.userName"
       required
+      [disabled]="!!userName"
     />
     <mat-error *ngIf="userForm.submitted && !user.userName"
-      >User Name is required</mat-error
+    >User Name is required
+    </mat-error
     >
   </mat-form-field>
 
@@ -33,7 +39,8 @@
       required
     />
     <mat-error *ngIf="userForm.submitted && !user.displayName"
-      >Display Name is required</mat-error
+    >Display Name is required
+    </mat-error
     >
   </mat-form-field>
 
@@ -49,13 +56,29 @@
       required
     />
     <mat-error *ngIf="userForm.submitted && !user.email"
-      >Email is required</mat-error
+    >Email is required
+    </mat-error
     >
     <mat-error
       *ngIf="userForm.submitted && user.email && !isValidEmail(user.email)"
-      >Invalid email format</mat-error
+    >Invalid email format
+    </mat-error
     >
   </mat-form-field>
+  @if (userName) {
+    <!-- Elo -->
+    <mat-form-field>
+      <mat-label>Elo</mat-label>
+      <input
+        matInput
+        type="elo"
+        placeholder="Elo"
+        name="elo"
+        [(ngModel)]="elo"
+        disabled
+      />
+    </mat-form-field>
+  }
 </form>
 
-<app-footer [isEditForm]="!!id" [saveDisabled]="userForm.invalid!"></app-footer>
+<app-footer [isEditForm]="!!userName" [saveDisabled]="userForm.invalid!"></app-footer>
