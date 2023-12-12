@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import {EMPTY, Observable} from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -27,7 +27,7 @@ export class FooterComponent {
   }
 
   onSaveClicked() {
-    console.log("click")
+    console.log('click');
     this.emitSave();
   }
 
