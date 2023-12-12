@@ -1,9 +1,9 @@
-import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { EMPTY, Observable } from 'rxjs';
+import {NgIf} from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
+import {EMPTY, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -18,16 +18,17 @@ export class FooterComponent {
   @Input() saveDisabled = false;
   @Input() save: Observable<any> = EMPTY;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onCancelClicked() {
     this.navigateBack();
   }
 
   onSaveClicked() {
-    console.log('click');
     this.emitSave();
   }
 

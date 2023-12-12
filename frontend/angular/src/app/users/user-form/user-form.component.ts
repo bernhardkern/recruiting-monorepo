@@ -50,10 +50,11 @@ export class UserFormComponent {
     return !!email;
   }
 
-  submit = () => this.userName ? this.apiService.updateUser(this.user) : this.apiService.createUser(this.user)
+  isEditForm = () => !!this.userName
+
+  submit = () => this.isEditForm() ? this.apiService.updateUser(this.user) : this.apiService.createUser(this.user)
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
     if (changes['userName'].currentValue) {
       this.apiService.getUserElo(this.userName).subscribe((data: number) => {
         this.elo = data;
