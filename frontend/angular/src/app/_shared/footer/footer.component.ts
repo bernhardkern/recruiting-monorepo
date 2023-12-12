@@ -1,9 +1,10 @@
-import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import {NgIf} from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { EMPTY, Observable } from 'rxjs';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-footer',
@@ -18,16 +19,17 @@ export class FooterComponent {
   @Input() saveDisabled = false;
   @Input() save: Observable<any> = EMPTY;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onCancelClicked() {
     this.navigateBack();
   }
 
   onSaveClicked() {
-    console.log('click');
     this.emitSave();
   }
 
@@ -46,6 +48,14 @@ export class FooterComponent {
   }
 
   private emitSave() {
-    this.save.subscribe();
+    this.save.subscribe({
+      next: (data) => this.snackBar.open('Save successful!', 'Dismiss', {
+        duration: 3000,
+
+      }),
+      error: () => this.snackBar.open('Save error!', 'Dismiss', {
+        duration: 3000,
+      },)
+    });
   }
 }
