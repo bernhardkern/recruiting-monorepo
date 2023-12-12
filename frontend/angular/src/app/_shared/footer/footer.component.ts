@@ -14,7 +14,6 @@ import {EMPTY, Observable} from 'rxjs';
 })
 export class FooterComponent {
   @Input() isGridComponent = false;
-  @Input() isEditForm = false;
   @Input() saveDisabled = false;
   @Input() save: Observable<any> = EMPTY;
 
@@ -33,13 +32,8 @@ export class FooterComponent {
   }
 
   private navigateBack(): void {
-    let navigateCommand: string[];
-
-    if (this.isEditForm && !this.isGridComponent) {
-      navigateCommand = ['../../'];
-    } else {
-      navigateCommand = ['../'];
-    }
+    const lastPath = this.route.snapshot.url.reverse()[0]
+    const navigateCommand = lastPath.path === 'edit' ? ['../../'] : ['../'];
 
     this.router.navigate(navigateCommand, {
       relativeTo: this.route,
