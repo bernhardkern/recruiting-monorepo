@@ -6,40 +6,40 @@
   <!-- Player 1 -->
   <mat-form-field>
     <mat-label>Player 1</mat-label>
-    <mat-select required [(ngModel)]="match.player1" name="player1">
+    <mat-select required [(ngModel)]="match.player1" name="player1" #player1Input="ngModel">
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
-    <mat-error *ngIf="matchForm.submitted && !match.player1"
-      >Player 1 is required</mat-error
-    >
+    <mat-error>
+      @if (player1Input.errors && player1Input.errors['required']) { Player 1 is required }
+    </mat-error>
   </mat-form-field>
 
   <!-- Player 2 -->
   <mat-form-field>
     <mat-label>Player 2</mat-label>
-    <mat-select required [(ngModel)]="match.player2" name="player2">
+    <mat-select required [(ngModel)]="match.player2" name="player2" #player2Input="ngModel">
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
-    <mat-error *ngIf="matchForm.submitted && !match.player2"
-      >Player 2 is required</mat-error
-    >
+    <mat-error>
+      @if (player2Input.errors && player2Input.errors['required']) { Player 2 is required }
+    </mat-error>
   </mat-form-field>
 
   <!-- Outcome -->
   <mat-form-field>
     <mat-label>Outcome</mat-label>
-    <mat-select required [(ngModel)]="match.outcome" name="outcome">
+    <mat-select required [(ngModel)]="match.outcome" name="outcome" #outcomeInput="ngModel">
       <mat-option *ngFor="let outcome of outcomes" [value]="outcome">{{
         outcome
       }}</mat-option>
     </mat-select>
-    <mat-error *ngIf="matchForm.submitted && !match.outcome"
-      >Outcome is required</mat-error
-    >
+    <mat-error>
+      @if (outcomeInput.errors && outcomeInput.errors['required']) { Outcome is required }
+    </mat-error>
   </mat-form-field>
 
   <!-- Date -->
@@ -52,12 +52,13 @@
       required
       [(ngModel)]="match.date"
       name="date"
+      #dateInput="ngModel"
     />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-    <mat-error *ngIf="matchForm.submitted && !match.date"
-      >Date is required</mat-error
-    >
+    <mat-error>
+      @if (dateInput.errors && dateInput.errors['required']) { Date is required }
+    </mat-error>
   </mat-form-field>
 </form>
 
