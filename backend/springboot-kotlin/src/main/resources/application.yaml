@@ -12,6 +12,3 @@ spring:
     hibernate:
       ddl-auto: none
     open-in-view: false
-#  sql:
-#    init:
-#      schema-locations: schema.sql

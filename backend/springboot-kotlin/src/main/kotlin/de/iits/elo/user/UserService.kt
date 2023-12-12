@@ -14,6 +14,7 @@ class UserService(
     fun findByUsername(userName: String) =
         userRepository.findById(userName).getOrNull()
 
+    @Throws(IllegalArgumentException::class)
     fun update(user: User): User {
         val databaseObject = userRepository.findById(user.username)
         check(databaseObject.isPresent) { "No user exists with username ${user.username}" }

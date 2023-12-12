@@ -1,7 +1,8 @@
-CREATE TABLE user(
+CREATE TABLE IF NOT EXISTS user_data
+(
     username     VARCHAR(255) NOT NULL,
-    display_name VARCHAR(255),
+    displayname VARCHAR(255) NOT NULL,
     email        VARCHAR(255),
-    elo          INT,
-    PRIMARY KEY (id)
+    elo          INT NOT NULL,
+    PRIMARY KEY (username)
 );

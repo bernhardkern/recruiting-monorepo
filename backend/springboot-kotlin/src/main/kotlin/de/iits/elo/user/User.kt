@@ -5,12 +5,12 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_data")
 data class User(
 
     @Id
     val username: String,
-    val displayName: String,
-    val email: String,
+    val displayname: String,
+    val email: String?,
     val elo: Int = 1000,
 )

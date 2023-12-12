@@ -18,7 +18,7 @@ class RankingController {
                     elo = 1499,
                     player = User(
                         username = "Peter",
-                        displayName = "Der Peter",
+                        displayname = "Der Peter",
                         email = "peter@elo.com"
                     )
                 )

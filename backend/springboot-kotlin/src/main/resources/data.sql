@@ -1,1 +1,2 @@
-INSERT INTO user (username, displayName, email, elo) VALUES ('Max Mustermann', 'Maxi', 'max.mustermann@iits-consulting.de', 42);
+INSERT INTO user_data(username, displayname, email, elo) VALUES ('Max Mustermann', 'Maxi', 'max.mustermann@iits-consulting.de', 42);
+INSERT INTO user_data(username, displayname, email, elo) VALUES ('Lieschen Müller', 'Lisa', 'lieschen.mueller@iits-consulting.de', 1337);

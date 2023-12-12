@@ -2,7 +2,6 @@ package de.iits.elo.user
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -23,12 +22,17 @@ class UserController(
     @PutMapping("/users")
     fun updateUser(@RequestBody user: User?): ResponseEntity<User> {
         user ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "User required for update, but no user was found in request body")
-        return ResponseEntity.ok(userService.update(user))
+        val update = try {
+            userService.update(user)
+        } catch (exception: IllegalStateException) {
+            throw ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.message)
+        }
+        return ResponseEntity.ok(update)
     }
 
     @PostMapping("/users")
     fun createUser(@RequestBody user: User?): ResponseEntity<User> {
-        user ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "User required for update, but no user was found in request body")
+        user ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "User required for creation, but no user was found in request body")
         return ResponseEntity.ok(userService.save(user))
     }
 
@@ -41,9 +45,10 @@ class UserController(
 
     @GetMapping("/users/{username}/elo")
     fun getUserElo(@PathVariable username: String): ResponseEntity<Int> =
-        ResponseEntity.ok(userService.getElo(username))
+        try {
+            ResponseEntity.ok(userService.getElo(username))
+        } catch (exception: IllegalStateException) {
+            throw ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, exception.message)
+        }
 
-    @ExceptionHandler(IllegalStateException::class)
-    protected fun handleUserMissingInDatabase(exception: IllegalStateException) =
-        ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.message)
 }
