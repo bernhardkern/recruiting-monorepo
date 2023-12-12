@@ -29,3 +29,7 @@ body {
     }
   }
 }
+
+form > mat-form-field {
+  padding-bottom: 1rem;
+}
