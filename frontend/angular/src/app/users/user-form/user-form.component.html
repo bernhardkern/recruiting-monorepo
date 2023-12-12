@@ -1,5 +1,5 @@
 <mat-toolbar color="secondary">
-  @if (!id) { Create new user } @else { Edit user with id: {{ id }} }
+  @if (!!id) { Edit user with id: {{ id }} } @else { Create new user }
 </mat-toolbar>
 
 <form
