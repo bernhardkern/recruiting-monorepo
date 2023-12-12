@@ -42,10 +42,6 @@ export class UserFormComponent {
     email: ''
   }
 
-  onSubmit() {
-    console.log('Form submitted:', this.user);
-  }
-
   isValidEmail(email: string): boolean {
     return !!email;
   }
