@@ -8,31 +8,31 @@
       "body": [
         {
           "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
-          "username": "careBear3000",
+          "userName": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com"
         },
         {
           "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-          "username": "lovingAndCaring4Bears",
+          "userName": "lovingAndCaring4Bears",
           "displayName": "Berthold Kehr",
           "email": "bearthold@care.de"
         },
         {
           "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
-          "username": "BearChessCare",
+          "userName": "BearChessCare",
           "displayName": "Bartholomaeus Baer",
           "email": "bartholomaeus@bear.de"
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-          "username": "AppleBearCare",
+          "userName": "AppleBearCare",
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de"
         },
         {
           "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-          "username": "KenningBaerAlter",
+          "userName": "KenningBaerAlter",
           "displayName": "Kenning Bär",
           "email": "kenningBärRecords@carebär.de"
         }
@@ -47,7 +47,7 @@
     "httpResponse": {
       "body": {
         "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-        "username": "lovingAndCaring4Bears",
+        "userName": "lovingAndCaring4Bears",
         "displayName": "Berthold Kehr",
         "email": "bearthold@care.de"
       }
@@ -61,7 +61,7 @@
     "httpResponse": {
       "body": {
         "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-        "username": "AppleBearCare",
+        "userName": "AppleBearCare",
         "displayName": "Apple Carebear",
         "email": "keepAppleAway@care.de"
       }
@@ -75,7 +75,7 @@
     "httpResponse": {
       "body": {
         "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-        "username": "KenningBaerAlter",
+        "userName": "KenningBaerAlter",
         "displayName": "Kenning Bär",
         "email": "kenningBärRecords@carebär.de"
       }
@@ -160,7 +160,7 @@
       "body": [
         {
           "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
-          "username": "careBear3000",
+          "userName": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com",
           "elo": 2345,
@@ -168,7 +168,7 @@
         },
         {
           "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-          "username": "lovingAndCaring4Bears",
+          "userName": "lovingAndCaring4Bears",
           "displayName": "Berthold Kehr",
           "email": "bearthold@care.de",
           "elo": 1200,
@@ -176,7 +176,7 @@
         },
         {
           "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
-          "username": "BearChessCare",
+          "userName": "BearChessCare",
           "displayName": "Bartholomaeus Baer",
           "email": "bartholomaeus@bear.de",
           "elo": 1200,
@@ -184,7 +184,7 @@
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-          "username": "AppleBearCare",
+          "userName": "AppleBearCare",
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de",
           "elo": 1000,
@@ -192,7 +192,7 @@
         },
         {
           "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-          "username": "KenningBaerAlter",
+          "userName": "KenningBaerAlter",
           "displayName": "Kenning Bär",
           "email": "kenningBärRecords@carebär.de",
           "elo": 800,
