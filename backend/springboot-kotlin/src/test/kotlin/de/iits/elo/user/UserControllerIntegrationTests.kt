@@ -32,11 +32,11 @@ class UserControllerIntegrationTests {
 
         @Test
         fun `return all users from database`() {
-            val expectedUsersAsJson = objectMapper.writeValueAsString(userRepository.findAll())
+            val expectedUserAsJson = objectMapper.writeValueAsString(userRepository.findAll())
             val requestResponse = mockMvc.get("/users")
             requestResponse.andExpectAll {
                 status { isOk() }
-                content { json(expectedUsersAsJson) }
+                content { json(expectedUserAsJson) }
             }
         }
     }
@@ -105,21 +105,21 @@ class UserControllerIntegrationTests {
         }
 
         @Test
-        fun `send valid user for update`() {
-            val userUpdate = createUserUpdate()
-            val userUpdateAsJson = objectMapper.writeValueAsString(userUpdate)
-            val requestResponse = mockMvc.put("/users") {
+        fun `send valid user for creation`() {
+            val user = createUser()
+            val userAsJson = objectMapper.writeValueAsString(user)
+            val requestResponse = mockMvc.post("/users") {
                 contentType = MediaType.APPLICATION_JSON
-                content = userUpdateAsJson
+                content = userAsJson
             }
             requestResponse.andExpectAll {
                 status { isOk() }
-                content { json(userUpdateAsJson) }
+                content { json(userAsJson) }
             }
-            userRepository.findById(userUpdate.username).get() shouldBe userUpdate
+            userRepository.findById(user.username).get() shouldBe user
         }
 
-        private fun createUserUpdate() =
+        private fun createUser() =
             User(
                 username = "Max Mustermann",
                 displayname = "BestMaxEuWest",

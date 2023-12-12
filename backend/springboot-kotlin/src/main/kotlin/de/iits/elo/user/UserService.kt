@@ -8,7 +8,7 @@ class UserService(
     private val userRepository: UserRepository,
 ) {
 
-    fun findAll(): MutableList<User> =
+    fun findAll(): List<User> =
         userRepository.findAll()
 
     fun findByUsername(userName: String) =

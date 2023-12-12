@@ -1,61 +1,90 @@
 package de.iits.elo.match
 
-//import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-//import com.fasterxml.jackson.module.kotlin.readValue
-//import de.iits.elo.testdata.mockuser1
-//import de.iits.elo.testdata.mockuser2
-//import io.kotest.matchers.shouldBe
-//import org.junit.jupiter.api.Test
-//import org.springframework.boot.test.context.SpringBootTest
-//import org.springframework.boot.test.web.server.LocalServerPort
-//import org.springframework.http.HttpHeaders
-//import java.util.*
-//
-//
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.node.ObjectNode
+import io.kotest.matchers.longs.shouldBeGreaterThanOrEqual
+import io.kotest.matchers.shouldNotBe
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.get
+import org.springframework.test.web.servlet.post
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 class MatchControllerTest {
-//    @LocalServerPort
-//    private var port: Int = -1
-//
-//    val objectMapper = jacksonObjectMapper()
-//
-//    @Test
-//    fun getAllMatches() {
-//        val blackUser = mockuser1
-//        val whiteUser = mockuser2
-//        val expectedMatch = Match(
-//                id = UUID.fromString("13632e28-e531-41a4-b395-6a06e4f8b39c"),
-//                blackPlayer = blackUser.id,
-//                whitePlayer = whiteUser.id,
-//                outcome = Outcome.DRAW,
-//                playedOn = "2023-07-21T17:56:50Z"
-//        )
-//        val (_, _, result) = "http://localhost:$port/matches".httpGet()
-//                .header(HttpHeaders.ACCEPT to "application/json")
-//                .responseString()
-//        val foundMatches = result
-//                .map { objectMapper.readValue<List<Match>>(it) }
-//                .get()
-//        foundMatches[0] shouldBe expectedMatch
-//    }
-//
-//    @Test
-//    fun postMatch() {
-//        val expectedMatch = Match(
-//                blackPlayer = UUID.fromString("11111111-58cc-4372-a567-0e02b2c3d479"),
-//                whitePlayer = UUID.fromString("22222222-58cc-4372-a567-0e02b2c3d479"),
-//                outcome = Outcome.DRAW,
-//                playedOn = "2023-07-21T17:56:50Z"
-//        )
-//        val (_, _, result) = "http://localhost:$port/matches".httpPost()
-//                .header(HttpHeaders.ACCEPT to "application/json")
-//                .header(HttpHeaders.CONTENT_TYPE, "application/json")
-//                .body(objectMapper.writeValueAsString(expectedMatch))
-//                .responseString()
-//
-//        result.map { objectMapper.readValue<Match>(it) }
-//                .get() shouldBe expectedMatch
-//
-//    }
+
+    @Autowired
+    lateinit var mockMvc: MockMvc
+
+    @Autowired
+    lateinit var objectMapper: ObjectMapper
+
+    @Autowired
+    lateinit var matchRepository: MatchRepository
+
+    @Nested
+    inner class GetAllMatches {
+
+        @Test
+        fun `return all matches from database`() {
+            val expectedMatchAsJson = objectMapper.writeValueAsString(matchRepository.findAll())
+            val requestResponse = mockMvc.get("/matches")
+            requestResponse.andExpectAll {
+                status { isOk() }
+                content { json(expectedMatchAsJson) }
+            }
+        }
+    }
+
+    @Nested
+    inner class CreateMatch {
+
+        @Test
+        fun `do not send match for creation`() {
+            val requestResponse = mockMvc.post("/matches")
+            requestResponse.andExpectAll {
+                status { isBadRequest() }
+                status { reason("Match required for creation, but no match was found in request body") }
+            }
+        }
+
+        @Test
+        fun `send valid match for creation`() {
+            val newMatch = createNewMatch()
+            val newMatchAsJson = getJsonRequestContent(newMatch)
+            val requestResponse = mockMvc.post("/matches") {
+                contentType = MediaType.APPLICATION_JSON
+                content = newMatchAsJson
+            }
+            requestResponse.andExpectAll {
+                status { isOk() }
+                content { json(newMatchAsJson) }
+            }
+            val allMatches = matchRepository.findAll()
+            allMatches.sortBy(Match::timestamp)
+            allMatches.last().id shouldNotBe null
+            allMatches.last().timestamp shouldBeGreaterThanOrEqual (newMatch.timestamp)
+        }
+
+        private fun createNewMatch() =
+            Match(
+                whitePlayerUsername = "Maxi",
+                blackPlayerUsername = "Lisa",
+                outcome = Outcome.DRAW,
+            )
+
+        private fun getJsonRequestContent(newMatch: Match): String {
+            val newMatchAsJson = objectMapper.writeValueAsString(newMatch)
+            val objectNode = objectMapper.readTree(newMatchAsJson) as ObjectNode
+            objectNode.remove("id")
+            objectNode.remove("timestamp")
+            return objectMapper.writeValueAsString(objectNode)
+        }
+    }
 
 }
