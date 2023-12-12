@@ -35,6 +35,246 @@
           "userName": "KenningBaerAlter",
           "displayName": "Kenning Bär",
           "email": "kenningBärRecords@carebär.de"
+        },
+        {
+          "id": "2ca8361c-96a6-4787-af86-8bafda1b1e99",
+          "userName": "careBear3000",
+          "displayName": "Carey Bar",
+          "email": "care4bears@barbar.com"
+        },
+        {
+          "id": "1a2b3c4d-5678-90ab-cdef12345678",
+          "userName": "tenderHearted",
+          "displayName": "Tender Heart",
+          "email": "tenderheart@caremail.com"
+        },
+        {
+          "id": "2b3c4d5e-6789-0abc-def1-23456789abcd",
+          "userName": "grizzleGazer",
+          "displayName": "Grizzle Gazer",
+          "email": "gaze4grizzles@bearmail.com"
+        },
+        {
+          "id": "3c4d5e6f-7890-abcd-ef12-34567890abcd",
+          "userName": "cheerUpCharlie",
+          "displayName": "Cheer Up Charlie",
+          "email": "charlie@careandcheer.com"
+        },
+        {
+          "id": "4d5e6f7g-890a-bcde-f123-4567890abcde",
+          "userName": "wishBearDreams",
+          "displayName": "Wish Bear Dreams",
+          "email": "dreamy@wishbear.com"
+        },
+        {
+          "id": "5e6f7g8h-90ab-cdef-1234-567890abcdef",
+          "userName": "shareABear",
+          "displayName": "Share A. Bear",
+          "email": "sharelove@bearshare.com"
+        },
+        {
+          "id": "6g7h8i9j-0abc-def1-2345-67890abcdef1",
+          "userName": "grumpyGrins",
+          "displayName": "Grumpy Grins",
+          "email": "grinsngrumps@grumpybear.com"
+        },
+        {
+          "id": "7h8i9j0k-abcd-ef12-3456-7890abcdef12",
+          "userName": "harmonyHarbor",
+          "displayName": "Harmony Harbor",
+          "email": "harbor@harmonybear.com"
+        },
+        {
+          "id": "8i9j0k1l-bcde-f123-4567-890abcdef123",
+          "userName": "caringCartoons",
+          "displayName": "Caring Cartoons",
+          "email": "cartoons@careland.com"
+        },
+        {
+          "id": "9j0k1l2m-cdef-1234-5678-90abcdef1234",
+          "userName": "gratefulGumdrop",
+          "displayName": "Grateful Gumdrop",
+          "email": "gumdrop@gratefulbear.com"
+        },
+        {
+          "id": "0k1l2m3n-def1-2345-6789-0abcdef12345",
+          "userName": "sunshineBearHug",
+          "displayName": "Sunshine Bear Hug",
+          "email": "hug4sunshine@bearhugs.com"
+        },
+        {
+          "id": "1a2b3c4d-5678-90ab-cdef12345678",
+          "userName": "tenderHearted",
+          "displayName": "Tender Heart",
+          "email": "tenderheart@caremail.com"
+        },
+        {
+          "id": "2b3c4d5e-6789-0abc-def1-23456789abcd",
+          "userName": "grizzleGazer",
+          "displayName": "Grizzle Gazer",
+          "email": "gaze4grizzles@bearmail.com"
+        },
+        {
+          "id": "3c4d5e6f-7890-abcd-ef12-34567890abcd",
+          "userName": "cheerUpCharlie",
+          "displayName": "Cheer Up Charlie",
+          "email": "charlie@careandcheer.com"
+        },
+        {
+          "id": "4d5e6f7g-890a-bcde-f123-4567890abcde",
+          "userName": "wishBearDreams",
+          "displayName": "Wish Bear Dreams",
+          "email": "dreamy@wishbear.com"
+        },
+        {
+          "id": "5e6f7g8h-90ab-cdef-1234-567890abcdef",
+          "userName": "shareABear",
+          "displayName": "Share A. Bear",
+          "email": "sharelove@bearshare.com"
+        },
+        {
+          "id": "6g7h8i9j-0abc-def1-2345-67890abcdef1",
+          "userName": "grumpyGrins",
+          "displayName": "Grumpy Grins",
+          "email": "grinsngrumps@grumpybear.com"
+        },
+        {
+          "id": "7h8i9j0k-abcd-ef12-3456-7890abcdef12",
+          "userName": "harmonyHarbor",
+          "displayName": "Harmony Harbor",
+          "email": "harbor@harmonybear.com"
+        },
+        {
+          "id": "8i9j0k1l-bcde-f123-4567-890abcdef123",
+          "userName": "caringCartoons",
+          "displayName": "Caring Cartoons",
+          "email": "cartoons@careland.com"
+        },
+        {
+          "id": "9j0k1l2m-cdef-1234-5678-90abcdef1234",
+          "userName": "gratefulGumdrop",
+          "displayName": "Grateful Gumdrop",
+          "email": "gumdrop@gratefulbear.com"
+        },
+        {
+          "id": "0k1l2m3n-def1-2345-6789-0abcdef12345",
+          "userName": "sunshineBearHug",
+          "displayName": "Sunshine Bear Hug",
+          "email": "hug4sunshine@bearhugs.com"
+        },
+        {
+          "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
+          "userName": "gentleGiggler",
+          "displayName": "Gentle Giggler",
+          "email": "giggle@gentlebear.com"
+        },
+        {
+          "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+          "userName": "laughingLullaby",
+          "displayName": "Laughing Lullaby",
+          "email": "lullaby@bearlaughs.com"
+        },
+        {
+          "id": "c3d4e5f6-7890-abcd-efghijklmno",
+          "userName": "harmonyHarper",
+          "displayName": "Harmony Harper",
+          "email": "harper@harmonybear.com"
+        },
+        {
+          "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
+          "userName": "cuddleBug",
+          "displayName": "Cuddle Bug",
+          "email": "bugcuddles@bearbug.com"
+        },
+        {
+          "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
+          "userName": "shareASnuggle",
+          "displayName": "Share A. Snuggle",
+          "email": "snuggle@bearshare.com"
+        },
+        {
+          "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
+          "userName": "compassionCub",
+          "displayName": "Compassion Cub",
+          "email": "cubcompassion@caremail.com"
+        },
+        {
+          "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
+          "userName": "gentleGlow",
+          "displayName": "Gentle Glow",
+          "email": "glow@gentlebear.com"
+        },
+        {
+          "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+          "userName": "gratefulGiggles",
+          "displayName": "Grateful Giggles",
+          "email": "giggles@gratefulbear.com"
+        },
+        {
+          "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
+          "userName": "heartfeltHugs",
+          "displayName": "Heartfelt Hugs",
+          "email": "hugs@heartfeltbear.com"
+        },
+        {
+          "id": "j0k1l2m3-defg-hijk-lmnopqrstuvw",
+          "userName": "tenderTwinkle",
+          "displayName": "Tender Twinkle",
+          "email": "twinkle@tenderbear.com"
+        },
+        {
+          "id": "k1l2m3n4-efgh-ijkl-mnop-qrstuvwx",
+          "userName": "joyfulJamboree",
+          "displayName": "Joyful Jamboree",
+          "email": "jamboree@joyfulbear.com"
+        },
+        {
+          "id": "l2m3n4o5-fghi-jklm-nopq-rstuvwxy",
+          "userName": "warmWishes",
+          "displayName": "Warm Wishes",
+          "email": "wishes@warmbear.com"
+        },
+        {
+          "id": "m3n4o5p6-ijkl-mnop-qrst-uvwxyzab",
+          "userName": "careFreeCrafter",
+          "displayName": "Care Free Crafter",
+          "email": "crafty@carefreebear.com"
+        },
+        {
+          "id": "n4o5p6q7-klm-nopq-rstu-vwxyzabcde",
+          "userName": "sincereSnuggler",
+          "displayName": "Sincere Snuggler",
+          "email": "snuggle@sincerebear.com"
+        },
+        {
+          "id": "o5p6q7r8-mnop-qrst-uvw-xyzabcdefgh",
+          "userName": "gentleGleam",
+          "displayName": "Gentle Gleam",
+          "email": "gleam@gentlebear.com"
+        },
+        {
+          "id": "p6q7r8s9-nopq-rstu-vwx-yzabcdefg",
+          "userName": "gratitudeGazer",
+          "displayName": "Gratitude Gazer",
+          "email": "gaze@gratefulbear.com"
+        },
+        {
+          "id": "q7r8s9t0-opqr-stuv-wxyz-abcdefghij",
+          "userName": "caringComet",
+          "displayName": "Caring Comet",
+          "email": "comet@carebear.com"
+        },
+        {
+          "id": "r8s9t0u1-pqrs-tuvw-xyzab-cdefghijkl",
+          "userName": "beamOfLove",
+          "displayName": "Beam Of Love",
+          "email": "love@beamcare.com"
+        },
+        {
+          "id": "s9t0u1v2-qrst-uvwx-yzabc-defghijklm",
+          "userName": "sereneSprinkles",
+          "displayName": "Serene Sprinkles",
+          "email": "sprinkles@serenebear.com"
         }
       ]
     }
@@ -132,6 +372,111 @@
           "player2": "lovingAndCaring4Bears",
           "outcome": "TWO_WINS",
           "date": "2023-12-01T00:00:00.000Z"
+        },
+        {
+          "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
+          "player1": "tenderHearted",
+          "player2": "gentleGiggler",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-01T10:15:00.000Z"
+        },
+        {
+          "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+          "player1": "grizzleGazer",
+          "player2": "laughingLullaby",
+          "outcome": "DRAW",
+          "date": "2023-12-02T14:30:00.000Z"
+        },
+        {
+          "id": "c3d4e5f6-7890-abcd-efghijklmno",
+          "player1": "cheerUpCharlie",
+          "player2": "harmonyHarper",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-03T08:45:00.000Z"
+        },
+        {
+          "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
+          "player1": "wishBearDreams",
+          "player2": "cuddleBug",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-04T12:00:00.000Z"
+        },
+        {
+          "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
+          "player1": "shareABear",
+          "player2": "shareASnuggle",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-05T16:20:00.000Z"
+        },
+        {
+          "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
+          "player1": "grumpyGrins",
+          "player2": "compassionCub",
+          "outcome": "DRAW",
+          "date": "2023-12-06T19:30:00.000Z"
+        },
+        {
+          "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
+          "player1": "harmonyHarbor",
+          "player2": "gentleGlow",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-07T22:45:00.000Z"
+        },
+        {
+          "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+          "player1": "caringCartoons",
+          "player2": "gratefulGiggles",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-08T06:10:00.000Z"
+        },
+        {
+          "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
+          "player1": "gratefulGumdrop",
+          "player2": "heartfeltHugs",
+          "outcome": "DRAW",
+          "date": "2023-12-09T14:15:00.000Z"
+        },
+        {
+          "id": "j0k1l2m3-defg-hijk-lmnopqrstuvw",
+          "player1": "sunshineBearHug",
+          "player2": "tenderTwinkle",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-10T18:20:00.000Z"
+        },
+        {
+          "id": "k1l2m3n4-efgh-ijkl-mnopqrstuvwx",
+          "player1": "joyfulJamboree",
+          "player2": "warmWishes",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-11T09:30:00.000Z"
+        },
+        {
+          "id": "l2m3n4o5-fghi-jklm-nopq-rstuvwxy",
+          "player1": "careFreeCrafter",
+          "player2": "sincereSnuggler",
+          "outcome": "DRAW",
+          "date": "2023-12-12T15:45:00.000Z"
+        },
+        {
+          "id": "m3n4o5p6-ijkl-mnop-qrst-uvwxyzab",
+          "player1": "gentleGleam",
+          "player2": "gratitudeGazer",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-13T20:00:00.000Z"
+        },
+        {
+          "id": "n4o5p6q7-klm-nopq-rstu-vwxyzabcde",
+          "player1": "gratitudeGazer",
+          "player2": "caringComet",
+          "outcome": "TWO_WINS",
+          "date": "2023-12-14T23:15:00.000Z"
+        },
+        {
+          "id": "o5p6q7r8-mnop-qrst-uvw-xyzabcdefgh",
+          "player1": "caringComet",
+          "player2": "beamOfLove",
+          "outcome": "ONE_WINS",
+          "date": "2023-12-15T11:30:00.000Z"
         }
       ]
     }
@@ -163,24 +508,112 @@
           "userName": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com",
-          "elo": 2345,
+          "elo": 2400,
           "rank": 1
         },
         {
-          "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-          "userName": "lovingAndCaring4Bears",
-          "displayName": "Berthold Kehr",
-          "email": "bearthold@care.de",
-          "elo": 1200,
+          "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
+          "userName": "wishBearDreams",
+          "displayName": "Wish Bear Dreams",
+          "email": "dreamy@wishbear.com",
+          "elo": 2300,
           "rank": 2
+        },
+        {
+          "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
+          "userName": "harmonyHarbor",
+          "displayName": "Harmony Harbor",
+          "email": "harbor@harmonybear.com",
+          "elo": 2200,
+          "rank": 3
+        },
+        {
+          "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
+          "userName": "gratefulGumdrop",
+          "displayName": "Grateful Gumdrop",
+          "email": "gumdrop@gratefulbear.com",
+          "elo": 2100,
+          "rank": 4
+        },
+        {
+          "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
+          "userName": "grumpyGrins",
+          "displayName": "Grumpy Grins",
+          "email": "grinsngrumps@grumpybear.com",
+          "elo": 2000,
+          "rank": 5
+        },
+        {
+          "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
+          "userName": "tenderHearted",
+          "displayName": "Tender Heart",
+          "email": "tenderheart@caremail.com",
+          "elo": 1900,
+          "rank": 6
+        },
+        {
+          "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+          "userName": "grizzleGazer",
+          "displayName": "Grizzle Gazer",
+          "email": "gaze4grizzles@bearmail.com",
+          "elo": 1800,
+          "rank": 7
+        },
+        {
+          "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+          "userName": "caringCartoons",
+          "displayName": "Caring Cartoons",
+          "email": "cartoons@careland.com",
+          "elo": 1700,
+          "rank": 8
+        },
+        {
+          "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+          "userName": "AppleBearCare",
+          "displayName": "Apple Carebear",
+          "email": "keepAppleAway@care.de",
+          "elo": 1600,
+          "rank": 9
+        },
+        {
+          "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
+          "userName": "shareABear",
+          "displayName": "Share A. Bear",
+          "email": "sharelove@bearshare.com",
+          "elo": 1500,
+          "rank": 10
         },
         {
           "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
           "userName": "BearChessCare",
           "displayName": "Barholomaeus Baer",
           "email": "bartholomaeus@bear.de",
+          "elo": 1400,
+          "rank": 11
+        },
+        {
+          "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+          "userName": "lovingAndCaring4Bears",
+          "displayName": "Berthold Kehr",
+          "email": "bearthold@care.de",
+          "elo": 1300,
+          "rank": 12
+        },
+        {
+          "id": "c3d4e5f6-7890-abcd-efghijklmno",
+          "userName": "cheerUpCharlie",
+          "displayName": "Cheer Up Charlie",
+          "email": "charlie@careandcheer.com",
           "elo": 1200,
-          "rank": 2
+          "rank": 13
+        },
+        {
+          "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+          "userName": "KenningBaerAlter",
+          "displayName": "Kenning Bär",
+          "email": "kenningBärRecords@carebär.de",
+          "elo": 1100,
+          "rank": 14
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
@@ -188,15 +621,7 @@
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de",
           "elo": 1000,
-          "rank": 4
-        },
-        {
-          "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-          "userName": "KenningBaerAlter",
-          "displayName": "Kenning Bär",
-          "email": "kenningBärRecords@carebär.de",
-          "elo": 800,
-          "rank": 5
+          "rank": 15
         }
       ]
     }
