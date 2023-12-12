@@ -41,6 +41,6 @@ export class FooterComponent {
   }
 
   private emitSave() {
-    this.save.subscribe();
+    this.save.subscribe(() => this.navigateBack());
   }
 }
