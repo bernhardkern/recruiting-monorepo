@@ -2,7 +2,7 @@
   Create new match
 </mat-toolbar>
 
-<form #matchForm="ngForm" (ngSubmit)="onSubmit()" class="app-content app-content__form">
+<form #matchForm="ngForm" class="app-content app-content__form">
   <!-- Player 1 -->
   <mat-form-field>
     <mat-label>Player 1</mat-label>
@@ -61,4 +61,4 @@
   </mat-form-field>
 </form>
 
-<app-footer [isEditForm]="false" [saveDisabled]="matchForm.invalid!"></app-footer>
+<app-footer [isEditForm]="false" [saveDisabled]="matchForm.invalid!" [save]="submit"></app-footer>

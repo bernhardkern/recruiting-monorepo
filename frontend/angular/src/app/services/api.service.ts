@@ -37,7 +37,7 @@ export class ApiService {
     return this.http.get<Match[]>(`${this.apiUrl}/matches`);
   }
 
-  createMatch(match: User): Observable<User> {
+  createMatch(match: Match): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/matches`, match);
   }
 

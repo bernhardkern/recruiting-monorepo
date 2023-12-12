@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Observable } from 'rxjs';
+import {EMPTY, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +16,7 @@ export class FooterComponent {
   @Input() isGridComponent = false;
   @Input() isEditForm = false;
   @Input() saveDisabled = false;
-  // @Input() save: Observable<any>;
+  @Input() save: Observable<any> = EMPTY;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -27,6 +27,7 @@ export class FooterComponent {
   }
 
   onSaveClicked() {
+    console.log("click")
     this.emitSave();
   }
 
@@ -45,6 +46,6 @@ export class FooterComponent {
   }
 
   private emitSave() {
-    // this.save.subscribe();
+    this.save.subscribe();
   }
 }
