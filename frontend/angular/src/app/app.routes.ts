@@ -22,7 +22,7 @@ export const routes: Routes = [
         component: UserGridComponent,
       },
       {
-        path: ':id/edit',
+        path: ':userName/edit',
         component: UserFormComponent,
       },
       {

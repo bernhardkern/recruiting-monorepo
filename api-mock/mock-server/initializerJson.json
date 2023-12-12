@@ -55,7 +55,7 @@
   },
   {
     "httpRequest": {
-      "path": "/users/[a-zA-Z]+",
+      "path": "/users/[a-zA-Z0-9]+",
       "method": "GET"
     },
     "httpResponse": {
@@ -69,7 +69,7 @@
   },
   {
     "httpRequest": {
-      "path": "/users/[a-zA-Z]+",
+      "path": "/users/[a-zA-Z0-9]+",
       "method": "PUT"
     },
     "httpResponse": {
@@ -91,7 +91,7 @@
   },
   {
     "httpRequest": {
-      "path": "/users/[a-zA-Z]+/elo",
+      "path": "/users/[a-zA-Z0-9]+/elo",
       "method": "GET"
     },
     "httpResponse": {
