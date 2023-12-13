@@ -159,7 +159,7 @@ paths:
         '400':
           description: Invalid match supplied
 
-  '/ranking':
+  '/rankings':
     get:
       tags:
         - Ranking
