@@ -1,18 +1,18 @@
-CREATE TABLE IF NOT EXISTS user_data
+CREATE TABLE IF NOT EXISTS player
 (
-    username     VARCHAR(255) NOT NULL,
-    displayname  VARCHAR(255) NOT NULL,
-    email        VARCHAR(255),
-    elo          INT NOT NULL,
-    PRIMARY KEY (username)
+    user_name     VARCHAR(255) NOT NULL,
+    display_name  VARCHAR(255) NOT NULL,
+    email         VARCHAR(255),
+    elo           INT NOT NULL,
+    PRIMARY KEY (user_name)
 );
 
 CREATE TABLE IF NOT EXISTS match
 (
-    id                      UUID NOT NULL,
-    white_player_username   VARCHAR(255) NOT NULL,
-    black_player_username   VARCHAR(255) NOT NULL,
-    outcome                 VARCHAR(10) NOT NULL,
-    timestamp               LONG NOT NULL,
+    id                       UUID NOT NULL,
+    white_player_user_name   VARCHAR(255) NOT NULL,
+    black_player_user_name   VARCHAR(255) NOT NULL,
+    outcome                  VARCHAR(10) NOT NULL,
+    timestamp                LONG NOT NULL,
     PRIMARY KEY (id)
-    );
+);

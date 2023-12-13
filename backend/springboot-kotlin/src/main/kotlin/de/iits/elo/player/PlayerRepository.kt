@@ -1,11 +1,11 @@
-package de.iits.elo.user
+package de.iits.elo.player
 
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface UserRepository : JpaRepository<User, String> {
+interface PlayerRepository : JpaRepository<Player, String> {
 
-    fun findByOrderByEloDesc(pageable: Pageable): List<User>
+    fun findByOrderByEloDesc(pageable: Pageable): List<Player>
 }

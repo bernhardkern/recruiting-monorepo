@@ -1,8 +1,8 @@
 package de.iits.elo.ranking
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import de.iits.elo.user.User
-import de.iits.elo.user.UserRepository
+import de.iits.elo.player.Player
+import de.iits.elo.player.PlayerRepository
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,23 +19,23 @@ class RankingControllerTest {
     lateinit var mockMvc: MockMvc
 
     @Autowired
-    lateinit var userRepository: UserRepository
+    lateinit var playerRepository: PlayerRepository
 
     @Autowired
     lateinit var objectMapper: ObjectMapper
 
     @Nested
-    inner class GetRanking {
+    inner class GetRankings {
 
         @Test
         fun `return top 5 players`() {
-            val top5players = userRepository.findAll()
-                .sortedBy(User::elo)
+            val top5players = playerRepository.findAll()
+                .sortedBy(Player::elo)
                 .reversed()
                 .take(5)
                 .mapIndexed { index, user -> Ranking(index + 1, user) }
             val top5playersAsJson = objectMapper.writeValueAsString(top5players)
-            val requestResponse = mockMvc.get("/ranking?top=5")
+            val requestResponse = mockMvc.get("/rankings?top=5")
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(top5playersAsJson) }
@@ -44,16 +44,24 @@ class RankingControllerTest {
 
         @Test
         fun `return top player`() {
-            val top5players = userRepository.findAll()
-                .sortedBy(User::elo)
+            val top5players = playerRepository.findAll()
+                .sortedBy(Player::elo)
                 .reversed()
                 .take(1)
                 .mapIndexed { index, user -> Ranking(index + 1, user) }
             val top5playersAsJson = objectMapper.writeValueAsString(top5players)
-            val requestResponse = mockMvc.get("/ranking?top=1")
+            val requestResponse = mockMvc.get("/rankings?top=1")
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(top5playersAsJson) }
+            }
+        }
+
+        @Test
+        fun `dont provide a number of players`() {
+            val requestResponse = mockMvc.get("/rankings")
+            requestResponse.andExpectAll {
+                status { isBadRequest() }
             }
         }
     }

@@ -10,7 +10,7 @@ class RankingController(
     private val rankingService: RankingService,
 ) {
 
-    @GetMapping("/ranking")
-    fun getRanking(@RequestParam top: Int): ResponseEntity<List<Ranking>> =
+    @GetMapping("/rankings")
+    fun getRankings(@RequestParam top: Int): ResponseEntity<List<Ranking>> =
         ResponseEntity.ok(rankingService.getTopPlayers(top))
 }

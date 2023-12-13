@@ -73,8 +73,8 @@ class MatchControllerTest {
 
         private fun createNewMatch() =
             Match(
-                whitePlayerUsername = "Maxi",
-                blackPlayerUsername = "Lisa",
+                whitePlayerUserName = "Maxi",
+                blackPlayerUserName = "Lisa",
                 outcome = Outcome.DRAW,
             )
 

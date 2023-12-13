@@ -1,5 +1,6 @@
 package de.iits.elo.match
 
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
@@ -14,13 +15,13 @@ data class Match(
 
     @Id
     val id: UUID = UUID.randomUUID(),
-
-    val whitePlayerUsername: String,
-
-    val blackPlayerUsername: String,
-
+    @Column(name = "white_player_user_name")
+    val whitePlayerUserName: String,
+    @Column(name = "black_player_user_name")
+    val blackPlayerUserName: String,
+    @Column(name = "outcome")
     @Enumerated(EnumType.STRING)
     val outcome: Outcome,
-
+    @Column(name = "timestamp")
     val timestamp: Long = Instant.now().epochSecond,
 )

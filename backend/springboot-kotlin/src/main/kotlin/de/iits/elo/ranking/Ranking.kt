@@ -1,8 +1,8 @@
 package de.iits.elo.ranking
 
-import de.iits.elo.user.User
+import de.iits.elo.player.Player
 
 data class Ranking(
     val rank: Int,
-    val player: User
+    val player: Player
 )
