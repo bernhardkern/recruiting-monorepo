@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/recruiting-monorepo.iml" filepath="$PROJECT_DIR$/.idea/recruiting-monorepo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kotlin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kotlin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kotlin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kotlin.test.iml" />
     </modules>
   </component>
 </project>
