@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class MatchService(
-    private val matchRepository: MatchRepository
+    private val matchRepository: MatchRepository,
 ) {
 
     fun findAll(): List<Match> =

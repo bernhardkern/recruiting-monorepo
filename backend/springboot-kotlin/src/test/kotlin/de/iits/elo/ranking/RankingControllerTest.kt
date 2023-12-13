@@ -1,35 +1,60 @@
 package de.iits.elo.ranking
 
-//import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-//import com.fasterxml.jackson.module.kotlin.readValue
-//import com.github.kittinunf.fuel.httpGet
-//import com.github.kittinunf.result.map
-//import de.iits.elo.testdata.mockuser1
-//import io.kotest.matchers.shouldBe
-//import org.junit.jupiter.api.Test
-//import org.springframework.boot.test.context.SpringBootTest
-//import org.springframework.boot.test.web.server.LocalServerPort
-//import org.springframework.http.HttpHeaders
-//
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+import com.fasterxml.jackson.databind.ObjectMapper
+import de.iits.elo.user.User
+import de.iits.elo.user.UserRepository
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.get
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 class RankingControllerTest {
 
-//    @LocalServerPort
-//    private var port: Int = -1
-//
-//    private val objectMapper = jacksonObjectMapper()
-//
-//    @Test
-//    fun top10Ranking() {
-//        val expectedRanking = Ranking(
-//            rank = 1, elo = 1499, player = mockuser1
-//        )
-//        val (_, _, result) = "http://localhost:$port/ranking?top=10".httpGet()
-//            .header(HttpHeaders.ACCEPT to "application/json")
-//            .responseString()
-//
-//        result.map { objectMapper.readValue<List<Ranking>>(it) }
-//            .get()[0] shouldBe expectedRanking
-//    }
+    @Autowired
+    lateinit var mockMvc: MockMvc
 
+    @Autowired
+    lateinit var userRepository: UserRepository
+
+    @Autowired
+    lateinit var objectMapper: ObjectMapper
+
+    @Nested
+    inner class GetRanking {
+
+        @Test
+        fun `return top 5 players`() {
+            val top5players = userRepository.findAll()
+                .sortedBy(User::elo)
+                .reversed()
+                .take(5)
+                .mapIndexed { index, user -> Ranking(index + 1, user) }
+            val top5playersAsJson = objectMapper.writeValueAsString(top5players)
+            val requestResponse = mockMvc.get("/ranking?top=5")
+            requestResponse.andExpectAll {
+                status { isOk() }
+                content { json(top5playersAsJson) }
+            }
+        }
+
+        @Test
+        fun `return top player`() {
+            val top5players = userRepository.findAll()
+                .sortedBy(User::elo)
+                .reversed()
+                .take(1)
+                .mapIndexed { index, user -> Ranking(index + 1, user) }
+            val top5playersAsJson = objectMapper.writeValueAsString(top5players)
+            val requestResponse = mockMvc.get("/ranking?top=1")
+            requestResponse.andExpectAll {
+                status { isOk() }
+                content { json(top5playersAsJson) }
+            }
+        }
+    }
 }
