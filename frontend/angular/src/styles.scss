@@ -1,0 +1,36 @@
+@import "./styles/variables";
+@import "./../node_modules/ngx-toastr/toastr.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .app-content {
+    flex: 1;
+    padding: $app-padding;
+    overflow: auto;
+
+    &.app-content__form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+form > mat-form-field {
+  padding-bottom: 1rem;
+}

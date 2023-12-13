@@ -1,0 +1,82 @@
+<mat-toolbar color="secondary">
+  @if (isEditForm()) {
+    Edit user with userName: {{ userName }}
+  } @else {
+    Create new user
+  }
+</mat-toolbar>
+
+<form
+  #userForm="ngForm"
+  class="app-content app-content__form"
+>
+  <!-- User Name -->
+  <mat-form-field>
+    <mat-label>User Name</mat-label>
+    <input
+      matInput
+      placeholder="User Name"
+      name="userName"
+      #userNameInput="ngModel"
+      [(ngModel)]="user.userName"
+      required
+      [disabled]="isEditForm()"
+    />
+    <mat-error>
+      @if (userNameInput.errors && userNameInput.errors['required']) { User Name is required }
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Display Name -->
+  <mat-form-field>
+    <mat-label>Display Name</mat-label>
+    <input
+      matInput
+      placeholder="Display Name"
+      name="displayName"
+      #displayNameInput="ngModel"
+      [(ngModel)]="user.displayName"
+      required
+    />
+    <mat-error>
+      @if (displayNameInput.errors && !displayNameInput.errors['required']) { Display Name is required }
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Email -->
+  <mat-form-field>
+    <mat-label>E-Mail</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="Email"
+      name="email"
+      #emailInput="ngModel"
+      [(ngModel)]="user.email"
+      required
+    />
+    <mat-error>
+      @if (emailInput.errors && !emailInput.errors['required']) { Email is required }
+      @else if (emailInput.dirty && user.email && !isValidEmail(user.email)) { Invalid email format }
+    </mat-error>
+  </mat-form-field>
+  @if (isEditForm()) {
+    <!-- Elo -->
+    <mat-form-field>
+      <mat-label>Elo</mat-label>
+      <input
+        matInput
+        type="elo"
+        placeholder="Elo"
+        name="elo"
+        [(ngModel)]="elo"
+        disabled
+      />
+    </mat-form-field>
+  }
+</form>
+
+<app-footer
+  [saveDisabled]="userForm.invalid!"
+  [save]="submit()"
+></app-footer>
