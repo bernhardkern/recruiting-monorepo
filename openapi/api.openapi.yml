@@ -18,7 +18,7 @@ paths:
   '/players':
     get:
       tags:
-        - PlayerPlayer
+        - Player
       summary: Get all registered players
       operationId: getAllPlayers
       responses:
