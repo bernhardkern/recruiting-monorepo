@@ -3,7 +3,7 @@ GET {{host}}:{{port}}/matches
 
 
 ### create match
-POST {{host}}:{{port}}/users
+POST {{host}}:{{port}}/matches
 Content-Type: application/json
 
 {

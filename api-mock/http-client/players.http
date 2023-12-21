@@ -1,9 +1,9 @@
 ### find all users
-GET {{host}}:{{port}}/users
+GET {{host}}:{{port}}/players
 
 
 ### create user
-POST {{host}}:{{port}}/users
+POST {{host}}:{{port}}/players
 Content-Type: application/json
 
 {
@@ -14,10 +14,10 @@ Content-Type: application/json
 }
 
 ### get user by name
-GET {{host}}:{{port}}/users/careBear3000
+GET {{host}}:{{port}}/players/careBear3000
 
 ### update user by name
-PUT {{host}}:{{port}}/users/carebear
+PUT {{host}}:{{port}}/players/carebear
 Content-Type: application/json
 
 {
@@ -28,5 +28,5 @@ Content-Type: application/json
 }
 
 ### get elo of user
-GET {{host}}:{{port}}/users/carebear/elo
+GET {{host}}:{{port}}/players/carebear/elo
 

@@ -18,7 +18,7 @@ paths:
   '/players':
     get:
       tags:
-        - Player
+        - PlayerPlayer
       summary: Get all registered players
       operationId: getAllPlayers
       responses:
@@ -187,6 +187,10 @@ components:
     Player:
       type: object
       properties:
+        id:
+          description: Database id of the player
+          type: string
+          example: DAF924F7-98DC-45B7-AD5E-5A847571091B
         userName:
           description: Unique identifier; user name
           type: string
