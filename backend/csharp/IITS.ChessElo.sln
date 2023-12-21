@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Application", "IITS.ChessElo.Application\IITS.ChessElo.Application.csproj", "{0BAB629C-BE87-4366-BB57-2A8A96257EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Domain", "IITS.ChessElo.Domain\IITS.ChessElo.Domain.csproj", "{6E8ED762-9B38-4837-B903-96D3101A0CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Infrastructure", "IITS.ChessElo.Infrastructure\IITS.ChessElo.Infrastructure.csproj", "{D9F0874C-A869-4EC2-96C2-3737A02F9A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Api", "IITS.ChessElo.Api\IITS.ChessElo.Api.csproj", "{BD1BCC19-B7DB-4E7D-8B70-784FF4724252}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{996AC0F7-2102-44CB-B98A-1910A923AAD4}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		docker-compose.yml = docker-compose.yml
+		global.json = global.json
+		..\..\openapi\api.openapi.yml = ..\..\openapi\api.openapi.yml
+		..\..\Backlog.md = ..\..\Backlog.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B419DF89-29BF-46D6-A195-56A2FD8F92CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Application.Tests", "IITS.ChessElo.Application.Tests\IITS.ChessElo.Application.Tests.csproj", "{8D1E0F87-C7BA-458D-926A-6526D5E19EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IITS.ChessElo.Domain.Tests", "IITS.ChessElo.Domain.Tests\IITS.ChessElo.Domain.Tests.csproj", "{33686DD6-65A8-4F11-8945-AA1ED223E763}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BAB629C-BE87-4366-BB57-2A8A96257EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAB629C-BE87-4366-BB57-2A8A96257EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAB629C-BE87-4366-BB57-2A8A96257EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAB629C-BE87-4366-BB57-2A8A96257EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8ED762-9B38-4837-B903-96D3101A0CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8ED762-9B38-4837-B903-96D3101A0CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8ED762-9B38-4837-B903-96D3101A0CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8ED762-9B38-4837-B903-96D3101A0CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F0874C-A869-4EC2-96C2-3737A02F9A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F0874C-A869-4EC2-96C2-3737A02F9A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F0874C-A869-4EC2-96C2-3737A02F9A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F0874C-A869-4EC2-96C2-3737A02F9A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1BCC19-B7DB-4E7D-8B70-784FF4724252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1BCC19-B7DB-4E7D-8B70-784FF4724252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1BCC19-B7DB-4E7D-8B70-784FF4724252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1BCC19-B7DB-4E7D-8B70-784FF4724252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1E0F87-C7BA-458D-926A-6526D5E19EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1E0F87-C7BA-458D-926A-6526D5E19EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1E0F87-C7BA-458D-926A-6526D5E19EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1E0F87-C7BA-458D-926A-6526D5E19EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33686DD6-65A8-4F11-8945-AA1ED223E763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33686DD6-65A8-4F11-8945-AA1ED223E763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33686DD6-65A8-4F11-8945-AA1ED223E763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33686DD6-65A8-4F11-8945-AA1ED223E763}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D1E0F87-C7BA-458D-926A-6526D5E19EC1} = {B419DF89-29BF-46D6-A195-56A2FD8F92CF}
+		{33686DD6-65A8-4F11-8945-AA1ED223E763} = {B419DF89-29BF-46D6-A195-56A2FD8F92CF}
+	EndGlobalSection
+EndGlobal

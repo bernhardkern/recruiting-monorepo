@@ -1,0 +1,1 @@
+global using IITS.ChessElo.Domain.Core;

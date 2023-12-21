@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>987dc875-8276-4fc1-8e91-488f2ab9a248</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\IITS.ChessElo.Application\IITS.ChessElo.Application.csproj"/>
+        <ProjectReference Include="..\IITS.ChessElo.Domain\IITS.ChessElo.Domain.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1"/>
+        <PackageReference Include="AutoMapper.Collection" Version="9.0.0"/>
+        <PackageReference Include="AutoMapper.Extensions.EnumMapping" Version="3.1.0"/>
+        <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="6.0.4"/>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.2"/>
+        <PackageReference Include="FluentMigrator" Version="5.0.0"/>
+        <PackageReference Include="FluentMigrator.Runner.Postgres" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0"/>
+    </ItemGroup>
+
+</Project>

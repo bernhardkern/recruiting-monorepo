@@ -1,0 +1,9 @@
+services:
+  sql:
+    image: postgres
+    container_name: chess-elo-sql
+    environment:
+      POSTGRES_USER: "sa"
+      POSTGRES_PASSWORD: "chess-elo?Password"
+    ports:
+      - "5532:5432"
