@@ -11,7 +11,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FooterComponent} from '../../_shared/footer/footer.component';
 import {ApiService} from "../../services/api.service";
-import {User} from "../../models/user.model";
+import {Player} from "../../models/player.model";
 import {Match} from "../../models/match.model";
 
 @Component({
@@ -49,8 +49,8 @@ export class MatchFormComponent {
 
 
   ngOnInit() {
-    this.apiService.getUsers().subscribe((data: User[]) => {
-      this.players = data.map((user) => user.displayName).sort();
+    this.apiService.getPlayers().subscribe((data: Player[]) => {
+      this.players = data.map((player) => player.displayName).sort();
     });
   }
 }

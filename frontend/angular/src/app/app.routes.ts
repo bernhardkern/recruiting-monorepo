@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { UserGridComponent } from './users/user-grid/user-grid.component';
-import { UserFormComponent } from './users/user-form/user-form.component';
+import { PlayersComponent } from './players/players.component';
+import { PlayerGridComponent } from './players/player-grid/player-grid.component';
+import { PlayerFormComponent } from './players/player-form/player-form.component';
 import { MatchesComponent } from './matches/matches.component';
 import { MatchGridComponent } from './matches/match-grid/match-grid.component';
 import { MatchFormComponent } from './matches/match-form/match-form.component';
@@ -9,8 +9,8 @@ import { RankingGridComponent } from './ranking-grid/ranking-grid.component';
 
 export const routes: Routes = [
   {
-    path: 'users',
-    component: UsersComponent,
+    path: 'players',
+    component: PlayersComponent,
     children: [
       {
         path: '',
@@ -19,15 +19,15 @@ export const routes: Routes = [
       },
       {
         path: 'overview',
-        component: UserGridComponent,
+        component: PlayerGridComponent,
       },
       {
-        path: ':userName/edit',
-        component: UserFormComponent,
+        path: ':playerName/edit',
+        component: PlayerFormComponent,
       },
       {
         path: 'new',
-        component: UserFormComponent,
+        component: PlayerFormComponent,
       },
     ],
   },

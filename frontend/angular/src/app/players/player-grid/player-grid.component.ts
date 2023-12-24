@@ -5,14 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from '../../_shared/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {User} from "../../models/user.model";
+import {Player} from "../../models/player.model";
 import {ApiService} from "../../services/api.service";
 
 @Component({
-  selector: 'app-user-grid',
+  selector: 'app-player-grid',
   standalone: true,
-  templateUrl: './user-grid.component.html',
-  styleUrl: './user-grid.component.scss',
+  templateUrl: './player-grid.component.html',
+  styleUrl: './player-grid.component.scss',
   imports: [
     MatTableModule,
     RouterLink,
@@ -23,16 +23,16 @@ import {ApiService} from "../../services/api.service";
   ],
   host: { class: 'app-wrapper' },
 })
-export class UserGridComponent {
-  dataSource: User[] = [];
+export class PlayerGridComponent {
+  dataSource: Player[] = [];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getUsers().subscribe((data: User[]) => {
+    this.apiService.getPlayers().subscribe((data: Player[]) => {
       this.dataSource = data;
     });
   }
 
-  displayColumns = ['id', 'userName', 'displayName', 'email', 'actions'];
+  displayColumns = ['id', 'username', 'displayName', 'email', 'actions'];
 }

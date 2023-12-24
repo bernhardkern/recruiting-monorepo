@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {ApiService} from "../services/api.service";
-import {RankedUser, User} from "../models/user.model";
+import {RankedPlayer, Player} from "../models/player.model";
 import {Match} from "../models/match.model";
 
 @Component({
@@ -16,14 +16,14 @@ import {Match} from "../models/match.model";
   host: { class: 'app-wrapper' },
 })
 export class RankingGridComponent {
-  dataSource: RankedUser[] = [];
+  dataSource: RankedPlayer[] = [];
 
-  displayColumns = ['rank', 'elo', 'userName', 'displayName', 'email'];
+  displayColumns = ['rank', 'elo', 'username', 'displayName', 'email'];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getRankings().subscribe((data: RankedUser[]) => {
+    this.apiService.getRankings().subscribe((data: RankedPlayer[]) => {
       this.dataSource = data;
     });
   }

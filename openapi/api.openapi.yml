@@ -75,16 +75,16 @@ paths:
         '400':
           description: Invalid player supplied
 
-  '/players/{userName}':
+  '/players/{username}':
     get:
       tags:
         - Player
-      summary: Get player by user name
-      operationId: getPlayerByUserName
+      summary: Get player by username
+      operationId: getPlayerByUsername
       parameters:
-        - name: userName
+        - name: username
           in: path
-          description: The user name of the player
+          description: The username of the player
           required: true
           schema:
             type: string
@@ -98,16 +98,16 @@ paths:
         '404':
           description: Player not found in database
 
-  '/players/{userName}/elo':
+  '/players/{username}/elo':
     get:
       tags:
         - Player
-      summary: Get player elo by user name
+      summary: Get player elo by username
       operationId: getPlayerElo
       parameters:
-        - name: userName
+        - name: username
           in: path
-          description: The user name of the player
+          description: The username of the player
           required: true
           schema:
             type: string
@@ -191,8 +191,8 @@ components:
           description: Database id of the player
           type: string
           example: DAF924F7-98DC-45B7-AD5E-5A847571091B
-        userName:
-          description: Unique identifier; user name
+        username:
+          description: Unique identifier; username
           type: string
           minLength: 1
           example: Max Mustermann
