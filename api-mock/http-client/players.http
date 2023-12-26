@@ -7,7 +7,6 @@ POST {{host}}:{{port}}/players
 Content-Type: application/json
 
 {
-  "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
   "username": "lovingAndCaring4Bears",
   "displayName": "Berthold Kehr",
   "email": "bearthold@care.de"
@@ -16,8 +15,8 @@ Content-Type: application/json
 ### get user by name
 GET {{host}}:{{port}}/players/careBear3000
 
-### update user by name
-PUT {{host}}:{{port}}/players/carebear
+### update user
+PUT {{host}}:{{port}}/players
 Content-Type: application/json
 
 {

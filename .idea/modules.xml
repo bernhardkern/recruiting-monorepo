@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/elo-calculator-backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/elo-calculator-backend.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/recruiting-monorepo.iml" filepath="$PROJECT_DIR$/.idea/recruiting-monorepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kotlin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kotlin.main.iml" />

@@ -13,3 +13,13 @@ Content-Type: application/json
   "outcome": "TWO_WINS",
   "date": "2023-12-01T00:00:00.000Z"
 }
+
+### create match java/kotlin
+POST {{host}}:{{port}}/matches
+Content-Type: application/json
+
+{
+  "whitePlayerUserName": "careBear3000",
+  "blackPlayerUserName": "lovingAndCaring4Bears",
+  "outcome": "WHITE_WINS"
+}
