@@ -217,12 +217,12 @@ components:
           description: Database id of the match
           type: string
           example: DFA924F7-98DC-45B7-AD5E-5A8475710B91
-        whitePlayerUserName:
+        whitePlayerUsername:
           description: Unique name of the player with white figures
           type: string
           minLength: 1
           example: Max Mustermann
-        blackPlayerUserName:
+        blackPlayerUsername:
           description: Unique name of the player with black figures
           type: string
           minLength: 1
