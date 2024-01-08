@@ -5,27 +5,27 @@
 <form #matchForm="ngForm" class="app-content app-content__form">
   <!-- Player 1 -->
   <mat-form-field>
-    <mat-label>Player 1</mat-label>
-    <mat-select required [(ngModel)]="match.player1" name="player1" #player1Input="ngModel">
+    <mat-label>White Player</mat-label>
+    <mat-select required [(ngModel)]="match.whitePlayerUsername" name="whitePlayerUsername" #whitePlayerInput="ngModel">
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
     <mat-error>
-      @if (player1Input.errors && player1Input.errors['required']) { Player 1 is required }
+      @if (whitePlayerInput.errors && whitePlayerInput.errors['required']) { White Player is required }
     </mat-error>
   </mat-form-field>
 
   <!-- Player 2 -->
   <mat-form-field>
-    <mat-label>Player 2</mat-label>
-    <mat-select required [(ngModel)]="match.player2" name="player2" #player2Input="ngModel">
+    <mat-label>Black Player</mat-label>
+    <mat-select required [(ngModel)]="match.blackPlayerUsername" name="blackPlayerUsername" #blackPlayerInput="ngModel">
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
     <mat-error>
-      @if (player2Input.errors && player2Input.errors['required']) { Player 2 is required }
+      @if (blackPlayerInput.errors && blackPlayerInput.errors['required']) { Black Player is required }
     </mat-error>
   </mat-form-field>
 
@@ -51,7 +51,7 @@
       placeholder="Choose a date"
       required
       [(ngModel)]="match.date"
-      name="date"
+      name="timestamp"
       #dateInput="ngModel"
     />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

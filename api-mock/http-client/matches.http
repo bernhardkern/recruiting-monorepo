@@ -8,10 +8,10 @@ Content-Type: application/json
 
 {
   "id": "ea8c63ad-a4ed-4960-b685-78442e10d345",
-  "player1": "careBear3000",
-  "player2": "lovingAndCaring4Bears",
+  "whitePlayerUsername": "careBear3000",
+  "blackPlayerUsername": "lovingAndCaring4Bears",
   "outcome": "TWO_WINS",
-  "date": "2023-12-01T00:00:00.000Z"
+  "timestamp": 1602329862
 }
 
 ### create match java/kotlin
@@ -19,7 +19,7 @@ POST {{host}}:{{port}}/matches
 Content-Type: application/json
 
 {
-  "whitePlayerUserName": "careBear3000",
-  "blackPlayerUserName": "lovingAndCaring4Bears",
+  "whitePlayerUsername": "careBear3000",
+  "blackPlayerUsername": "lovingAndCaring4Bears",
   "outcome": "WHITE_WINS"
 }

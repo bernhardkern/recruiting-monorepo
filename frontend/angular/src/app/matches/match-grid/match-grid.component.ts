@@ -26,7 +26,7 @@ import {ApiService} from "../../services/api.service";
 export class MatchGridComponent {
   dataSource: Match[] = []
 
-  displayColumns = ['id', 'player1', 'player2', 'outcome'];
+  displayColumns = ['id', 'whitePlayerUsername', 'blackPlayerUsername', 'outcome'];
 
   constructor(private apiService: ApiService) {}
 

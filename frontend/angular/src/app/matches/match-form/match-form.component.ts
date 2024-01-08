@@ -40,10 +40,10 @@ export class MatchFormComponent {
   @Input() id = '';
   constructor(private apiService: ApiService) {}
 
-  match: Match = {player1: '', player2: '', outcome: '', date: ''};
+  match: Match = {whitePlayerUsername: '', blackPlayerUsername: '', outcome: '', date: ''};
   players: string[] = [];
 
-  outcomes: string[] = ['ONE_WINS', 'TWO_WINS', 'DRAW'];
+  outcomes: string[] = ['WHITE_WINS', 'BLACK_WINS', 'DRAW'];
 
   submit = this.apiService.createMatch(this.match)
 
