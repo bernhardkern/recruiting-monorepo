@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserFormComponent } from './user-form.component';
+import { PlayerGridComponent } from './player-grid.component';
 
-describe('UserFormComponent', () => {
-  let component: UserFormComponent;
-  let fixture: ComponentFixture<UserFormComponent>;
+describe('PlayerGridComponent', () => {
+  let component: PlayerGridComponent;
+  let fixture: ComponentFixture<PlayerGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserFormComponent]
+      imports: [PlayerGridComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(UserFormComponent);
+    fixture = TestBed.createComponent(PlayerGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

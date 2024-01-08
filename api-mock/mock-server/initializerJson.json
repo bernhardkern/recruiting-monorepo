@@ -8,315 +8,315 @@
       "body": [
         {
           "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
-          "userName": "careBear3000",
+          "username": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com",
           "elo": 2300
         },
         {
           "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-          "userName": "lovingAndCaring4Bears",
+          "username": "lovingAndCaring4Bears",
           "displayName": "Berthold Kehr",
           "email": "bearthold@care.de",
           "elo": 2300
         },
         {
           "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
-          "userName": "BearChessCare",
+          "username": "BearChessCare",
           "displayName": "Bartholomaeus Baer",
           "email": "bartholomaeus@bear.de",
           "elo": 2300
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-          "userName": "AppleBearCare",
+          "username": "AppleBearCare",
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de",
           "elo": 2300
         },
         {
           "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-          "userName": "KenningBaerAlter",
+          "username": "KenningBaerAlter",
           "displayName": "Kenning Bär",
           "email": "kenningBärRecords@carebär.de",
           "elo": 2300
         },
         {
           "id": "2ca8361c-96a6-4787-af86-8bafda1b1e99",
-          "userName": "careBear3000",
+          "username": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com",
           "elo": 2100
         },
         {
           "id": "1a2b3c4d-5678-90ab-cdef12345678",
-          "userName": "tenderHearted",
+          "username": "tenderHearted",
           "displayName": "Tender Heart",
           "email": "tenderheart@caremail.com",
           "elo": 2100
         },
         {
           "id": "2b3c4d5e-6789-0abc-def1-23456789abcd",
-          "userName": "grizzleGazer",
+          "username": "grizzleGazer",
           "displayName": "Grizzle Gazer",
           "email": "gaze4grizzles@bearmail.com",
           "elo": 2100
         },
         {
           "id": "3c4d5e6f-7890-abcd-ef12-34567890abcd",
-          "userName": "cheerUpCharlie",
+          "username": "cheerUpCharlie",
           "displayName": "Cheer Up Charlie",
           "email": "charlie@careandcheer.com",
           "elo": 2100
         },
         {
           "id": "4d5e6f7g-890a-bcde-f123-4567890abcde",
-          "userName": "wishBearDreams",
+          "username": "wishBearDreams",
           "displayName": "Wish Bear Dreams",
           "email": "dreamy@wishbear.com",
           "elo": 2100
         },
         {
           "id": "5e6f7g8h-90ab-cdef-1234-567890abcdef",
-          "userName": "shareABear",
+          "username": "shareABear",
           "displayName": "Share A. Bear",
           "email": "sharelove@bearshare.com",
           "elo": 2100
         },
         {
           "id": "6g7h8i9j-0abc-def1-2345-67890abcdef1",
-          "userName": "grumpyGrins",
+          "username": "grumpyGrins",
           "displayName": "Grumpy Grins",
           "email": "grinsngrumps@grumpybear.com",
           "elo": 2100
         },
         {
           "id": "7h8i9j0k-abcd-ef12-3456-7890abcdef12",
-          "userName": "harmonyHarbor",
+          "username": "harmonyHarbor",
           "displayName": "Harmony Harbor",
           "email": "harbor@harmonybear.com",
           "elo": 2100
         },
         {
           "id": "8i9j0k1l-bcde-f123-4567-890abcdef123",
-          "userName": "caringCartoons",
+          "username": "caringCartoons",
           "displayName": "Caring Cartoons",
           "email": "cartoons@careland.com",
           "elo": 2100
         },
         {
           "id": "9j0k1l2m-cdef-1234-5678-90abcdef1234",
-          "userName": "gratefulGumdrop",
+          "username": "gratefulGumdrop",
           "displayName": "Grateful Gumdrop",
           "email": "gumdrop@gratefulbear.com",
           "elo": 2100
         },
         {
           "id": "0k1l2m3n-def1-2345-6789-0abcdef12345",
-          "userName": "sunshineBearHug",
+          "username": "sunshineBearHug",
           "displayName": "Sunshine Bear Hug",
           "email": "hug4sunshine@bearhugs.com",
           "elo": 2100
         },
         {
           "id": "1a2b3c4d-5678-90ab-cdef12345678",
-          "userName": "tenderHearted",
+          "username": "tenderHearted",
           "displayName": "Tender Heart",
           "email": "tenderheart@caremail.com",
           "elo": 1800
         },
         {
           "id": "2b3c4d5e-6789-0abc-def1-23456789abcd",
-          "userName": "grizzleGazer",
+          "username": "grizzleGazer",
           "displayName": "Grizzle Gazer",
           "email": "gaze4grizzles@bearmail.com",
           "elo": 1800
         },
         {
           "id": "3c4d5e6f-7890-abcd-ef12-34567890abcd",
-          "userName": "cheerUpCharlie",
+          "username": "cheerUpCharlie",
           "displayName": "Cheer Up Charlie",
           "email": "charlie@careandcheer.com",
           "elo": 1800
         },
         {
           "id": "4d5e6f7g-890a-bcde-f123-4567890abcde",
-          "userName": "wishBearDreams",
+          "username": "wishBearDreams",
           "displayName": "Wish Bear Dreams",
           "email": "dreamy@wishbear.com",
           "elo": 1800
         },
         {
           "id": "5e6f7g8h-90ab-cdef-1234-567890abcdef",
-          "userName": "shareABear",
+          "username": "shareABear",
           "displayName": "Share A. Bear",
           "email": "sharelove@bearshare.com",
           "elo": 1800
         },
         {
           "id": "6g7h8i9j-0abc-def1-2345-67890abcdef1",
-          "userName": "grumpyGrins",
+          "username": "grumpyGrins",
           "displayName": "Grumpy Grins",
           "email": "grinsngrumps@grumpybear.com",
           "elo": 1800
         },
         {
           "id": "7h8i9j0k-abcd-ef12-3456-7890abcdef12",
-          "userName": "harmonyHarbor",
+          "username": "harmonyHarbor",
           "displayName": "Harmony Harbor",
           "email": "harbor@harmonybear.com",
           "elo": 1800
         },
         {
           "id": "8i9j0k1l-bcde-f123-4567-890abcdef123",
-          "userName": "caringCartoons",
+          "username": "caringCartoons",
           "displayName": "Caring Cartoons",
           "email": "cartoons@careland.com",
           "elo": 1800
         },
         {
           "id": "9j0k1l2m-cdef-1234-5678-90abcdef1234",
-          "userName": "gratefulGumdrop",
+          "username": "gratefulGumdrop",
           "displayName": "Grateful Gumdrop",
           "email": "gumdrop@gratefulbear.com",
           "elo": 1800
         },
         {
           "id": "0k1l2m3n-def1-2345-6789-0abcdef12345",
-          "userName": "sunshineBearHug",
+          "username": "sunshineBearHug",
           "displayName": "Sunshine Bear Hug",
           "email": "hug4sunshine@bearhugs.com",
           "elo": 1800
         },
         {
           "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
-          "userName": "gentleGiggler",
+          "username": "gentleGiggler",
           "displayName": "Gentle Giggler",
           "email": "giggle@gentlebear.com",
           "elo": 1500
         },
         {
           "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
-          "userName": "laughingLullaby",
+          "username": "laughingLullaby",
           "displayName": "Laughing Lullaby",
           "email": "lullaby@bearlaughs.com",
           "elo": 1500
         },
         {
           "id": "c3d4e5f6-7890-abcd-efghijklmno",
-          "userName": "harmonyHarper",
+          "username": "harmonyHarper",
           "displayName": "Harmony Harper",
           "email": "harper@harmonybear.com",
           "elo": 1500
         },
         {
           "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
-          "userName": "cuddleBug",
+          "username": "cuddleBug",
           "displayName": "Cuddle Bug",
           "email": "bugcuddles@bearbug.com",
           "elo": 1500
         },
         {
           "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
-          "userName": "shareASnuggle",
+          "username": "shareASnuggle",
           "displayName": "Share A. Snuggle",
           "email": "snuggle@bearshare.com",
           "elo": 1500
         },
         {
           "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
-          "userName": "compassionCub",
+          "username": "compassionCub",
           "displayName": "Compassion Cub",
           "email": "cubcompassion@caremail.com",
           "elo": 1500
         },
         {
           "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
-          "userName": "gentleGlow",
+          "username": "gentleGlow",
           "displayName": "Gentle Glow",
           "email": "glow@gentlebear.com",
           "elo": 1500
         },
         {
           "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
-          "userName": "gratefulGiggles",
+          "username": "gratefulGiggles",
           "displayName": "Grateful Giggles",
           "email": "giggles@gratefulbear.com",
           "elo": 1500
         },
         {
           "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
-          "userName": "heartfeltHugs",
+          "username": "heartfeltHugs",
           "displayName": "Heartfelt Hugs",
           "email": "hugs@heartfeltbear.com",
           "elo": 1500
         },
         {
           "id": "j0k1l2m3-defg-hijk-lmnopqrstuvw",
-          "userName": "tenderTwinkle",
+          "username": "tenderTwinkle",
           "displayName": "Tender Twinkle",
           "email": "twinkle@tenderbear.com",
           "elo": 1500
         },
         {
           "id": "k1l2m3n4-efgh-ijkl-mnop-qrstuvwx",
-          "userName": "joyfulJamboree",
+          "username": "joyfulJamboree",
           "displayName": "Joyful Jamboree",
           "email": "jamboree@joyfulbear.com",
           "elo": 1200
         },
         {
           "id": "l2m3n4o5-fghi-jklm-nopq-rstuvwxy",
-          "userName": "warmWishes",
+          "username": "warmWishes",
           "displayName": "Warm Wishes",
           "email": "wishes@warmbear.com",
           "elo": 1200
         },
         {
           "id": "m3n4o5p6-ijkl-mnop-qrst-uvwxyzab",
-          "userName": "careFreeCrafter",
+          "username": "careFreeCrafter",
           "displayName": "Care Free Crafter",
           "email": "crafty@carefreebear.com",
           "elo": 1200
         },
         {
           "id": "n4o5p6q7-klm-nopq-rstu-vwxyzabcde",
-          "userName": "sincereSnuggler",
+          "username": "sincereSnuggler",
           "displayName": "Sincere Snuggler",
           "email": "snuggle@sincerebear.com",
           "elo": 1200
         },
         {
           "id": "o5p6q7r8-mnop-qrst-uvw-xyzabcdefgh",
-          "userName": "gentleGleam",
+          "username": "gentleGleam",
           "displayName": "Gentle Gleam",
           "email": "gleam@gentlebear.com",
           "elo": 1200
         },
         {
           "id": "p6q7r8s9-nopq-rstu-vwx-yzabcdefg",
-          "userName": "gratitudeGazer",
+          "username": "gratitudeGazer",
           "displayName": "Gratitude Gazer",
           "email": "gaze@gratefulbear.com",
           "elo": 1200
         },
         {
           "id": "q7r8s9t0-opqr-stuv-wxyz-abcdefghij",
-          "userName": "caringComet",
+          "username": "caringComet",
           "displayName": "Caring Comet",
           "email": "comet@carebear.com",
           "elo": 1200
         },
         {
           "id": "r8s9t0u1-pqrs-tuvw-xyzab-cdefghijkl",
-          "userName": "beamOfLove",
+          "username": "beamOfLove",
           "displayName": "Beam Of Love",
           "email": "love@beamcare.com",
           "elo": 1200
         },
         {
           "id": "s9t0u1v2-qrst-uvwx-yzabc-defghijklm",
-          "userName": "sereneSprinkles",
+          "username": "sereneSprinkles",
           "displayName": "Serene Sprinkles",
           "email": "sprinkles@serenebear.com",
           "elo": 1200
@@ -332,7 +332,7 @@
     "httpResponse": {
       "body": {
         "id": "ed54ecb0-9355-44ac-8b51-4e485936332d",
-        "userName": "lovingAndCaring4Bears",
+        "username": "lovingAndCaring4Bears",
         "displayName": "Berthold Kehr",
         "email": "bearthold@care.de",
         "elo": 1200
@@ -347,7 +347,7 @@
     "httpResponse": {
       "body": {
         "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-        "userName": "AppleBearCare",
+        "username": "AppleBearCare",
         "displayName": "Apple Carebear",
         "email": "keepAppleAway@care.de",
         "elo": 1200
@@ -362,7 +362,7 @@
     "httpResponse": {
       "body": {
         "id": "6cc88dc7-f334-4001-9a21-07f9b348a129",
-        "userName": "KenningBaerAlter",
+        "username": "KenningBaerAlter",
         "displayName": "Kenning Bär",
         "email": "kenningBärRecords@carebär.de",
         "elo": 400
@@ -553,7 +553,7 @@
       "body": [
         {
           "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
-          "userName": "careBear3000",
+          "username": "careBear3000",
           "displayName": "Carey Bar",
           "email": "care4bears@barbar.com",
           "elo": 2400,
@@ -561,7 +561,7 @@
         },
         {
           "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
-          "userName": "wishBearDreams",
+          "username": "wishBearDreams",
           "displayName": "Wish Bear Dreams",
           "email": "dreamy@wishbear.com",
           "elo": 2300,
@@ -569,7 +569,7 @@
         },
         {
           "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
-          "userName": "harmonyHarbor",
+          "username": "harmonyHarbor",
           "displayName": "Harmony Harbor",
           "email": "harbor@harmonybear.com",
           "elo": 2200,
@@ -577,7 +577,7 @@
         },
         {
           "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
-          "userName": "gratefulGumdrop",
+          "username": "gratefulGumdrop",
           "displayName": "Grateful Gumdrop",
           "email": "gumdrop@gratefulbear.com",
           "elo": 2100,
@@ -585,7 +585,7 @@
         },
         {
           "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
-          "userName": "grumpyGrins",
+          "username": "grumpyGrins",
           "displayName": "Grumpy Grins",
           "email": "grinsngrumps@grumpybear.com",
           "elo": 2000,
@@ -593,7 +593,7 @@
         },
         {
           "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
-          "userName": "tenderHearted",
+          "username": "tenderHearted",
           "displayName": "Tender Heart",
           "email": "tenderheart@caremail.com",
           "elo": 1900,
@@ -601,7 +601,7 @@
         },
         {
           "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
-          "userName": "grizzleGazer",
+          "username": "grizzleGazer",
           "displayName": "Grizzle Gazer",
           "email": "gaze4grizzles@bearmail.com",
           "elo": 1800,
@@ -609,7 +609,7 @@
         },
         {
           "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
-          "userName": "caringCartoons",
+          "username": "caringCartoons",
           "displayName": "Caring Cartoons",
           "email": "cartoons@careland.com",
           "elo": 1700,
@@ -617,7 +617,7 @@
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-          "userName": "AppleBearCare",
+          "username": "AppleBearCare",
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de",
           "elo": 1600,
@@ -625,7 +625,7 @@
         },
         {
           "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
-          "userName": "shareABear",
+          "username": "shareABear",
           "displayName": "Share A. Bear",
           "email": "sharelove@bearshare.com",
           "elo": 1500,
@@ -633,7 +633,7 @@
         },
         {
           "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
-          "userName": "BearChessCare",
+          "username": "BearChessCare",
           "displayName": "Bartholomaeus Baer",
           "email": "bartholomaeus@bear.de",
           "elo": 1400,
@@ -641,7 +641,7 @@
         },
         {
           "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
-          "userName": "lovingAndCaring4Bears",
+          "username": "lovingAndCaring4Bears",
           "displayName": "Berthold Kehr",
           "email": "bearthold@care.de",
           "elo": 1300,
@@ -649,7 +649,7 @@
         },
         {
           "id": "c3d4e5f6-7890-abcd-efghijklmno",
-          "userName": "cheerUpCharlie",
+          "username": "cheerUpCharlie",
           "displayName": "Cheer Up Charlie",
           "email": "charlie@careandcheer.com",
           "elo": 1200,
@@ -657,7 +657,7 @@
         },
         {
           "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
-          "userName": "KenningBaerAlter",
+          "username": "KenningBaerAlter",
           "displayName": "Kenning Bär",
           "email": "kenningBärRecords@carebär.de",
           "elo": 1100,
@@ -665,7 +665,7 @@
         },
         {
           "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
-          "userName": "AppleBearCare",
+          "username": "AppleBearCare",
           "displayName": "Apple Carebear",
           "email": "keepAppleAway@care.de",
           "elo": 1000,

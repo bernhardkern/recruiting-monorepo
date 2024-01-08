@@ -29,8 +29,8 @@ export class AppComponent {
 
   navList = [
     {
-      title: 'Users',
-      routerLink: '/users',
+      title: 'Players',
+      routerLink: '/players',
     },
     {
       title: 'Matches',

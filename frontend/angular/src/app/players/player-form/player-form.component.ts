@@ -9,13 +9,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from '../../_shared/footer/footer.component';
 import { Observable } from 'rxjs';
 import {ApiService} from "../../services/api.service";
-import {User} from "../../models/user.model";
+import {Player} from "../../models/player.model";
 
 @Component({
-  selector: 'app-user-form',
+  selector: 'app-player-form',
   standalone: true,
-  templateUrl: './user-form.component.html',
-  styleUrl: './user-form.component.scss',
+  templateUrl: './player-form.component.html',
+  styleUrl: './player-form.component.scss',
   host: { class: 'app-wrapper' },
   imports: [
     NgIf,
@@ -29,15 +29,15 @@ import {User} from "../../models/user.model";
     FooterComponent,
   ],
 })
-export class UserFormComponent {
-  @Input() userName = '';
+export class PlayerFormComponent {
+  @Input() username = '';
 
   constructor(private apiService: ApiService) {}
 
   elo: number | null = null
-  user: User = {
+  player: Player = {
     id: '',
-    userName: '',
+    username: '',
     displayName: '',
     email: ''
   }
@@ -46,17 +46,17 @@ export class UserFormComponent {
     return !!email;
   }
 
-  isEditForm = () => !!this.userName
+  isEditForm = () => !!this.username
 
-  submit = () => this.isEditForm() ? this.apiService.updateUser(this.user) : this.apiService.createUser(this.user)
+  submit = () => this.isEditForm() ? this.apiService.updatePlayer(this.player) : this.apiService.createPlayer(this.player)
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['userName'].currentValue) {
-      this.apiService.getUserElo(this.userName).subscribe((data: number) => {
+    if (changes['username'].currentValue) {
+      this.apiService.getPlayerElo(this.username).subscribe((data: number) => {
         this.elo = data;
       });
-      this.apiService.getUser(this.userName).subscribe((data: User) => {
-        this.user = data;
+      this.apiService.getPlayer(this.username).subscribe((data: Player) => {
+        this.player = data;
       });
     }
   }

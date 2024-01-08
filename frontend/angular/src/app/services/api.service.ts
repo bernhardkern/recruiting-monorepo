@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {RankedUser, User} from "../models/user.model";
+import {RankedPlayer, Player} from "../models/player.model";
 import {Match} from "../models/match.model";
 
 @Injectable({
@@ -13,35 +13,35 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/users`);
+  getPlayers(): Observable<Player[]> {
+    return this.http.get<Player[]>(`${this.apiUrl}/players`);
   }
 
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/users`, user);
+  createPlayer(player: Player): Observable<Player> {
+    return this.http.post<Player>(`${this.apiUrl}/players`, player);
   }
 
-  updateUser(user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/users/${user.userName}`, user);
+  updatePlayer(player: Player): Observable<Player> {
+    return this.http.put<Player>(`${this.apiUrl}/players/${player.username}`, player);
   }
 
-  getUser(userName: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/users/${userName}`);
+  getPlayer(username: string): Observable<Player> {
+    return this.http.get<Player>(`${this.apiUrl}/players/${username}`);
   }
 
-  getUserElo(userName: string): Observable<number> {
-    return this.http.get<number>(`${this.apiUrl}/users/${userName}/elo`);
+  getPlayerElo(username: string): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/players/${username}/elo`);
   }
 
   getMatches(): Observable<Match[]> {
     return this.http.get<Match[]>(`${this.apiUrl}/matches`);
   }
 
-  createMatch(match: Match): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/matches`, match);
+  createMatch(match: Match): Observable<Player> {
+    return this.http.post<Player>(`${this.apiUrl}/matches`, match);
   }
 
-  getRankings(): Observable<RankedUser[]> {
-    return this.http.get<RankedUser[]>(`${this.apiUrl}/rankings`);
+  getRankings(): Observable<RankedPlayer[]> {
+    return this.http.get<RankedPlayer[]>(`${this.apiUrl}/rankings`);
   }
 }
