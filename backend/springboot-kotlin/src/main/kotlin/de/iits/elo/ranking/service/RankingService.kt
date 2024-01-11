@@ -1,6 +1,7 @@
-package de.iits.elo.ranking
+package de.iits.elo.ranking.service
 
-import de.iits.elo.player.PlayerRepository
+import de.iits.elo.player.repository.PlayerRepository
+import de.iits.elo.ranking.model.dto.RankingResponseDto
 import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 
@@ -11,5 +12,5 @@ class RankingService(
 
     fun getTopPlayers(number: Int) =
         playerRepository.findByOrderByEloDesc(PageRequest.of(0, number))
-            .mapIndexed { index, user -> Ranking(rank = index + 1, player = user) }
+            .mapIndexed { index, user -> RankingResponseDto(rank = index + 1, player = user) }
 }

@@ -1,8 +1,9 @@
-package de.iits.elo.ranking
+package de.iits.elo.ranking.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import de.iits.elo.player.Player
-import de.iits.elo.player.PlayerRepository
+import de.iits.elo.player.model.entity.Player
+import de.iits.elo.player.repository.PlayerRepository
+import de.iits.elo.ranking.model.dto.RankingResponseDto
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,7 +14,7 @@ import org.springframework.test.web.servlet.get
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class RankingControllerTest {
+class RankingControllerIntegrationTest {
 
     @Autowired
     lateinit var mockMvc: MockMvc
@@ -33,9 +34,10 @@ class RankingControllerTest {
                 .sortedBy(Player::elo)
                 .reversed()
                 .take(5)
-                .mapIndexed { index, user -> Ranking(index + 1, user) }
+                .mapIndexed { index, user -> RankingResponseDto(index + 1, user) }
             val top5playersAsJson = objectMapper.writeValueAsString(top5players)
             val requestResponse = mockMvc.get("/rankings?top=5")
+
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(top5playersAsJson) }
@@ -48,9 +50,10 @@ class RankingControllerTest {
                 .sortedBy(Player::elo)
                 .reversed()
                 .take(1)
-                .mapIndexed { index, user -> Ranking(index + 1, user) }
+                .mapIndexed { index, user -> RankingResponseDto(index + 1, user) }
             val top5playersAsJson = objectMapper.writeValueAsString(top5players)
             val requestResponse = mockMvc.get("/rankings?top=1")
+
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(top5playersAsJson) }
@@ -60,6 +63,7 @@ class RankingControllerTest {
         @Test
         fun `dont provide a number of players`() {
             val requestResponse = mockMvc.get("/rankings")
+
             requestResponse.andExpectAll {
                 status { isBadRequest() }
             }

@@ -1,5 +1,8 @@
-package de.iits.elo.player
+package de.iits.elo.player.controller
 
+import de.iits.elo.player.model.dto.PlayerRequestDto
+import de.iits.elo.player.model.dto.PlayerResponseDto
+import de.iits.elo.player.service.PlayerService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,11 +19,12 @@ class PlayerController(
 ) {
 
     @GetMapping("/players")
-    fun getAllPlayers(): ResponseEntity<List<Player>> =
+    fun getAllPlayers(): ResponseEntity<List<PlayerResponseDto>> =
         ResponseEntity.ok(playerService.findAll())
 
     @PutMapping("/players")
-    fun updatePlayer(@RequestBody player: Player?): ResponseEntity<Player> {
+    @Suppress("SwallowedException") // exception message is delegated
+    fun updatePlayer(@RequestBody player: PlayerRequestDto?): ResponseEntity<PlayerResponseDto> {
         player ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for update, but no player was found in request body")
         val update = try {
             playerService.update(player)
@@ -31,23 +35,15 @@ class PlayerController(
     }
 
     @PostMapping("/players")
-    fun createNewPlayer(@RequestBody player: Player?): ResponseEntity<Player> {
+    fun createNewPlayer(@RequestBody player: PlayerRequestDto?): ResponseEntity<PlayerResponseDto> {
         player ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for creation, but no player was found in request body")
-        return ResponseEntity.ok(playerService.save(player))
+        return ResponseEntity.ok(playerService.create(player))
     }
 
-    @GetMapping("/players/{userName}")
-    fun getPlayerByUserName(@PathVariable userName: String): ResponseEntity<Player> {
-        val requestedUser = playerService.findByUserName(userName)
-            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Could not find player with user name $userName")
+    @GetMapping("/players/{username}")
+    fun getPlayerByUserName(@PathVariable username: String): ResponseEntity<PlayerResponseDto> {
+        val requestedUser = playerService.findByUsername(username)
+            ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Could not find player with user name $username")
         return ResponseEntity.ok(requestedUser)
     }
-
-    @GetMapping("/players/{userName}/elo")
-    fun getPlayerElo(@PathVariable userName: String): ResponseEntity<Int> =
-        try {
-            ResponseEntity.ok(playerService.getElo(userName))
-        } catch (exception: IllegalStateException) {
-            throw ResponseStatusException(HttpStatus.NOT_FOUND, exception.message)
-        }
 }

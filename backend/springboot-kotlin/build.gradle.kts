@@ -6,9 +6,9 @@ version = "0.0.1-SNAPSHOT"
 
 plugins {
     val kotlinVersion = "1.9.21"
-    val springBootVersion = "3.1.4"
-    val springDependencyManagementVersion = "1.1.3"
-    val detektVersion = "1.23.1"
+    val springBootVersion = "3.2.1"
+    val springDependencyManagementVersion = "1.1.4"
+    val detektVersion = "1.23.4"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
@@ -20,14 +20,13 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
 }
 
 val h2Version = "2.2.224"
-val detektVersion = "1.23.1"
+val detektVersion = "1.23.4"
 val kotestVersion = "5.8.0"
 val mockKVersion = "1.13.8"
-val testcontainersPostgresVersion = "1.19.3"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")

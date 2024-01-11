@@ -98,30 +98,6 @@ paths:
         '404':
           description: Player not found in database
 
-  '/players/{username}/elo':
-    get:
-      tags:
-        - Player
-      summary: Get player elo by username
-      operationId: getPlayerElo
-      parameters:
-        - name: username
-          in: path
-          description: The username of the player
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: number
-                example: 1337
-        '404':
-          description: Player not found in database
-
   '/matches':
     get:
       tags:

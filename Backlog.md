@@ -71,7 +71,12 @@ When a user requests a match the server should return the appropriate data.
     - Rank
 
 
+// aufgabe: username veränderbar -> ID
+// aufgabe: match zeitpunkt mitschicken
+// aufgabe: implement easy elo algorithm triggered at win/lose
 
-
-
+TODO: Bewerber mitteilen:
+Neueste Docker Version
+Backend: Java 21/?
+Frontend: ?
 

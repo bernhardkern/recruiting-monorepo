@@ -1,4 +1,4 @@
-package de.iits.elo.match
+package de.iits.elo.match.model.enumeration
 
 enum class Outcome {
 

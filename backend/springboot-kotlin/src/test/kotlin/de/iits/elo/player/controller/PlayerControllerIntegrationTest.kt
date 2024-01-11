@@ -1,6 +1,11 @@
-package de.iits.elo.player
+package de.iits.elo.player.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import de.iits.elo.player.model.dto.PlayerRequestDto
+import de.iits.elo.player.model.dto.toEntity
+import de.iits.elo.player.model.entity.Player
+import de.iits.elo.player.model.entity.toResponseDto
+import de.iits.elo.player.repository.PlayerRepository
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -13,10 +18,11 @@ import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.post
 import org.springframework.test.web.servlet.put
 import java.util.*
+import kotlin.jvm.optionals.getOrNull
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class PlayerControllerIntegrationTests {
+class PlayerControllerIntegrationTest {
 
     @Autowired
     lateinit var mockMvc: MockMvc
@@ -28,12 +34,14 @@ class PlayerControllerIntegrationTests {
     lateinit var playerRepository: PlayerRepository
 
     @Nested
-    inner class GetAllUsers {
+    inner class GetAllPlayers {
 
         @Test
         fun `return all players from database`() {
-            val expectedPlayersAsJson = objectMapper.writeValueAsString(playerRepository.findAll())
+            val expectedPlayers = playerRepository.findAll().map(Player::toResponseDto)
+            val expectedPlayersAsJson = objectMapper.writeValueAsString(expectedPlayers)
             val requestResponse = mockMvc.get("/players")
+
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(expectedPlayersAsJson) }
@@ -47,6 +55,7 @@ class PlayerControllerIntegrationTests {
         @Test
         fun `do not send player for update`() {
             val requestResponse = mockMvc.put("/players")
+
             requestResponse.andExpectAll {
                 status { isBadRequest() }
                 status { reason("Player required for update, but no player was found in request body") }
@@ -55,40 +64,46 @@ class PlayerControllerIntegrationTests {
 
         @Test
         fun `send invalid player for update`() {
-            val playerUpdate = createPlayerUpdate("John Doe")
+            val playerUpdate = createPlayerUpdateRequest("John Doe")
             val playerUpdateAsJson = objectMapper.writeValueAsString(playerUpdate)
             val requestResponse = mockMvc.put("/players") {
                 contentType = MediaType.APPLICATION_JSON
                 content = playerUpdateAsJson
             }
+
+            playerRepository.findById(playerUpdate.username) shouldBe Optional.empty()
+
             requestResponse.andExpectAll {
                 status { isNotFound() }
-                status { reason("No player exists with user name ${playerUpdate.userName}") }
+                status { reason("No player exists with user name ${playerUpdate.username}") }
             }
-            playerRepository.findById(playerUpdate.userName) shouldBe Optional.empty()
         }
 
         @Test
         fun `send valid player for update`() {
-            val playerUpdate = createPlayerUpdate()
-            val playerUpdateAsJson = objectMapper.writeValueAsString(playerUpdate)
+            val playerUpdateRequest = createPlayerUpdateRequest()
+            val playerUpdateRequestAsJson = objectMapper.writeValueAsString(playerUpdateRequest)
             val requestResponse = mockMvc.put("/players") {
                 contentType = MediaType.APPLICATION_JSON
-                content = playerUpdateAsJson
+                content = playerUpdateRequestAsJson
             }
+
+            val playerElo = playerRepository.findById(playerUpdateRequest.username).get().elo
+            val playerUpdateEntity = playerUpdateRequest.toEntity().copy(elo = playerElo)
+            playerRepository.findById(playerUpdateRequest.username).get() shouldBe playerUpdateEntity
+
+            val playerUpdateResponseAsJson = objectMapper.writeValueAsString(playerUpdateEntity.toResponseDto())
             requestResponse.andExpectAll {
                 status { isOk() }
-                content { json(playerUpdateAsJson) }
+                content { json(playerUpdateResponseAsJson) }
             }
-            playerRepository.findById(playerUpdate.userName).get() shouldBe playerUpdate
         }
 
-        private fun createPlayerUpdate(username: String = "Max Mustermann") =
-            Player(
-                userName = username,
+        private fun createPlayerUpdateRequest(username: String = "Max Mustermann") =
+            PlayerRequestDto(
+                username = username,
                 displayName = "BestMaxEuWest",
                 email = "max.mustermann@iits-consulting.de",
-                elo = 69,
             )
     }
 
@@ -98,6 +113,7 @@ class PlayerControllerIntegrationTests {
         @Test
         fun `do not send player for creation`() {
             val requestResponse = mockMvc.post("/players")
+
             requestResponse.andExpectAll {
                 status { isBadRequest() }
                 status { reason("Player required for creation, but no player was found in request body") }
@@ -106,98 +122,76 @@ class PlayerControllerIntegrationTests {
 
         @Test
         fun `send valid player for creation`() {
-            val player = createPlayer()
-            val playerAsJson = objectMapper.writeValueAsString(player)
+            val playerRequest = createPlayerRequest()
+            val playerRequestAsJson = objectMapper.writeValueAsString(playerRequest)
             val requestResponse = mockMvc.post("/players") {
                 contentType = MediaType.APPLICATION_JSON
-                content = playerAsJson
+                content = playerRequestAsJson
             }
+
+            val playerEntity = playerRequest.toEntity()
+            playerRepository.findById(playerRequest.username).get() shouldBe playerEntity
+
+            val playerResponseAsJson = objectMapper.writeValueAsString(playerEntity.toResponseDto())
             requestResponse.andExpectAll {
                 status { isOk() }
-                content { json(playerAsJson) }
+                content { json(playerResponseAsJson) }
             }
-            playerRepository.findById(player.userName).get() shouldBe player
         }
 
-        private fun createPlayer() =
-            Player(
-                userName = "Max Mustermann",
+        private fun createPlayerRequest() =
+            PlayerRequestDto(
+                username = "Max Mustermann",
                 displayName = "BestMaxEuWest",
                 email = "max.mustermann@iits-consulting.de",
-                elo = 69,
             )
     }
 
     @Nested
-    inner class GetPlayerByUserName {
+    inner class GetPlayerByUsername {
 
         @Test
-        fun `forget to query with user name`() {
+        fun `forget to query with username`() {
             val requestResponse = mockMvc.get("/players/")
+
             requestResponse.andExpectAll {
                 status { isNotFound() }
             }
         }
 
         @Test
-        fun `query with not existing user name`() {
-            val givenUserName = null
-            val requestResponse = mockMvc.get("/players/$givenUserName")
+        fun `query with not given username`() {
+            val givenUsername = null
+            val requestResponse = mockMvc.get("/players/$givenUsername")
+
             requestResponse.andExpectAll {
                 status { isNotFound() }
-                status { reason("Could not find player with user name $givenUserName") }
+                status { reason("Could not find player with user name $givenUsername") }
             }
         }
 
         @Test
-        fun `send valid user name`() {
-            val playerFromDatabase = playerRepository.findAll().first()
-            val requestResponse = mockMvc.get("/players/${playerFromDatabase.userName}")
+        fun `query with not existing username`() {
+            val givenUsername = "null"
+            val requestResponse = mockMvc.get("/players/$givenUsername")
+
+            playerRepository.findById(givenUsername).getOrNull() shouldBe null
+
+            requestResponse.andExpectAll {
+                status { isNotFound() }
+                status { reason("Could not find player with user name $givenUsername") }
+            }
+        }
+
+        @Test
+        fun `send valid username`() {
+            val playerFromDatabase = playerRepository.findAll().first().toResponseDto()
+            val requestResponse = mockMvc.get("/players/${playerFromDatabase.username}")
+
             val playersFromDatabaseAsJson = objectMapper.writeValueAsString(playerFromDatabase)
             requestResponse.andExpectAll {
                 status { isOk() }
                 content { json(playersFromDatabaseAsJson) }
-            }
-        }
-    }
-
-    @Nested
-    inner class GetPlayerElo {
-
-        @Test
-        fun `forget to query with user name`() {
-            val requestResponse = mockMvc.get("/players//elo")
-            requestResponse.andExpectAll {
-                status { isNotFound() }
-            }
-        }
-
-        @Test
-        fun `leave out user name in path`() {
-            val requestResponse = mockMvc.get("/players/elo")
-            requestResponse.andExpectAll {
-                status { isNotFound() }
-            }
-        }
-
-        @Test
-        fun `query with not existing user name`() {
-            val givenUserName = null
-            val requestResponse = mockMvc.get("/players/$givenUserName/elo")
-            requestResponse.andExpectAll {
-                status { isNotFound() }
-                status { reason("Could not find player with user name $givenUserName") }
-            }
-        }
-
-        @Test
-        fun `send valid user name`() {
-            val playerFromDatabase = playerRepository.findAll().first()
-            val requestResponse = mockMvc.get("/players/${playerFromDatabase.userName}/elo")
-            val playerEloFromDatabaseAsJson = objectMapper.writeValueAsString(playerFromDatabase.elo)
-            requestResponse.andExpectAll {
-                status { isOk() }
-                content { json(playerEloFromDatabaseAsJson) }
             }
         }
     }
