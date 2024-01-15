@@ -46,12 +46,12 @@ class RankingControllerIntegrationTest {
 
         @Test
         fun `return top player`() {
-            val top5players = playerRepository.findAll()
+            val topPlayer = playerRepository.findAll()
                 .sortedBy(Player::elo)
                 .reversed()
                 .take(1)
                 .mapIndexed { index, user -> RankingResponseDto(index + 1, user) }
-            val top5playersAsJson = objectMapper.writeValueAsString(top5players)
+            val top5playersAsJson = objectMapper.writeValueAsString(topPlayer)
             val requestResponse = mockMvc.get("/rankings?top=1")
 
             requestResponse.andExpectAll {

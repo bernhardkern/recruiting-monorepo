@@ -5,10 +5,10 @@ group = "de.iits"
 version = "0.0.1-SNAPSHOT"
 
 plugins {
-    val kotlinVersion = "1.9.21"
-    val springBootVersion = "3.2.1"
-    val springDependencyManagementVersion = "1.1.4"
-    val detektVersion = "1.23.4"
+    val kotlinVersion = "1.9.21" // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
+    val springBootVersion = "3.2.1" // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
+    val springDependencyManagementVersion = "1.1.4" // https://mvnrepository.com/artifact/io.spring.gradle/dependency-management-plugin
+    val detektVersion = "1.23.4" // https://mvnrepository.com/artifact/io.gitlab.arturbosch.detekt/detekt-gradle-plugin
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
@@ -23,10 +23,9 @@ java {
     sourceCompatibility = JavaVersion.VERSION_21
 }
 
-val h2Version = "2.2.224"
-val detektVersion = "1.23.4"
-val kotestVersion = "5.8.0"
-val mockKVersion = "1.13.8"
+val h2Version = "2.2.224" // https://mvnrepository.com/artifact/com.h2database/h2
+val detektVersion = "1.23.4" // https://mvnrepository.com/artifact/io.gitlab.arturbosch.detekt/detekt-gradle-plugin
+val kotestVersion = "5.8.0" // https://mvnrepository.com/artifact/io.kotest/kotest-runner-junit5
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
@@ -39,7 +38,6 @@ dependencies {
 
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
-    testImplementation("io.mockk:mockk:$mockKVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude("org.junit.vintage")
         exclude("org.assertj")
