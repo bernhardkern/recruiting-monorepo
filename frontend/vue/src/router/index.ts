@@ -10,6 +10,21 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/players',
+      component: () => import('@/views/players/PlayersView.vue'),
+      meta: { transition: 'slide-left' },
+    },
+    {
+      path: '/matches',
+      component: () => import('@/views/matches/MatchesView.vue'),
+    },
+    {
+      path: '/ranking',
+      name: 'ranking',
+      component: () => import('@/views/ranking/RankingView.vue'),
+      meta: { transition: 'slide-right' }
+    },
+    {
       path: '/:pathMatch(.*)',
       redirect: { name: 'home' }
     }

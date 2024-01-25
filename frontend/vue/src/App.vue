@@ -18,9 +18,9 @@ useTitle('vue')
 
     <aside>
       <nav>
-        <!-- <RouterLink :to="{ name: 'players' }">Players</RouterLink> -->
-        <!-- <RouterLink :to="{ name: 'matches' }">Matches</RouterLink> -->
-        <!-- <RouterLink :to="{ name: 'ranking' }">Ranking</RouterLink> -->
+        <RouterLink :to="{ name: 'players' }">Players</RouterLink>
+        <RouterLink :to="{ name: 'matches' }">Matches</RouterLink>
+        <RouterLink :to="{ name: 'ranking' }">Ranking</RouterLink>
       </nav>
     </aside>
 

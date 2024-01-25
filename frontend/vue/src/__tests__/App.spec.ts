@@ -37,6 +37,24 @@ describe('App.vue', () => {
     expect(routerLinkTargetInHeader).toBe('home')
   })
 
+  it(`should render 'players' link`, () => {
+    wrapper = shallowMount(sut, { global: { components: { RouterLink } } })
+    const routerLinkTargets = wrapper.findAllComponents(RouterLink).map((e: any) => e.vm.to?.name)
+    expect(routerLinkTargets).toContain('players')
+  })
+
+  it(`should render 'matches' link`, () => {
+    wrapper = shallowMount(sut, { global: { components: { RouterLink } } })
+    const routerLinkTargets = wrapper.findAllComponents(RouterLink).map((e: any) => e.vm.to?.name)
+    expect(routerLinkTargets).toContain('matches')
+  })
+
+  it(`should render 'ranking' link`, () => {
+    wrapper = shallowMount(sut, { global: { components: { RouterLink } } })
+    const routerLinkTargets = wrapper.findAllComponents(RouterLink).map((e: any) => e.vm.to?.name)
+    expect(routerLinkTargets).toContain('ranking')
+  })
+
   it('should have a toast target component in the DOM', () => {
     wrapper = shallowMount(sut)
     expect(wrapper.find('toast-stub').exists()).toBeTruthy()
