@@ -2,7 +2,6 @@ using AutoFixture;
 using FluentAssertions;
 using IITS.ChessElo.Application.Features.Players.Create;
 using IITS.ChessElo.Application.Repositories;
-using IITS.ChessElo.Application.Tests.Features.Matches;
 using IITS.ChessElo.Domain.Players;
 using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +13,7 @@ namespace IITS.ChessElo.Application.Tests.Features.Players.Create;
 [TestSubject(typeof(CreatePlayerHandler))]
 public class CreatePlayerHandlerTest
 {
-    private readonly IFixture _fixture = new Fixture().CustomizeMatchFixtures();
+    private readonly IFixture _fixture = new Fixture();
     private readonly IServiceProvider _serviceProvider;
 
     public CreatePlayerHandlerTest()

@@ -12,7 +12,7 @@ namespace IITS.ChessElo.Application.Tests.Features.Matches.Create;
 
 public class CreateMatchHandlerTest
 {
-    private readonly IFixture _fixture = new Fixture().CustomizeMatchFixtures();
+    private readonly IFixture _fixture = new Fixture();
     private readonly IServiceProvider _serviceProvider;
 
     public CreateMatchHandlerTest()
@@ -38,7 +38,6 @@ public class CreateMatchHandlerTest
         await matchRepository.Received(1).AddAsync(Arg.Is<Match>(x =>
             x.WhitePlayerUserName == command.WhitePlayerUserName &&
             x.BlackPlayerUserName == command.BlackPlayerUserName &&
-            x.PlayedOn == command.Timestamp &&
             (int)x.Outcome == (int)command.Outcome));
         await matchRepository.UnitOfWork.ReceivedWithAnyArgs(1).SaveChangesAsync(default);
     }
@@ -48,7 +47,6 @@ public class CreateMatchHandlerTest
     {
         // Arrange
         var command = _fixture.Build<CreateMatchCommand>()
-            .With(x => x.Timestamp, DateProvider.GetRandomDateTimeAfterUtcNow())
             .Create();
         var handler = _serviceProvider.GetRequiredService<CreateMatchHandler>();
 

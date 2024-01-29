@@ -41,7 +41,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddFluentMigratorCore()
             .ConfigureRunner(rb => rb
-                .AddPostgres()
+                .AddSQLite()
                 .WithGlobalConnectionString(configuration["Database:ConnectionString"])
                 .ScanIn(typeof(InitialMigration).Assembly).For.Migrations());
 
@@ -51,7 +51,7 @@ public static class ServiceCollectionExtensions
     private static void AddDatabasePersistence(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(configuration["Database:ConnectionString"]));
+            options.UseSqlite(configuration["Database:ConnectionString"]));
         services.AddScoped<IDatabaseInitializerService, DatabaseInitializerService>();
     }
 

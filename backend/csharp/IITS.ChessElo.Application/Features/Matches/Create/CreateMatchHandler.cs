@@ -11,7 +11,7 @@ public class CreateMatchHandler(IMatchRepository matchRepository) : IRequestHand
         var matchOutcome = GetMatchOutcome();
 
         var match = new Match(Guid.NewGuid(), request.WhitePlayerUserName, request.BlackPlayerUserName, matchOutcome,
-            request.Timestamp);
+            DateTimeOffset.UtcNow);
 
         await matchRepository.AddAsync(match);
         await matchRepository.UnitOfWork.SaveChangesAsync(cancellationToken);

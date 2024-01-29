@@ -11,6 +11,7 @@ public class MatchEntityConfiguration : EntityBaseConfiguration<MatchEntity, Gui
         builder.ToTable("match");
         ConfigureBaseEntity(builder);
 
-        builder.Property(x => x.PlayedOn).HasConversion<long>();
+        builder.Property(x => x.Outcome).HasConversion<string>();
+        builder.Property(x => x.PlayedOn).HasConversion<string>();
     }
 }
