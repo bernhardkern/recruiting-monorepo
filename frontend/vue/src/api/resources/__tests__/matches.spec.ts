@@ -26,7 +26,7 @@ describe('matches.ts', () => {
           whitePlayerUsername: 'White Mustermann',
           blackPlayerUsername: 'Black Mustermann',
           outcome: Outcome.DRAW,
-          timestamp: 1602329862,
+          timestamp: 1602329862
         }
       ]
       const requestGetSpy = request.get as Mock<any, any>
@@ -58,7 +58,7 @@ describe('matches.ts', () => {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
         outcome: Outcome.DRAW,
-        timestamp: 1602329862,
+        timestamp: 1602329862
       }
       const requestPostSpy = request.post as Mock<any, any>
       requestPostSpy.mockResolvedValueOnce(testResponse)
@@ -66,7 +66,7 @@ describe('matches.ts', () => {
       const createMatch = {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
-        outcome: Outcome.DRAW,
+        outcome: Outcome.DRAW
       }
       const response = await sut.createMatch(createMatch)
 
@@ -83,7 +83,7 @@ describe('matches.ts', () => {
       const createMatch = {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
-        outcome: Outcome.DRAW,
+        outcome: Outcome.DRAW
       }
       await expect(sut.createMatch(createMatch)).rejects.toThrowError(testError)
 

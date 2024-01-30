@@ -39,6 +39,23 @@ const router = createRouter({
     {
       path: '/matches',
       component: () => import('@/views/matches/MatchesView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'matches',
+          redirect: { name: 'matches.overview' }
+        },
+        {
+          path: 'overview',
+          name: 'matches.overview',
+          component: () => import('@/views/matches/MatchGridView.vue')
+        },
+        {
+          path: 'new',
+          name: 'matches.new',
+          component: () => import('@/views/matches/MatchFormView.vue')
+        }
+      ]
     },
     {
       path: '/ranking',

@@ -5,5 +5,5 @@ import { baseURL } from '@/plugins/api-namespace'
 export default {
   getMatches: () => request.get<MatchResource[]>(`${baseURL.CHESS_ELO_CALCULATOR}/matches`),
   createMatch: (match: MatchResource) =>
-    request.post<MatchResource>(`${baseURL.CHESS_ELO_CALCULATOR}/matches`, match),
+    request.post<MatchResource>(`${baseURL.CHESS_ELO_CALCULATOR}/matches`, match)
 }

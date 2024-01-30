@@ -12,6 +12,10 @@ export function useNavigate() {
     await router.push({ name: 'players.new' })
   }
 
+  async function navigateToNewMatch() {
+    await router.push({ name: 'matches.new' })
+  }
+
   async function navigateToParentRoute() {
     const nameParts = route.name?.toString().split('.') ?? []
     if (nameParts.length > 1) {
@@ -22,6 +26,7 @@ export function useNavigate() {
   return {
     navigateToEditPlayer,
     navigateToNewPlayer,
+    navigateToNewMatch,
     navigateToParentRoute
   }
 }

@@ -54,6 +54,26 @@ describe('navigate.ts', () => {
       })
     })
 
+    describe('navigateToNewMatch()', () => {
+      it('has "navigateToNewMatch" function in returned object', () => {
+        const sutResult = sut()
+        expect(sutResult).toBeTruthy()
+        const { navigateToNewMatch } = sutResult
+        expect(typeof navigateToNewMatch).toBe('function')
+      })
+
+      it(`calls router.push to 'matches.new'`, async () => {
+        const { pushSpy } = useMockRouter({ name: 'matches' })
+
+        await sut().navigateToNewMatch()
+
+        expect(pushSpy).toHaveBeenCalledTimes(1)
+        expect(pushSpy).toHaveBeenCalledWith({
+          name: 'matches.new'
+        })
+      })
+    })
+
     describe('navigateToParentRoute()', () => {
       it('has "navigateToParentRoute" function in returned object', () => {
         const sutResult = sut()
