@@ -1,0 +1,16 @@
+# BROWSER values of platforms
+# MacOS: BROWSER='open -a "Google Chrome" --args --incognito --new-tab'
+# Linux: BROWSER='google-chrome --incognito --new-window'
+# Windows: BROWSER='start chrome --incognito --new-window'
+# If you don't want the incognito new-tab options you can just use the
+# browser's platform specific name.
+export BROWSER="Google Chrome"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f "./.nvmrc" ]; then
+  nvm install $(cat ./.nvmrc)
+  nvm use # This activates the node version defined in .nvmrc
+fi

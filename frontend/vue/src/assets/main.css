@@ -1,0 +1,62 @@
+@import './base.css';
+@import './transitions.css';
+
+#app {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link-text);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+input {
+  background-color: var(--color-form-field-background);
+  border: 0;
+  border-bottom: 1px solid var(--color-form-field-border-bottom);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  color: var(--color-form-field-text);
+  font-family: var(--font-familiy);
+  font-size: 1rem;
+  height: 3.5rem;
+  letter-spacing: var(--form-field-letter-spacing);
+  padding: 0 1rem;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
+}
+input::placeholder {
+  color: var(--color-form-field-placeholder);
+}
+input:focus-visible {
+  outline: none;
+}
+
+.card {
+  padding: 2em;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-link-text-hover);
+  }
+  input:hover {
+    background-color: var(--color-form-field-background-hover);
+    border-bottom: 1px solid var(--color-form-field-border-bottom-hover);
+  }
+}
+
+input.dirty {
+  border-bottom: 1px solid var(--color-form-field-border-bottom-dirty);
+}
+input.invalid {
+  border-bottom: 1px solid var(--color-form-field-border-bottom-error);
+}

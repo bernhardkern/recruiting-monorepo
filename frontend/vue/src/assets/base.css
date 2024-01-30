@@ -1,0 +1,226 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --f-text-font: Roboto, sans-serif;
+  --f-form-field-letter-spacing: 0.03125rem;
+
+  --vt-c-white: hsl(0, 0%, 81%);
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: hsl(0, 0%, 19%);
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-button-background-dark: hsla(0, 0%, 100%, 0.08);
+  --vt-c-button-background-light: hsla(0, 0%, 0%, 0.08);
+  --vt-c-button-active-background-dark: hsla(0, 0%, 100%, 0.24);
+  --vt-c-button-active-background-light: hsla(0, 0%, 0%, 0.24);
+  --vt-c-button-hover-background-dark: hsla(0, 0%, 100%, 0.16);
+  --vt-c-button-hover-background-light: hsla(0, 0%, 0%, 0.16);
+  --vt-c-button-hover-dark: hsl(0, 57%, 90%);
+  --vt-c-button-hover-light: hsl(0, 93%, 44%);
+  --vt-c-button-dark: hsl(0, 93%, 80%);
+  --vt-c-button-light: hsl(0, 93%, 33%);
+  --vt-c-button-background-default-dark: hsl(0, 93%, 33%);
+  --vt-c-button-background-default-light: hsl(0, 93%, 80%);
+  --vt-c-button-active-background-default-dark: hsl(0, 93%, 49%);
+  --vt-c-button-active-background-default-light: hsl(0, 93%, 88%);
+  --vt-c-button-hover-background-default-dark: hsl(0, 93%, 41%);
+  --vt-c-button-hover-background-default-light: hsl(0, 93%, 96%);
+
+  --vt-c-form-field-background-dark: hsl(0, 0%, 29%);
+  --vt-c-form-field-background-light: hsl(0, 0%, 71%);
+  --vt-c-form-field-background-hover-dark: hsl(0, 0%, 37%);
+  --vt-c-form-field-background-hover-light: hsl(0, 0%, 79%);
+  --vt-c-form-field-text-dark: hsla(100, 100%, 100%, 0.87);
+  --vt-c-form-field-text-light: hsla(100, 100%, 100%, 0.13);
+  --vt-c-form-field-placeholder-dark: hsla(100, 100%, 100%, 0.6);
+  --vt-c-form-field-placeholder-light: hsla(100, 100%, 100%, 0.4);
+  --vt-c-form-field-error-text-dark: hsl(4, 90%, 58%);
+  --vt-c-form-field-error-text-light: hsl(4, 90%, 42%);
+  --vt-c-form-field-border-bottom-dark: hsla(100, 100%, 100%, 0.58);
+  --vt-c-form-field-border-bottom-light: hsla(100, 100%, 100%, 0.42);
+  --vt-c-form-field-border-bottom-hover-dark: hsla(100, 100%, 100%, 0.66);
+  --vt-c-form-field-border-bottom-hover-light: hsla(100, 100%, 100%, 0.5);
+  --vt-c-form-field-border-bottom-error-dark: hsl(4, 90%, 58%);
+  --vt-c-form-field-border-bottom-error-light: hsl(4, 90%, 42%);
+  --vt-c-form-field-border-bottom-dirty-dark: hsl(46, 93%, 33%);
+  --vt-c-form-field-border-bottom-dirty-light: hsl(52, 57%, 90%);
+
+  --vt-c-link-dark: hsl(0, 93%, 80%);
+  --vt-c-link-hover-dark: hsl(0, 57%, 90%);
+  --vt-c-link-hover-background-dark: hsla(0, 0%, 100%, 0.08);
+  --vt-c-link-active-background-dark: hsla(0, 0%, 100%, 0.16);
+  --vt-c-link-active-background-light: hsla(0, 0%, 0%, 0.16);
+  --vt-c-link-hover-background-light: hsla(0, 0%, 0%, 0.08);
+  --vt-c-link-hover-light: hsl(0, 93%, 44%);
+  --vt-c-link-light: hsl(0, 93%, 33%);
+
+  --vt-c-header-background-dark: hsl(0, 93%, 33%);
+  --vt-c-header-background-light: hsl(0, 57%, 90%);
+  --vt-c-header-text-dark: hsl(0, 57%, 90%);
+  --vt-c-header-text-light: hsl(0, 93%, 33%);
+
+  --vt-c-page-heading-background-dark: hsl(0, 0%, 13%);
+  --vt-c-page-heading-text-dark: hsl(0, 0%, 100%);
+  --vt-c-page-heading-background-light: hsl(0, 0%, 87%);
+  --vt-c-page-heading-text-light: hsl(0, 0%, 0%);
+
+  --vt-c-nav-background-dark: hsl(0, 0%, 26%);
+  --vt-c-nav-background-light: hsl(0, 0%, 74%);
+
+  --vt-c-table-background-dark: hsl(0, 0%, 26%);
+  --vt-c-table-background-light: hsl(0, 0%, 74%);
+  --vt-c-table-header-headline-dark: hsla(0, 0%, 1000%, 0.87);
+  --vt-c-table-header-headline-light: hsla(0, 0%, 0%, 0.87);
+  --vt-c-table-row-item-outline-dark: hsla(0, 0%, 100%, 0.12);
+  --vt-c-table-row-item-outline-light: hsla(0, 0%, 0%, 0.12);
+
+  --vt-c-toast-background: hsl(0, 0%, 30%);
+  --vt-c-toast-error-background: hsl(4, 75%, 40%);
+  --vt-c-toast-success-background: hsl(123, 75%, 30%);
+  --vt-c-toast-text: hsl(100, 100%, 100%);
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic variables for this project */
+:root {
+  --font-familiy: var(--f-text-font);
+  --form-field-letter-spacing: var(--f-form-field-letter-spacing);
+
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-button-background: var(--vt-c-button-background-light);
+  --color-button-background-active: var(--vt-c-button-active-background-light);
+  --color-button-background-hover: var(--vt-c-button-hover-background-light);
+  --color-button-text: var(--vt-c-button-light);
+  --color-button-text-hover: var(--vt-c-button-hover-light);
+  --color-button-background-default: var(--vt-c-button-background-default-light);
+  --color-button-background-default-active: var(--vt-c-button-active-background-default-light);
+  --color-button-background-default-hover: var(--vt-c-button-hover-background-default-light);
+
+  --color-form-field-background: var(--vt-c-form-field-background-light);
+  --color-form-field-background-hover: var(--vt-c-form-field-background-hover-light);
+  --color-form-field-text: var(--vt-c-form-field-text-light);
+  --color-form-field-placeholder: var(--vt-c-form-field-placeholder-light);
+  --color-form-field-error-text: var(--vt-c-form-field-error-text-light);
+  --color-form-field-border-bottom: var(--vt-c-form-field-border-bottom-light);
+  --color-form-field-border-bottom-error: var(--vt-c-form-field-border-bottom-error-light);
+  --color-form-field-border-bottom-hover: var(--vt-c-form-field-border-bottom-hover-light);
+  --color-form-field-border-bottom-dirty: var(--vt-c-form-field-border-bottom-dirty-light);
+
+  --color-link-background-active: var(--vt-c-link-active-background-light);
+  --color-link-background-hover: var(--vt-c-link-hover-background-light);
+  --color-link-text: var(--vt-c-link-light);
+  --color-link-text-hover: var(--vt-c-link-hover-light);
+
+  --color-header-background: var(--vt-c-header-background-light);
+  --color-header-text: var(--vt-c-header-text-light);
+
+  --color-page-heading-background: var(--vt-c-page-heading-background-light);
+  --color-page-heading-text: var(--vt-c-page-heading-text-light);
+
+  --color-nav-background: var(--vt-c-nav-background-light);
+
+  --color-table-background: var(--vt-c-table-background-light);
+  --color-table-header-headline: var(--vt-c-table-header-headline-light);
+  --color-table-row-item-outline: var(--vt-c-table-row-item-outline-light);
+
+  --color-toast-background: var(--vt-c-toast-background);
+  --color-toast-background-error: var(--vt-c-toast-error-background);
+  --color-toast-background-success: var(--vt-c-toast-success-background);
+  --color-toast-text: var(--vt-c-toast-text);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-button-background: var(--vt-c-button-background-dark);
+    --color-button-background-active: var(--vt-c-button-active-background-dark);
+    --color-button-background-hover: var(--vt-c-button-hover-background-dark);
+    --color-button-text: var(--vt-c-button-dark);
+    --color-button-text-hover: var(--vt-c-button-hover-dark);
+    --color-button-background-default: var(--vt-c-button-background-default-dark);
+    --color-button-background-default-active: var(--vt-c-button-active-background-default-dark);
+    --color-button-background-default-hover: var(--vt-c-button-hover-background-default-dark);
+
+    --color-form-field-background: var(--vt-c-form-field-background-dark);
+    --color-form-field-background-hover: var(--vt-c-form-field-background-hover-dark);
+    --color-form-field-text: var(--vt-c-form-field-text-dark);
+    --color-form-field-placeholder: var(--vt-c-form-field-placeholder-dark);
+    --color-form-field-error-text: var(--vt-c-form-field-error-text-dark);
+    --color-form-field-border-bottom: var(--vt-c-form-field-border-bottom-dark);
+    --color-form-field-border-bottom-error: var(--vt-c-form-field-border-bottom-error-dark);
+    --color-form-field-border-bottom-hover: var(--vt-c-form-field-border-bottom-hover-dark);
+    --color-form-field-border-bottom-dirty: var(--vt-c-form-field-border-bottom-dirty-dark);
+
+    --color-link-background-active: var(--vt-c-link-active-background-dark);
+    --color-link-background-hover: var(--vt-c-link-hover-background-dark);
+    --color-link-text: var(--vt-c-link-dark);
+    --color-link-text-hover: var(--vt-c-link-hover-dark);
+
+    --color-header-background: var(--vt-c-header-background-dark);
+    --color-header-text: var(--vt-c-header-text-dark);
+
+    --color-page-heading-background: var(--vt-c-page-heading-background-dark);
+    --color-page-heading-text: var(--vt-c-page-heading-text-dark);
+
+    --color-nav-background: var(--vt-c-nav-background-dark);
+
+    --color-table-background: var(--vt-c-table-background-dark);
+    --color-table-header-headline: var(--vt-c-table-header-headline-dark);
+    --color-table-row-item-outline: var(--vt-c-table-row-item-outline-dark);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
