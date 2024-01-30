@@ -13,6 +13,18 @@ const router = createRouter({
       path: '/players',
       component: () => import('@/views/players/PlayersView.vue'),
       meta: { transition: 'slide-left' },
+      children: [
+        {
+          path: '',
+          name: 'players',
+          redirect: { name: 'players.overview' }
+        },
+        {
+          path: 'overview',
+          name: 'players.overview',
+          component: () => import('@/views/players/PlayerGridView.vue')
+        },
+      ]
     },
     {
       path: '/matches',
