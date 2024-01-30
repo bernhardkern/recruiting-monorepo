@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi, type Mock } from 'vitest'
 import { nextTick } from 'vue'
 import { VueWrapper, shallowMount } from '@vue/test-utils'
 
+import { useMockNavigate } from '@/__tests__/_helpers/navigate'
 import { useMockToaster } from '@/__tests__/_helpers/toaster'
 
 import playersApi from '@/api/resources/players'
@@ -12,6 +13,7 @@ import sut from '@/views/players/PlayerGridView.vue'
 
 vi.mock('@/api/resources/players')
 
+const { navigateToNewPlayerMock } = useMockNavigate()
 const { showErrorMock } = useMockToaster()
 
 describe('PlayerGridView.vue', () => {
@@ -61,11 +63,10 @@ describe('PlayerGridView.vue', () => {
     expect(wrapper.find('player-list-stub')?.exists()).toBeTruthy()
   })
 
-
   it(`has an action bar with id 'player-list__action-bar'`, async () => {
     wrapper = shallowMount(sut, {
       global: {
-        renderStubDefaultSlot: true,
+        renderStubDefaultSlot: true
       }
     })
     const actionBarElement = wrapper.find('action-bar-stub')
@@ -77,7 +78,7 @@ describe('PlayerGridView.vue', () => {
     wrapper = shallowMount(sut, {
       global: {
         renderStubDefaultSlot: true,
-        components: { AnimatedButton },
+        components: { AnimatedButton }
       }
     })
     const actionBarElement = wrapper.find('action-bar-stub')
@@ -85,5 +86,22 @@ describe('PlayerGridView.vue', () => {
     const createButton = actionBarButtons.find((e: VueWrapper) => 'Create' === e.text())
     expect(createButton.exists()).toBeTruthy()
     expect(createButton.attributes()['defaultformbutton']).toBeTruthy()
+  })
+
+  it(`navigates to 'players.new' route if 'Create' action is clicked`, async () => {
+    wrapper = shallowMount(sut, {
+      global: {
+        renderStubDefaultSlot: true,
+        components: { AnimatedButton }
+      }
+    })
+    const actionBarElement = wrapper.find('action-bar-stub')
+    const actionBarButtons = actionBarElement.findAllComponents(AnimatedButton) as Array<VueWrapper>
+    const createButton = actionBarButtons.find((e: VueWrapper) => 'Create' === e.text())
+
+    await createButton?.trigger('click')
+    await nextTick()
+
+    expect(navigateToNewPlayerMock).toHaveBeenCalled()
   })
 })

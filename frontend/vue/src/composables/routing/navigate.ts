@@ -1,0 +1,27 @@
+import { useRouter, useRoute } from 'vue-router'
+
+export function useNavigate() {
+  const router = useRouter()
+  const route = useRoute()
+
+  async function navigateToEditPlayer(playerName: string) {
+    await router.push({ name: 'players.edit', params: { playerName } })
+  }
+
+  async function navigateToNewPlayer() {
+    await router.push({ name: 'players.new' })
+  }
+
+  async function navigateToParentRoute() {
+    const nameParts = route.name?.toString().split('.') ?? []
+    if (nameParts.length > 1) {
+      await router.push({ name: nameParts[nameParts.length - 2] })
+    }
+  }
+
+  return {
+    navigateToEditPlayer,
+    navigateToNewPlayer,
+    navigateToParentRoute
+  }
+}

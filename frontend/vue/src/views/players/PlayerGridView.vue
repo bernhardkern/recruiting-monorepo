@@ -2,6 +2,7 @@
 import { onBeforeMount, ref } from 'vue'
 
 import api from '@/api'
+import { useNavigate } from '@/composables/routing/navigate'
 import { getResponseBodyOrError, throwError } from '@/api/response-helper'
 import { useToaster } from '@/composables/ui/toaster'
 import type { Player } from '@/models/player'
@@ -26,7 +27,9 @@ onBeforeMount(async () => {
   }
 })
 
+const { navigateToNewPlayer } = useNavigate()
 function onCreate() {
+  navigateToNewPlayer()
 }
 </script>
 

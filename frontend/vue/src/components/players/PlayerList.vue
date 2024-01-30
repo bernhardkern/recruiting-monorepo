@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useNavigate } from '@/composables/routing/navigate'
 import type { Player } from '@/models/player'
 import type { ColumnDefinition, EditRowEventData } from '@/types/utility'
 
@@ -20,7 +21,9 @@ const columnDefinitions: Array<ColumnDefinition<Player>> = [
   { label: 'Actions', type: 'ACTION', actions: [{ label: 'Edit', type: 'EDIT' }] }
 ]
 
+const { navigateToEditPlayer } = useNavigate()
 function onEditRow({ rowData: player }: EditRowEventData<Player>) {
+  navigateToEditPlayer(player.username)
 }
 </script>
 

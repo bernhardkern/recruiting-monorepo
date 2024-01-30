@@ -24,6 +24,16 @@ const router = createRouter({
           name: 'players.overview',
           component: () => import('@/views/players/PlayerGridView.vue')
         },
+        {
+          path: ':playerName/edit',
+          name: 'players.edit',
+          component: () => import('@/views/players/PlayerFormView.vue')
+        },
+        {
+          path: 'new',
+          name: 'players.new',
+          component: () => import('@/views/players/PlayerFormView.vue')
+        }
       ]
     },
     {
