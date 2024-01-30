@@ -59,9 +59,20 @@ const router = createRouter({
     },
     {
       path: '/ranking',
-      name: 'ranking',
       component: () => import('@/views/ranking/RankingView.vue'),
-      meta: { transition: 'slide-right' }
+      meta: { transition: 'slide-right' },
+      children: [
+        {
+          path: '',
+          name: 'ranking',
+          redirect: { name: 'ranking.overview' }
+        },
+        {
+          path: 'overview',
+          name: 'ranking.overview',
+          component: () => import('@/views/ranking/RankingGridView.vue')
+        }
+      ]
     },
     {
       path: '/:pathMatch(.*)',

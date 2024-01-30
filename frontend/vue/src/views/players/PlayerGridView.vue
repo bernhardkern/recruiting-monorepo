@@ -36,7 +36,7 @@ function onCreate() {
 <template>
   <section id="player-grid-view">
     <PageHeading>Player Overview</PageHeading>
-    <div class="page-with-action-bar">
+    <div class="page-with-heading">
       <PlayerList :players="players"></PlayerList>
       <ActionBar id="player-list__action-bar">
         <AnimatedButton default-form-button @click="onCreate">Create</AnimatedButton>
@@ -52,7 +52,7 @@ function onCreate() {
   align-items: stretch;
 }
 
-.page-with-action-bar {
+.page-with-heading {
   display: flex;
   flex-direction: column;
   height: calc(100% - 64px);
