@@ -157,7 +157,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Ranking'
-
+        '400':
+          description: Bad Request
 components:
   schemas:
     Player:

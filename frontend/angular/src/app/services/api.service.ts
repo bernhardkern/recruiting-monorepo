@@ -41,7 +41,7 @@ export class ApiService {
     return this.http.post<Player>(`${this.apiUrl}/matches`, match);
   }
 
-  getRankings(): Observable<RankedPlayer[]> {
-    return this.http.get<RankedPlayer[]>(`${this.apiUrl}/rankings`);
+  getRankings(top: number): Observable<RankedPlayer[]> {
+    return this.http.get<RankedPlayer[]>(`${this.apiUrl}/rankings?top=${top}`);
   }
 }

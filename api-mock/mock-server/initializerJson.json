@@ -547,7 +547,53 @@
   {
     "httpRequest": {
       "path": "/rankings",
-      "method": "GET"
+      "method": "GET",
+      "queryStringParameters": [
+        {
+          "name": "top",
+          "values": ["3"]
+        }
+      ]
+    },
+    "httpResponse": {
+      "body": [
+        {
+          "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
+          "username": "careBear3000",
+          "displayName": "Carey Bar",
+          "email": "care4bears@barbar.com",
+          "elo": 2400,
+          "rank": 1
+        },
+        {
+          "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
+          "username": "wishBearDreams",
+          "displayName": "Wish Bear Dreams",
+          "email": "dreamy@wishbear.com",
+          "elo": 2300,
+          "rank": 2
+        },
+        {
+          "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
+          "username": "harmonyHarbor",
+          "displayName": "Harmony Harbor",
+          "email": "harbor@harmonybear.com",
+          "elo": 2200,
+          "rank": 3
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/rankings",
+      "method": "GET",
+      "queryStringParameters": [
+        {
+          "name": "top",
+          "values": ["15"]
+        }
+      ]
     },
     "httpResponse": {
       "body": [
@@ -672,6 +718,15 @@
           "rank": 15
         }
       ]
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/rankings",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "statusCode": 400
     }
   }
 ]

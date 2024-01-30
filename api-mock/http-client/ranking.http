@@ -1,3 +1,8 @@
-### find all rankings
-GET {{host}}:{{port}}/rankings?top=4
+### find top 3 rankings
+GET {{host}}:{{port}}/rankings?top=3
 
+### find top 15 rankings
+GET {{host}}:{{port}}/rankings?top=15
+
+### provoke 400 Bad Request (query parameter top is required)
+GET {{host}}:{{port}}/rankings

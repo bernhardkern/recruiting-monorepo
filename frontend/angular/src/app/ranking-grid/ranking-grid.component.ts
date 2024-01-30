@@ -23,7 +23,7 @@ export class RankingGridComponent {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getRankings().subscribe((data: RankedPlayer[]) => {
+    this.apiService.getRankings(15).subscribe((data: RankedPlayer[]) => {
       this.dataSource = data;
     });
   }
