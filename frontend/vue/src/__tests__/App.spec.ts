@@ -1,6 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { nextTick } from 'vue'
-import { DOMWrapper, VueWrapper, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import { RouterLink } from 'vue-router'
 
 import sut from '@/App.vue'
@@ -36,5 +35,10 @@ describe('App.vue', () => {
     wrapper = shallowMount(sut, { global: { components: { RouterLink } } })
     const routerLinkTargetInHeader = wrapper.find('header').findComponent(RouterLink).vm.to?.name
     expect(routerLinkTargetInHeader).toBe('home')
+  })
+
+  it('should have a toast target component in the DOM', () => {
+    wrapper = shallowMount(sut)
+    expect(wrapper.find('toast-stub').exists()).toBeTruthy()
   })
 })

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Toast from 'primevue/toast'
 import { RouterLink, RouterView } from 'vue-router'
 import { useTitle } from '@vueuse/core'
 
@@ -7,6 +8,7 @@ useTitle('vue')
 
 <template>
   <main>
+    <Toast />
     <header>
       <RouterLink :to="{ name: 'home' }">
         <img alt="Vue logo" src="@/assets/iits-cec.svg" width="64" height="64" />
