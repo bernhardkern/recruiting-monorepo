@@ -10,3 +10,5 @@ out/
 
 ### Gradle Patch ###
 *.hprof
+
+.DS_Store
