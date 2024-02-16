@@ -13,16 +13,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.1"/>
-        <PackageReference Include="AutoMapper.Collection" Version="9.0.0"/>
-        <PackageReference Include="AutoMapper.Extensions.EnumMapping" Version="3.1.0"/>
-        <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="6.0.4"/>
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageReference Include="AutoMapper.Collection" Version="10.0.0"/>
+        <PackageReference Include="AutoMapper.Extensions.EnumMapping" Version="3.2.0"/>
+        <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="7.0.0"/>
+
         <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.2.2"/>
         <PackageReference Include="FluentMigrator" Version="5.0.0"/>
         <PackageReference Include="FluentMigrator.Runner.SQLite" Version="5.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2"/>
     </ItemGroup>
 
     <ItemGroup>

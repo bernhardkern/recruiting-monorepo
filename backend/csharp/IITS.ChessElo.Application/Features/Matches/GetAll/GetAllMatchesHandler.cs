@@ -1,4 +1,5 @@
 using IITS.ChessElo.Application.Repositories;
+using IITS.ChessElo.Domain.Matches;
 
 namespace IITS.ChessElo.Application.Features.Matches.GetAll;
 
@@ -8,7 +9,10 @@ public class GetAllMatchesHandler(IMatchRepository matchRepository)
     public Task<List<MatchDto>> Handle(GetAllMatchesQuery request, CancellationToken cancellationToken)
     {
         return Task.FromResult(matchRepository.GetAll().Select(
-            s => new MatchDto(s.Id, s.WhitePlayerUserName, s.BlackPlayerUserName, (Outcome)s.Outcome, s.PlayedOn)
+            s =>
+                new MatchDto(s.Id, s.WhitePlayerUserName, s.BlackPlayerUserName,
+                    s.Outcome == MatchOutcome.BlackWin ? Outcome.BlackWin :
+                    s.Outcome == MatchOutcome.WhiteWin ? Outcome.WhiteWin : Outcome.Draw, s.PlayedOn)
         ).ToList());
     }
 }
