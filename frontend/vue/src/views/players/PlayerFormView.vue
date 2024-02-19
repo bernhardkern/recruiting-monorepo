@@ -26,13 +26,9 @@ const { showError } = useToaster()
 
 async function loadPlayer(username: string) {
   const response = await api.players.getPlayerByUsername(username)
-  try {
-    const data = getResponseBodyOrError(response)
-    throwError(data)
-    player.value = data as Player
-  } catch (error) {
-    showError(`Failed to load player: ${error}`)
-  }
+  const data = getResponseBodyOrError(response)
+  throwError(data)
+  player.value = data as Player
 }
 
 const isEditForm = computed(() => !!props.username)

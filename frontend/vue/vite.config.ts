@@ -1,19 +1,18 @@
-import {fileURLToPath, URL} from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
+import {defineConfig, ProxyOptions, UserConfig} from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-import {defineConfig} from 'vite'
-import vue from '@vitejs/plugin-vue'
-
-function createProxy(port: string) {
+function createProxy(port: string): Record<string, ProxyOptions> {
     return {
         '/api': {
             target: `http://localhost:${port}`,
             changeOrigin: true,
             rewrite: (path: string) => path.replace(/^\/api/, ''),
         },
-    }
+    };
 }
 
-function getProxyConfiguration(mode: string) {
+const getProxyConfiguration = (mode: string): Record<string, ProxyOptions> | {} => {
     switch (mode) {
         case 'mock':
             return createProxy('1080');
@@ -24,28 +23,28 @@ function getProxyConfiguration(mode: string) {
         case 'c#':
             return createProxy('8080');
         default:
-            return undefined;
+            return {}; // Return an empty object for types compatibility instead of undefined
     }
-}
+};
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}: { mode: string }) => {
+export default defineConfig(({ mode }: { mode: string }): UserConfig => {
     return {
         plugins: [
             vue({
                 script: {
-                    defineModel: true
-                }
+                    defineModel: true,
+                },
             }),
         ],
         resolve: {
             alias: {
-                '@': fileURLToPath(new URL('./src', import.meta.url))
-            }
+                '@': fileURLToPath(new URL('./src', import.meta.url)),
+            },
         },
         server: {
             port: 4200,
             proxy: getProxyConfiguration(mode),
         },
-    }
-})
+    };
+});

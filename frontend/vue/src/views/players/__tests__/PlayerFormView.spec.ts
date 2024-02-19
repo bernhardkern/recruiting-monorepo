@@ -46,8 +46,8 @@ describe('PlayerFormView.vue', () => {
     expect(wrapper.find('player-form-stub')?.exists()).toBeTruthy()
   })
 
-  it('should call showError() if api.players.getPlayer() throws an error', () => {
-    const testError = new Error('testError')
+  it('should call showError() if api.players.getPlayerByUsername() throws an error', async () => {
+    const testError = new Error('API Test Error')
     const getPlayerSpy = playersApi.getPlayerByUsername as Mock<any, any>
     getPlayerSpy.mockRejectedValueOnce(testError)
 

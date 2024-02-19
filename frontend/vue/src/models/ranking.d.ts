@@ -1,4 +1,4 @@
-import type {Player} from "@/models/player";
+import type { Player } from '@/models/player'
 
 export interface RankingFrontend {
   id: string
@@ -10,6 +10,6 @@ export interface RankingFrontend {
 }
 
 export interface RankingResource {
-  player: Player,
+  player: Player
   rank: number
 }
