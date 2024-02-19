@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from '../../_shared/footer/footer.component';
-import { Observable } from 'rxjs';
 import {ApiService} from "../../services/api.service";
 import {Player} from "../../models/player.model";
 
@@ -39,7 +38,8 @@ export class PlayerFormComponent {
     id: '',
     username: '',
     displayName: '',
-    email: ''
+    email: '',
+    elo: 0
   }
 
   isValidEmail(email: string): boolean {

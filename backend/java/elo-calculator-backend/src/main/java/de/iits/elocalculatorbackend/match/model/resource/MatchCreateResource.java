@@ -15,8 +15,8 @@ public record MatchCreateResource(
 
     public Match toMatch() {
         var match = new Match();
-        match.setBlackPlayerUserName(blackPlayerUserName);
-        match.setWhitePlayerUserName(whitePlayerUserName);
+        match.setBlackPlayerUsername(blackPlayerUserName);
+        match.setWhitePlayerUsername(whitePlayerUserName);
         match.setOutcome(outcome);
         match.setDate(date);
         return match;

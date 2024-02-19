@@ -26,10 +26,10 @@ public class Match {
     private UUID id;
 
     @Column(name = "white_player_user_name")
-    private String whitePlayerUserName;
+    private String whitePlayerUsername;
 
     @Column(name = "black_player_user_name")
-    private String blackPlayerUserName;
+    private String blackPlayerUsername;
 
     @Column(name = "outcome")
     @Enumerated(EnumType.STRING)

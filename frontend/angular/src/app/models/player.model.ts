@@ -3,9 +3,10 @@ export interface Player {
   username: string
   displayName: string
   email: string
+  elo: number
 }
 
 export interface RankedPlayer extends Player {
-  elo: number
+  player: Player
   rank: number
 }
