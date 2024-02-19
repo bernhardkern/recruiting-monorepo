@@ -4,21 +4,21 @@ import { onBeforeMount, ref } from 'vue'
 import api from '@/api'
 import { getResponseBodyOrError, throwError } from '@/api/response-helper'
 import { useToaster } from '@/composables/ui/toaster'
-import type { Ranking } from '@/models/ranking'
+import type { RankingFrontend } from '@/models/ranking'
 
 import RankingList from '@/components/ranking/RankingList.vue'
 import PageHeading from '@/components/ui/PageHeading.vue'
 
 const { showError } = useToaster()
 
-const rankings = ref<Array<Ranking>>([])
+const rankings = ref<Array<RankingFrontend>>([])
 
 onBeforeMount(async () => {
   try {
     const response = await api.rankings.getRankings(15)
     const data = getResponseBodyOrError(response)
     throwError(data)
-    rankings.value = data as Array<Ranking>
+    rankings.value = data as Array<RankingFrontend>
   } catch (error) {
     showError(`Failed to load ranking: ${error}`)
   }

@@ -4,6 +4,8 @@ import type { ColumnDefinition } from '@/types/utility'
 
 import DataTable from '@/components/ui/DataTable.vue'
 import ScrollableLayout from '@/components/ui/ScrollableLayout.vue'
+import {computed} from "vue";
+import {rankingResourceToRankingFrontend} from "@/adapter/rank";
 
 interface Props {
   rankings?: Array<Ranking>
@@ -11,6 +13,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   rankings: () => []
 })
+
+const rankings = computed(() => props.rankings.map(rankingResourceToRankingFrontend))
 
 const columnDefinitions: Array<ColumnDefinition<Ranking>> = [
   { label: 'Rank', type: 'DATA', dataProperty: 'rank' },
@@ -23,7 +27,7 @@ const columnDefinitions: Array<ColumnDefinition<Ranking>> = [
 
 <template>
   <ScrollableLayout>
-    <DataTable :column-definitions="columnDefinitions" :data="props.rankings"></DataTable>
+    <DataTable :column-definitions="columnDefinitions" :data="rankings"></DataTable>
   </ScrollableLayout>
 </template>
 @/models/ranking

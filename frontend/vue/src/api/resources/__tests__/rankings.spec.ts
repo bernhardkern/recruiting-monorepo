@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi, type Mock } from 'vitest'
 
 import request from '@/api/request'
-import type { Ranking } from '@/models/ranking'
+import type { RankingFrontend } from '@/models/ranking'
 
 import sut from '@/api/resources/rankings'
 
@@ -26,7 +26,7 @@ describe('rankings.ts', () => {
         elo: 69
       }
 
-      const testResponse: Array<Ranking> = [
+      const testResponse: Array<RankingFrontend> = [
         { ...testPlayer, id: 'testId-1', rank: 1 },
         { ...testPlayer, id: 'testId-2', rank: 2 },
         { ...testPlayer, id: 'testId-3', rank: 3 }

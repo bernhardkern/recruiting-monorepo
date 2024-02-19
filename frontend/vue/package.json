@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
+    "dev:mock": "vite --open --mode mock",
+    "dev:spring:kotlin": "vite --open --mode kotlin",
+    "dev:spring:java": "vite --open --mode java",
+    "dev:csharp": "vite --open --mode c#",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
