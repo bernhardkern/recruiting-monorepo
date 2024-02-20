@@ -1,63 +1,60 @@
-<mat-toolbar color="secondary">
-  Create new match
-</mat-toolbar>
+<mat-toolbar color="secondary"> Create new match </mat-toolbar>
 
 <form #matchForm="ngForm" class="app-content app-content__form">
   <!-- Player 1 -->
   <mat-form-field>
     <mat-label>White Player</mat-label>
-    <mat-select required [(ngModel)]="match.whitePlayerUsername" name="whitePlayerUsername" #whitePlayerInput="ngModel">
+    <mat-select
+      required
+      [(ngModel)]="match.whitePlayerUsername"
+      name="whitePlayerUsername"
+      #whitePlayerInput="ngModel"
+    >
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
     <mat-error>
-      @if (whitePlayerInput.errors && whitePlayerInput.errors['required']) { White Player is required }
+      @if (whitePlayerInput.errors && whitePlayerInput.errors['required']) {
+      White Player is required }
     </mat-error>
   </mat-form-field>
 
   <!-- Player 2 -->
   <mat-form-field>
     <mat-label>Black Player</mat-label>
-    <mat-select required [(ngModel)]="match.blackPlayerUsername" name="blackPlayerUsername" #blackPlayerInput="ngModel">
+    <mat-select
+      required
+      [(ngModel)]="match.blackPlayerUsername"
+      name="blackPlayerUsername"
+      #blackPlayerInput="ngModel"
+    >
       <mat-option *ngFor="let player of players" [value]="player">{{
         player
       }}</mat-option>
     </mat-select>
     <mat-error>
-      @if (blackPlayerInput.errors && blackPlayerInput.errors['required']) { Black Player is required }
+      @if (blackPlayerInput.errors && blackPlayerInput.errors['required']) {
+      Black Player is required }
     </mat-error>
   </mat-form-field>
 
   <!-- Outcome -->
   <mat-form-field>
     <mat-label>Outcome</mat-label>
-    <mat-select required [(ngModel)]="match.outcome" name="outcome" #outcomeInput="ngModel">
+    <mat-select
+      required
+      [(ngModel)]="match.outcome"
+      name="outcome"
+      #outcomeInput="ngModel"
+    >
       <mat-option *ngFor="let outcome of outcomes" [value]="outcome">{{
         outcome
       }}</mat-option>
     </mat-select>
     <mat-error>
-      @if (outcomeInput.errors && outcomeInput.errors['required']) { Outcome is required }
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Date -->
-  <mat-form-field>
-    <mat-label>Date</mat-label>
-    <input
-      matInput
-      [matDatepicker]="picker"
-      placeholder="Choose a date"
-      required
-      [(ngModel)]="match.date"
-      name="timestamp"
-      #dateInput="ngModel"
-    />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <mat-error>
-      @if (dateInput.errors && dateInput.errors['required']) { Date is required }
+      @if (outcomeInput.errors && outcomeInput.errors['required']) { Outcome is
+      required }
     </mat-error>
   </mat-form-field>
 </form>

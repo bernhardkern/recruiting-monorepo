@@ -4,8 +4,8 @@ namespace IITS.ChessElo.Domain.Matches;
 
 public class Match : AggregateRoot<Guid>
 {
-    public string WhitePlayerUserName { get; private set; }
-    public string BlackPlayerUserName { get; private set; }
+    public string WhitePlayerUsername { get; private set; }
+    public string BlackPlayerUsername { get; private set; }
 
     public MatchOutcome Outcome { get; private set; }
 
@@ -17,18 +17,18 @@ public class Match : AggregateRoot<Guid>
     }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-    public Match(Guid id, string whitePlayerUserName, string blackPlayerUserName, MatchOutcome outcome,
+    public Match(Guid id, string whitePlayerUsername, string blackPlayerUsername, MatchOutcome outcome,
         DateTimeOffset? playedOn) : base(id)
     {
-        WhitePlayerUserName = whitePlayerUserName;
-        BlackPlayerUserName = blackPlayerUserName;
+        WhitePlayerUsername = whitePlayerUsername;
+        BlackPlayerUsername = blackPlayerUsername;
         Outcome = outcome;
         PlayedOn = playedOn ?? DateTimeOffset.UtcNow;
 
         if (PlayedOn > DateTimeOffset.UtcNow)
             throw new ValidationException("The match date must not be in the future.");
 
-        if (WhitePlayerUserName == BlackPlayerUserName)
+        if (WhitePlayerUsername == BlackPlayerUsername)
             throw new ValidationException("The match must be played by two different users.");
     }
 }

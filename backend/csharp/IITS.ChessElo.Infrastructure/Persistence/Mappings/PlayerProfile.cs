@@ -12,6 +12,6 @@ internal class PlayerProfile : Profile
 
         CreateMap<Player, PlayerEntity>();
         CreateMap<PlayerEntity, Player>()
-            .ForMember(x => x.UserName, x => x.MapFrom(y => y.Id));
+            .ForMember(x => x.Username, x => x.MapFrom(y => y.Id));
     }
 }

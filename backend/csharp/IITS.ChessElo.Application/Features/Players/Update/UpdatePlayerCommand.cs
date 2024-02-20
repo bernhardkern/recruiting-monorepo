@@ -1,3 +1,3 @@
 namespace IITS.ChessElo.Application.Features.Players.Update;
 
-public record UpdatePlayerCommand(string UserName, string DisplayName, string? Email) : IRequest;
+public record UpdatePlayerCommand(string Username, string DisplayName, string? Email) : IRequest;

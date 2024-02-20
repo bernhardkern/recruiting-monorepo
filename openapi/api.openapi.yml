@@ -39,7 +39,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Player'
+              type: object
+              properties:
+                username:
+                  description: Unique identifier; username
+                  type: string
+                  minLength: 1
+                  example: Max Mustermann
+                displayName:
+                  description: Display name of the player
+                  type: string
+                  minLength: 1
+                  example: Maxi
+                email:
+                  description: User email address
+                  type: string
+                  example: max.mustermann@iits-consulting.de
         required: true
       responses:
         '200':
@@ -63,7 +78,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Player'
+              type: object
+              properties:
+                username:
+                  description: Unique identifier; username
+                  type: string
+                  minLength: 1
+                  example: Max Mustermann
+                displayName:
+                  description: Display name of the player
+                  type: string
+                  minLength: 1
+                  example: Maxi
+                email:
+                  description: User email address
+                  type: string
+                  example: max.mustermann@iits-consulting.de
         required: true
       responses:
         '200':
@@ -122,7 +152,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Match'
+              type: object
+              properties:
+                whitePlayerUsername:
+                  description: Unique name of the player with white figures
+                  type: string
+                  minLength: 1
+                  example: Max Mustermann
+                blackPlayerUsername:
+                  description: Unique name of the player with black figures
+                  type: string
+                  minLength: 1
+                  example: Lieschen Müller
+                outcome:
+                  description: Result of the match
+                  type: string
+                  enum: [ BLACK_WINS, WHITE_WINS, DRAW ]
         description: Updated match object
         required: true
       responses:
@@ -164,10 +209,6 @@ components:
     Player:
       type: object
       properties:
-        id:
-          description: Database id of the player
-          type: string
-          example: DAF924F7-98DC-45B7-AD5E-5A847571091B
         username:
           description: Unique identifier; username
           type: string
@@ -208,10 +249,10 @@ components:
           description: Result of the match
           type: string
           enum: [ BLACK_WINS, WHITE_WINS, DRAW ]
-        timestamp:
+        playedOn:
           description: Date of the match
-          type: number
-          example: 1602329862
+          type: string
+          example: "2024-02-19T15:00:00.000Z"
     Ranking:
       type: object
       properties:

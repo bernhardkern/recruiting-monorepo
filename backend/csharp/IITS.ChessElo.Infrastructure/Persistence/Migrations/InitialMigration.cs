@@ -16,17 +16,17 @@ public class InitialMigration : Migration
     public override void Up()
     {
         Create.Table(PlayerTableName)
-            .WithColumn("UserName").AsString(255).PrimaryKey()
+            .WithColumn("Username").AsString(255).PrimaryKey()
             .WithColumn(nameof(PlayerEntity.DisplayName)).AsString(255).NotNullable()
             .WithColumn(nameof(PlayerEntity.Email)).AsString(255)
             .WithColumn(nameof(PlayerEntity.Elo)).AsInt32();
 
         Create.Table(MatchTableName)
             .WithColumn(nameof(MatchEntity.Id)).AsGuid().PrimaryKey()
-            .WithColumn(nameof(MatchEntity.BlackPlayerUserName)).AsString().NotNullable()
-            .ForeignKey($"{nameof(MatchEntity.BlackPlayerUserName)}_{PlayerTableName}", PlayerTableName, "UserName")
-            .WithColumn(nameof(MatchEntity.WhitePlayerUserName)).AsString().NotNullable()
-            .ForeignKey($"{nameof(MatchEntity.WhitePlayerUserName)}_{PlayerTableName}", PlayerTableName, "UserName")
+            .WithColumn(nameof(MatchEntity.BlackPlayerUsername)).AsString().NotNullable()
+            .ForeignKey($"{nameof(MatchEntity.BlackPlayerUsername)}_{PlayerTableName}", PlayerTableName, "Username")
+            .WithColumn(nameof(MatchEntity.WhitePlayerUsername)).AsString().NotNullable()
+            .ForeignKey($"{nameof(MatchEntity.WhitePlayerUsername)}_{PlayerTableName}", PlayerTableName, "Username")
             .WithColumn(nameof(MatchEntity.Outcome)).AsString()
             .WithColumn(nameof(MatchEntity.PlayedOn)).AsInt64();
 
@@ -37,14 +37,14 @@ public class InitialMigration : Migration
         {
             var player = new PlayerEntity
             {
-                Id = data.UserName,
+                Id = data.Username,
                 Email = data.Email,
-                DisplayName = data.UserName,
+                DisplayName = data.Username,
                 Elo = new Random().Next(300, 2000)
             };
             players.Add(player);
             Insert.IntoTable(PlayerTableName).Row(new
-                { UserName = player.Id, DisplayName = player.DisplayName, Email = player.Email, Elo = player.Elo });
+                { Username = player.Id, DisplayName = player.DisplayName, Email = player.Email, Elo = player.Elo });
         }
 
         var converter = new DateTimeOffsetToStringConverter();
@@ -62,7 +62,7 @@ public class InitialMigration : Migration
             var blackPlayer = players.Skip(randomBlackPlayer).First();
             Insert.IntoTable(MatchTableName).Row(new
             {
-                Id = Guid.NewGuid(), BlackPlayerUserName = blackPlayer.Id, WhitePlayerUserName = whitePlayer.Id,
+                Id = Guid.NewGuid(), BlackPlayerUsername = blackPlayer.Id, WhitePlayerUsername = whitePlayer.Id,
                 Outcome = outcome.ToString(),
                 PlayedOn = converter.ConvertToProvider(DateTimeOffset.UtcNow.AddDays(-1 * randomDay))
             });
@@ -88,5 +88,5 @@ public class InitialMigration : Migration
     }
 
 
-    private sealed record PlayerData(string UserName, string Email);
+    private sealed record PlayerData(string Username, string Email);
 }

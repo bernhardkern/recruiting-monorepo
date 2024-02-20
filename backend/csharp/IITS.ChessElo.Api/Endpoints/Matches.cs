@@ -3,9 +3,9 @@ using IITS.ChessElo.Application.Features.Matches.GetAll;
 
 namespace IITS.ChessElo.Api.Endpoints;
 
-internal static class Match
+internal static class Matches
 {
-    public static void MapMatchEndpoints(this RouteGroupBuilder apiGroup)
+    public static void MapMatchesEndpoints(this RouteGroupBuilder apiGroup)
     {
         var group = apiGroup.MapGroup("/matches");
         group.MapGet("", Get);

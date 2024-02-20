@@ -2,7 +2,7 @@ namespace IITS.ChessElo.Domain.Players;
 
 public class Player : AggregateRoot<string>
 {
-    public string UserName { get; private set; }
+    public string Username { get; private set; }
     public string DisplayName { get; private set; }
     public string? Email { get; private set; }
     public int Elo { get; private set; }
@@ -17,7 +17,7 @@ public class Player : AggregateRoot<string>
 
     public Player(string userName, string displayName, string? email, int elo = 1000) : base(userName)
     {
-        UserName = userName.Trim();
+        Username = userName.Trim();
         DisplayName = displayName;
         Email = email;
         Elo = elo;

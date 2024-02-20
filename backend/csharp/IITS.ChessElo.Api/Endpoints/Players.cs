@@ -1,22 +1,22 @@
 using IITS.ChessElo.Application.Features.Players.Create;
 using IITS.ChessElo.Application.Features.Players.GetAll;
-using IITS.ChessElo.Application.Features.Players.GetByUserName;
-using IITS.ChessElo.Application.Features.Players.GetEloByUserName;
+using IITS.ChessElo.Application.Features.Players.GetByUsername;
+using IITS.ChessElo.Application.Features.Players.GetEloByUsername;
 using IITS.ChessElo.Application.Features.Players.Update;
 
 namespace IITS.ChessElo.Api.Endpoints;
 
-public static class User
+internal static class Players
 {
-    public static void MapUserEndpoints(this RouteGroupBuilder apiGroup)
+    public static void MapPlayersEndpoints(this RouteGroupBuilder apiGroup)
     {
         var group = apiGroup.MapGroup("/players");
         group.MapGet("", Get);
-        group.MapGet("{userName}", GetByUserName);
-        group.MapGet("{userName}/elo", GetEloByUserName);
+        group.MapGet("{username}", GetByUsername);
+        group.MapGet("{username}/elo", GetEloByUsername);
 
         group.MapPost("", Create);
-        group.MapPut("{userName}", Update);
+        group.MapPut("{username}", Update);
     }
 
     private static async Task<IResult> Create(CreatePlayerCommand command,
@@ -39,15 +39,15 @@ public static class User
         return TypedResults.Ok(result);
     }
 
-    private static async Task<IResult> GetByUserName(string userName, IMediator mediator)
+    private static async Task<IResult> GetByUsername(string userName, IMediator mediator)
     {
-        var result = await mediator.Send(new GetPlayerByUserNameQuery(userName));
+        var result = await mediator.Send(new GetPlayerByUsernameQuery(userName));
         return TypedResults.Ok(result);
     }
 
-    private static async Task<IResult> GetEloByUserName(string userName, IMediator mediator)
+    private static async Task<IResult> GetEloByUsername(string userName, IMediator mediator)
     {
-        var result = await mediator.Send(new GetEloByUserNameQuery(userName));
+        var result = await mediator.Send(new GetEloByUsernameQuery(userName));
         return TypedResults.Ok(result);
     }
 }

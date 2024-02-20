@@ -7,7 +7,7 @@ public class UpdatePlayerHandler(IPlayerRepository playerRepository) : IRequestH
 {
     public async Task Handle(UpdatePlayerCommand request, CancellationToken cancellationToken)
     {
-        var player = await playerRepository.GetFirstOrDefaultAsync(x => x.UserName == request.UserName);
+        var player = await playerRepository.GetFirstOrDefaultAsync(x => x.Username == request.Username);
         if (player == null) throw new EntityNotFoundException("Player with username not found.");
 
         player.UpdateDisplayName(request.DisplayName);

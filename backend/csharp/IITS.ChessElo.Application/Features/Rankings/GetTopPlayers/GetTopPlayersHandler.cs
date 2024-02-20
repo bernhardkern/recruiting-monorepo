@@ -12,7 +12,7 @@ public class GetTopPlayersHandler(IPlayerRepository playerRepository)
         return
             Task.FromResult(
                 players.Select((user, i) =>
-                    new UserRankingDto(i + 1, new PlayerDto(user.UserName, user.DisplayName, user.Email, user.Elo))
+                    new UserRankingDto(i + 1, new PlayerDto(user.Username, user.DisplayName, user.Email, user.Elo))
                 ).ToList());
     }
 }

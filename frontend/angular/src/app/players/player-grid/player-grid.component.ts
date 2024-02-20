@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from '../../_shared/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {Player} from "../../models/player.model";
-import {ApiService} from "../../services/api.service";
+import { Player } from '../../models/player.model';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-player-grid',
@@ -34,5 +34,5 @@ export class PlayerGridComponent {
     });
   }
 
-  displayColumns = ['id', 'username', 'displayName', 'email', 'actions'];
+  displayColumns = ['username', 'displayName', 'email', 'actions'];
 }

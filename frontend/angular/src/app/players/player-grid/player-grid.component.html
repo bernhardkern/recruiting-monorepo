@@ -2,11 +2,6 @@
 
 <div class="app-content">
   <table mat-table [dataSource]="dataSource">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-    </ng-container>
-
     <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef>Username</th>
       <td mat-cell *matCellDef="let element">{{ element.username }}</td>
@@ -25,7 +20,10 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button [routerLink]="'../' + element.username + '/edit'">
+        <button
+          mat-icon-button
+          [routerLink]="'../' + element.username + '/edit'"
+        >
           <mat-icon>edit</mat-icon>
         </button>
       </td>

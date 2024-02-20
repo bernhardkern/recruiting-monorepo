@@ -10,7 +10,7 @@ public class GetAllMatchesHandler(IMatchRepository matchRepository)
     {
         return Task.FromResult(matchRepository.GetAll().Select(
             s =>
-                new MatchDto(s.Id, s.WhitePlayerUserName, s.BlackPlayerUserName,
+                new MatchDto(s.Id, s.WhitePlayerUsername, s.BlackPlayerUsername,
                     s.Outcome == MatchOutcome.BlackWin ? Outcome.BlackWin :
                     s.Outcome == MatchOutcome.WhiteWin ? Outcome.WhiteWin : Outcome.Draw, s.PlayedOn)
         ).ToList());

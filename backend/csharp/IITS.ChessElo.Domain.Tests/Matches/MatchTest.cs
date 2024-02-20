@@ -15,13 +15,13 @@ public class MatchTest
     {
         // Arrange
         var id = _fixture.Create<Guid>();
-        var whitePlayerUserName = _fixture.Create<string>();
-        var blackPlayerUserName = _fixture.Create<string>();
+        var whitePlayerUsername = _fixture.Create<string>();
+        var blackPlayerUsername = _fixture.Create<string>();
         var outcome = _fixture.Create<MatchOutcome>();
         var playedOn = DateProvider.GetRandomDateTimeBeforeUtcNow();
 
         //Act
-        var act = () => new Match(id, whitePlayerUserName, blackPlayerUserName, outcome, playedOn);
+        var act = () => new Match(id, whitePlayerUsername, blackPlayerUsername, outcome, playedOn);
 
         //Assert
         act.Should().NotThrow();
@@ -32,13 +32,13 @@ public class MatchTest
     {
         // Arrange
         var id = _fixture.Create<Guid>();
-        var whitePlayerUserName = _fixture.Create<string>();
-        var blackPlayerUserName = _fixture.Create<string>();
+        var whitePlayerUsername = _fixture.Create<string>();
+        var blackPlayerUsername = _fixture.Create<string>();
         var outcome = _fixture.Create<MatchOutcome>();
         var playedOn = DateProvider.GetRandomDateTimeAfterUtcNow();
 
         //Act
-        var act = () => new Match(id, whitePlayerUserName, blackPlayerUserName, outcome, playedOn);
+        var act = () => new Match(id, whitePlayerUsername, blackPlayerUsername, outcome, playedOn);
 
         //Assert
         act.Should().Throw<ValidationException>();
@@ -49,13 +49,13 @@ public class MatchTest
     {
         // Arrange
         var id = _fixture.Create<Guid>();
-        var whitePlayerUserName = _fixture.Create<string>();
-        var blackPlayerUserName = whitePlayerUserName;
+        var whitePlayerUsername = _fixture.Create<string>();
+        var blackPlayerUsername = whitePlayerUsername;
         var outcome = _fixture.Create<MatchOutcome>();
         var playedOn = DateProvider.GetRandomDateTimeBeforeUtcNow();
 
         //Act
-        var act = () => new Match(id, whitePlayerUserName, blackPlayerUserName, outcome, playedOn);
+        var act = () => new Match(id, whitePlayerUsername, blackPlayerUsername, outcome, playedOn);
 
         //Assert
         act.Should().Throw<ValidationException>();

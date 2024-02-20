@@ -7,11 +7,11 @@ public class CreatePlayerHandler(IPlayerRepository playerRepository) : IRequestH
 {
     public async Task<string> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
     {
-        var newUser = new Player(request.UserName, request.DisplayName, request.Email);
+        var newUser = new Player(request.Username, request.DisplayName, request.Email);
 
         await playerRepository.AddAsync(newUser);
         await playerRepository.UnitOfWork.SaveChangesAsync(cancellationToken);
 
-        return newUser.UserName;
+        return newUser.Username;
     }
 }

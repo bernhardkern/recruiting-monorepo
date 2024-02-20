@@ -1,16 +1,17 @@
 using IITS.ChessElo.Application.Features.Rankings.GetTopPlayers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IITS.ChessElo.Api.Endpoints;
 
-public static class Ranking
+internal static class Rankings
 {
-    public static void MapRankingEndpoints(this RouteGroupBuilder apiGroup)
+    public static void MapRankingsEndpoints(this RouteGroupBuilder apiGroup)
     {
         var group = apiGroup.MapGroup("/rankings");
-        group.MapGet("{top}", GetTopPlayers);
+        group.MapGet("", GetTopPlayers);
     }
 
-    private static async Task<IResult> GetTopPlayers(int top, IMediator mediator)
+    private static async Task<IResult> GetTopPlayers([FromQuery]int top, IMediator mediator)
     {
         var result = await mediator.Send(new GetTopPlayersQuery(top));
         return TypedResults.Ok(result);

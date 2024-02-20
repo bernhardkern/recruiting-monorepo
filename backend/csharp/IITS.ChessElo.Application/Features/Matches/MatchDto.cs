@@ -2,7 +2,7 @@ namespace IITS.ChessElo.Application.Features.Matches;
 
 public record MatchDto(
     Guid Id,
-    string WhitePlayerUserName,
-    string BlackPlayerUserName,
+    string WhitePlayerUsername,
+    string BlackPlayerUsername,
     Outcome Outcome,
-    DateTimeOffset Timestamp);
+    DateTimeOffset PlayedOn);

@@ -36,8 +36,8 @@ public class CreateMatchHandlerTest
         // Assert
         var matchRepository = _serviceProvider.GetRequiredService<IMatchRepository>();
         await matchRepository.Received(1).AddAsync(Arg.Is<Match>(x =>
-            x.WhitePlayerUserName == command.WhitePlayerUserName &&
-            x.BlackPlayerUserName == command.BlackPlayerUserName &&
+            x.WhitePlayerUsername == command.WhitePlayerUsername &&
+            x.BlackPlayerUsername == command.BlackPlayerUsername &&
             (int)x.Outcome == (int)command.Outcome));
         await matchRepository.UnitOfWork.ReceivedWithAnyArgs(1).SaveChangesAsync(default);
     }
@@ -63,8 +63,8 @@ public class CreateMatchHandlerTest
         // Arrange
         var userName = _fixture.Create<string>();
         var command = _fixture.Build<CreateMatchCommand>()
-            .With(x => x.WhitePlayerUserName, userName)
-            .With(x => x.BlackPlayerUserName, userName)
+            .With(x => x.WhitePlayerUsername, userName)
+            .With(x => x.BlackPlayerUsername, userName)
             .Create();
         var handler = _serviceProvider.GetRequiredService<CreateMatchHandler>();
 

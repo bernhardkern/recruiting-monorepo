@@ -1,6 +1,6 @@
 namespace IITS.ChessElo.Application.Features.Matches.Create;
 
 public record CreateMatchCommand(
-    string WhitePlayerUserName,
-    string BlackPlayerUserName,
+    string WhitePlayerUsername,
+    string BlackPlayerUsername,
     Outcome Outcome) : IRequest<Guid>;

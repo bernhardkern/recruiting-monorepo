@@ -9,9 +9,9 @@ public static class Endpoints
         var apiGroup = webApplication.MapGroup("");
         apiGroup.AddEndpointFilter<ApplicationExceptionEndpointFilter>();
 
-        apiGroup.MapMatchEndpoints();
-        apiGroup.MapRankingEndpoints();
-        apiGroup.MapUserEndpoints();
+        apiGroup.MapMatchesEndpoints();
+        apiGroup.MapRankingsEndpoints();
+        apiGroup.MapPlayersEndpoints();
         return webApplication;
     }
 }

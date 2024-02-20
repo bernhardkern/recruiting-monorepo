@@ -10,7 +10,7 @@ public class CreateMatchHandler(IMatchRepository matchRepository) : IRequestHand
     {
         var matchOutcome = GetMatchOutcome();
 
-        var match = new Match(Guid.NewGuid(), request.WhitePlayerUserName, request.BlackPlayerUserName, matchOutcome,
+        var match = new Match(Guid.NewGuid(), request.WhitePlayerUsername, request.BlackPlayerUsername, matchOutcome,
             DateTimeOffset.UtcNow);
 
         await matchRepository.AddAsync(match);

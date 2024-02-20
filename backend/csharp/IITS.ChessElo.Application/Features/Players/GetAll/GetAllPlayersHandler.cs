@@ -8,7 +8,7 @@ public class GetAllPlayersHandler(IPlayerRepository playerRepository)
     public Task<List<PlayerDto>> Handle(GetAllPlayersQuery request, CancellationToken cancellationToken)
     {
         return Task.FromResult(playerRepository.GetAll()
-            .Select(s => new PlayerDto(s.UserName, s.DisplayName, s.Email, s.Elo))
+            .Select(s => new PlayerDto(s.Username, s.DisplayName, s.Email, s.Elo))
             .ToList());
     }
 }
