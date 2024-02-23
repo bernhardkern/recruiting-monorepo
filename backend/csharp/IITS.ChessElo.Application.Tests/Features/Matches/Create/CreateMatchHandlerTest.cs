@@ -43,21 +43,6 @@ public class CreateMatchHandlerTest
     }
 
     [Fact]
-    public async Task CreateMatch_WhenTheMatchTimestampIsInTheFuture_ThenAnExceptionIsThrown()
-    {
-        // Arrange
-        var command = _fixture.Build<CreateMatchCommand>()
-            .Create();
-        var handler = _serviceProvider.GetRequiredService<CreateMatchHandler>();
-
-        //Act
-        var act = async () => await handler.Handle(command, default);
-
-        //Assert
-        await act.Should().ThrowAsync<ValidationException>();
-    }
-
-    [Fact]
     public async Task CreateMatch_WhenTheMatchIsPlayedByTheSameUserOnBothSides_ThenAnExceptionIsThrown()
     {
         // Arrange

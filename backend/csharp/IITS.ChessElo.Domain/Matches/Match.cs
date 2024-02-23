@@ -29,6 +29,6 @@ public class Match : AggregateRoot<Guid>
             throw new ValidationException("The match date must not be in the future.");
 
         if (WhitePlayerUsername == BlackPlayerUsername)
-            throw new ValidationException("The match must be played by two different users.");
+            throw new ValidationException("The match must be played by two different players.");
     }
 }
