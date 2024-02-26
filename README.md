@@ -17,7 +17,9 @@ Anwendung zum Erfassen und Verfolgen von Spielen zwischen registrierten Personen
 
 ## Aufgaben Backlog
 
-TODO
+Die Aufgaben können in beliebiger Reihenfolge gestellt und bearbeitet werden.
+In den Testinterviews hat sich gezeigt, dass man durch die zeitliche Limitierung nur 1-2 Aufgaben coden kann.
+Die restlichen Aufgaben lassen sich aber dennoch theoretisch abfragen.
 
 ---
 
@@ -29,7 +31,7 @@ damit ich nicht immer direkt nach dem Spiel die Anwendung bedienen muss.
 
 **Ziel**: *Einstiegsfrage, Datumsformate und Zeitzonen, Testanpassung*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Eintragen von Matches aus der Zukunft*
 - *Default Verhalten, wenn kein Datum mitgeliefert wird*
 ---
@@ -63,7 +65,7 @@ damit wir Zeit und Geld bei der Entwicklung sparen können.
 
 **Ziel**: *Sinnhaftigkeit von Aufgaben hinterfragen*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Test nicht löschen, sondern Laufzeit verringern*
 ---
 
@@ -75,7 +77,7 @@ damit ein Hauptfeature meiner Anwendung implementiert ist.
 
 **Ziel**: *Programmstruktur, Algorithmen*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Wenn Matches aus Vergangenheit eingetragen werden können: Elo Berechnung dort nicht möglich*
 - *Spielername existiert nicht*
 - *Algorithmus zur Berechnung unbekannt*
@@ -89,7 +91,7 @@ damit ich faire Matches spielen kann.
 
 **Ziel**: *Performance, Datenbank Queries*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Welche Spanne ist "ähnlich"?* (die 2 nächsten)
 ---
 
@@ -101,7 +103,7 @@ damit Aufrufe mit großen Datenmengen vermieden werden.
 
 **Ziel**: *Pagination*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Default Size*
 - *Attribut zur Sortierung*
 ---
@@ -124,7 +126,7 @@ damit ein Hauptfeature meiner Anwendung implementiert ist. (Es reicht hier die K
 
 **Ziel**: *Scheduled Jobs*
 
-**Mögliche Probleme**:
+**Mögliche Ansätze/Probleme**:
 - *Welche Zeitspanne ist "regelmäßig"?*
 - *Mehrere Instanzen der Anwendung*
 - *Neustart der Anwendung*
