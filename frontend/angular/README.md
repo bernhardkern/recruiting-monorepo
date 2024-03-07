@@ -4,13 +4,13 @@ This project serves as a tool for coding interviews, featuring a user interface 
 
 ## Development server
 
-Run `ng run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `yarn run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 You can proxy to every backend. Just use these commands for the different beackends
-- `ng run start:mock` -> Mock Server Backend
-- `ng run start:spring:kotlin` -> Spring Boot Kotlin Backend
-- `ng run start:spring:java` -> Spring Boot Java Backend
-- `ng run start:csharp` -> C# Backend
+- `yarn run start:mock` -> Mock Server Backend
+- `yarn run start:spring:kotlin` -> Spring Boot Kotlin Backend
+- `yarn run start:spring:java` -> Spring Boot Java Backend
+- `yarn run start:csharp` -> C# Backend
 
 ## Code scaffolding
 
@@ -18,7 +18,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `yarn build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
