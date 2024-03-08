@@ -45,8 +45,7 @@ export class MatchFormComponent {
 
   outcomes: string[] = ['WHITE_WINS', 'BLACK_WINS', 'DRAW'];
 
-  submit = this.apiService.createMatch(this.match)
-
+  submit = () => this.apiService.createMatch(this.match)
 
   ngOnInit() {
     this.apiService.getPlayers().subscribe((data: Player[]) => {

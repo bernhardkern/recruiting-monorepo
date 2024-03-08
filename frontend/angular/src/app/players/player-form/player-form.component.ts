@@ -51,12 +51,15 @@ export class PlayerFormComponent {
   submit = () => this.isEditForm() ? this.apiService.updatePlayer(this.player) : this.apiService.createPlayer(this.player)
 
   ngOnChanges(changes: SimpleChanges) {
+    const newUsername = changes['username'].currentValue
     if (changes['username'].currentValue) {
-      this.apiService.getPlayerElo(this.username).subscribe((data: number) => {
-        this.elo = data;
-      });
-      this.apiService.getPlayer(this.username).subscribe((data: Player) => {
+
+      this.apiService.getPlayer(newUsername).subscribe((data: Player) => {
         this.player = data;
+      });
+      this.apiService.getPlayerElo(newUsername).subscribe((data: number) => {
+        this.elo = data;
+        this.player.elo = data
       });
     }
   }

@@ -6,7 +6,7 @@ export interface Player {
   elo: number
 }
 
-export interface RankedPlayer extends Player {
+export interface RankedPlayer {
   player: Player
   rank: number
 }

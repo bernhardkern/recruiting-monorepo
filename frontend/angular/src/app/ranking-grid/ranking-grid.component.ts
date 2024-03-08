@@ -4,8 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {ApiService} from "../services/api.service";
-import {RankedPlayer, Player} from "../models/player.model";
-import {Match} from "../models/match.model";
+import {RankedPlayer} from "../models/player.model";
 
 @Component({
   selector: 'app-ranking-grid',

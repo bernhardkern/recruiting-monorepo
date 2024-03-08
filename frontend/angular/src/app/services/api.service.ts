@@ -9,7 +9,7 @@ import {Match} from "../models/match.model";
   deps: [HttpClient],
 })
 export class ApiService {
-  private apiUrl = 'api';
+  apiUrl = 'api';
 
   constructor(private http: HttpClient) { }
 
@@ -37,8 +37,8 @@ export class ApiService {
     return this.http.get<Match[]>(`${this.apiUrl}/matches`);
   }
 
-  createMatch(match: Match): Observable<Player> {
-    return this.http.post<Player>(`${this.apiUrl}/matches`, match);
+  createMatch(match: Match): Observable<Match> {
+    return this.http.post<Match>(`${this.apiUrl}/matches`, match);
   }
 
   getRankings(top: number): Observable<RankedPlayer[]> {

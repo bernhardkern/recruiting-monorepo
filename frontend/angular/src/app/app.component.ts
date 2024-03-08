@@ -25,7 +25,7 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular';
+  title = 'iits chess elo manager';
 
   navList = [
     {
