@@ -1,7 +1,7 @@
 package de.iits.elo.player.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import de.iits.elo.player.model.dto.PlayerRequestDto
+import de.iits.elo.player.model.dto.PlayerCreateOrUpdateRequestDto
 import de.iits.elo.player.model.dto.toEntity
 import de.iits.elo.player.model.entity.Player
 import de.iits.elo.player.model.entity.toResponseDto
@@ -100,7 +100,7 @@ class PlayerControllerIntegrationTest {
         }
 
         private fun createPlayerUpdateRequest(username: String = "Max Mustermann") =
-            PlayerRequestDto(
+            PlayerCreateOrUpdateRequestDto(
                 username = username,
                 displayName = "BestMaxEuWest",
                 email = "max.mustermann@iits-consulting.de",
@@ -140,7 +140,7 @@ class PlayerControllerIntegrationTest {
         }
 
         private fun createPlayerRequest() =
-            PlayerRequestDto(
+            PlayerCreateOrUpdateRequestDto(
                 username = "Max Mustermann",
                 displayName = "BestMaxEuWest",
                 email = "max.mustermann@iits-consulting.de",

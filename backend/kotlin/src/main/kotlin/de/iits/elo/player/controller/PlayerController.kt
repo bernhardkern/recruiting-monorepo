@@ -1,6 +1,6 @@
 package de.iits.elo.player.controller
 
-import de.iits.elo.player.model.dto.PlayerRequestDto
+import de.iits.elo.player.model.dto.PlayerCreateOrUpdateRequestDto
 import de.iits.elo.player.model.dto.PlayerResponseDto
 import de.iits.elo.player.service.PlayerService
 import org.springframework.http.HttpStatus
@@ -24,7 +24,7 @@ class PlayerController(
 
     @PutMapping("/players")
     @Suppress("SwallowedException") // exception message is delegated
-    fun updatePlayer(@RequestBody player: PlayerRequestDto?): ResponseEntity<PlayerResponseDto> {
+    fun updatePlayer(@RequestBody player: PlayerCreateOrUpdateRequestDto?): ResponseEntity<PlayerResponseDto> {
         player ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for update, but no player was found in request body")
         val update = try {
             playerService.update(player)
@@ -35,7 +35,7 @@ class PlayerController(
     }
 
     @PostMapping("/players")
-    fun createNewPlayer(@RequestBody player: PlayerRequestDto?): ResponseEntity<PlayerResponseDto> {
+    fun createNewPlayer(@RequestBody player: PlayerCreateOrUpdateRequestDto?): ResponseEntity<PlayerResponseDto> {
         player ?: throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for creation, but no player was found in request body")
         return ResponseEntity.ok(playerService.create(player))
     }

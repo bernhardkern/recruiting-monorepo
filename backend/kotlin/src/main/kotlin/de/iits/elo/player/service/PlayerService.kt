@@ -1,11 +1,12 @@
 package de.iits.elo.player.service
 
-import de.iits.elo.player.model.dto.PlayerRequestDto
+import de.iits.elo.player.model.dto.PlayerCreateOrUpdateRequestDto
 import de.iits.elo.player.model.dto.PlayerResponseDto
 import de.iits.elo.player.model.dto.toEntity
 import de.iits.elo.player.model.entity.Player
 import de.iits.elo.player.model.entity.toResponseDto
 import de.iits.elo.player.persistence.PlayerRepository
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import kotlin.jvm.optionals.getOrNull
 
@@ -20,14 +21,13 @@ class PlayerService(
     fun findByUsername(username: String) =
         playerRepository.findById(username).getOrNull()?.toResponseDto()
 
-    @Throws(IllegalArgumentException::class)
-    fun update(player: PlayerRequestDto): PlayerResponseDto {
-        val databaseObject = playerRepository.findById(player.username)
-        check(databaseObject.isPresent) { "No player exists with user name ${player.username}" }
-        val updateEntity = player.toEntity().copy(elo = databaseObject.get().elo)
+    fun update(playerUpdateRequest: PlayerCreateOrUpdateRequestDto): PlayerResponseDto {
+        val player = playerRepository.findByIdOrNull(playerUpdateRequest.username)
+        checkNotNull(player) { "No player exists with user name ${playerUpdateRequest.username}" }
+        val updateEntity = playerUpdateRequest.toEntity().copy(elo = player.elo)
         return playerRepository.save(updateEntity).toResponseDto()
     }
 
-    fun create(player: PlayerRequestDto) =
-        playerRepository.save(player.toEntity()).toResponseDto()
+    fun create(playerCreateRequest: PlayerCreateOrUpdateRequestDto) =
+        playerRepository.save(playerCreateRequest.toEntity()).toResponseDto()
 }
