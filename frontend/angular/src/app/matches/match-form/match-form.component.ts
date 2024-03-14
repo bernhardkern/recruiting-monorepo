@@ -13,6 +13,7 @@ import {FooterComponent} from '../../_shared/footer/footer.component';
 import {ApiService} from "../../services/api.service";
 import {Player} from "../../models/player.model";
 import {Match} from "../../models/match.model";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-match-form',
@@ -45,7 +46,7 @@ export class MatchFormComponent {
 
   outcomes: string[] = ['WHITE_WINS', 'BLACK_WINS', 'DRAW'];
 
-  submit = () => this.apiService.createMatch(this.match)
+  submit = (): Observable<Match> => this.apiService.createMatch(this.match)
 
   ngOnInit() {
     this.apiService.getPlayers().subscribe((data: Player[]) => {
