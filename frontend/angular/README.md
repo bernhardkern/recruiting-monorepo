@@ -34,5 +34,5 @@ Es können ungültige Emails eingegeben werden. Füge eine Validierung hinzu.
 ---
 
 ```
-Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl.
+Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl und benutze sie für den weißen und den schwarzen spieler.∆
 ```
