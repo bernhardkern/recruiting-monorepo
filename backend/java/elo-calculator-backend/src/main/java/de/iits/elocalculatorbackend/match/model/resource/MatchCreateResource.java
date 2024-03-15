@@ -7,16 +7,16 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record MatchCreateResource(
-        @NotNull String whitePlayerUserName,
-        @NotNull String blackPlayerUserName,
+        @NotNull String whitePlayerUsername,
+        @NotNull String blackPlayerUsername,
         @NotNull Outcome outcome,
         @NotNull LocalDateTime date
         ) {
 
     public Match toMatch() {
         var match = new Match();
-        match.setBlackPlayerUsername(blackPlayerUserName);
-        match.setWhitePlayerUsername(whitePlayerUserName);
+        match.setBlackPlayerUsername(blackPlayerUsername);
+        match.setWhitePlayerUsername(whitePlayerUsername);
         match.setOutcome(outcome);
         match.setDate(date);
         return match;

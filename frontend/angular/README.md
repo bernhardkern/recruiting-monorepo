@@ -12,15 +12,27 @@ You can proxy to every backend. Just use these commands for the different beacke
 - `yarn run start:spring:java` -> Spring Boot Java Backend
 - `yarn run start:csharp` -> C# Backend
 
-## Code scaffolding
+## Specific angular exercises
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+```
+Das Bearbeiten eines Players geht nicht. Finde raus was das Problem ist.
+```
 
-Run `yarn build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+```
+Beim speichern eines 'Match' wird ein leerer String als Datum übergeben. Füge eine Möglichkeit hinzu, ein Datum einzugeben. Der Standardwert soll heute sein.
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
+```
+Es können ungültige Emails eingegeben werden. Füge eine Validierung hinzu.
+```
+
+---
+
+```
+Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl.
+```
