@@ -1,8 +1,8 @@
-package de.iits.elocalculatorbackend.player.service;
+package de.iits.elocalculatorbackend.ranking.service;
 
-import de.iits.elocalculatorbackend.player.model.resource.PlayerResponseResource;
-import de.iits.elocalculatorbackend.player.model.resource.RankingResource;
+import de.iits.elocalculatorbackend.player.model.dto.PlayerResponseDto;
 import de.iits.elocalculatorbackend.player.repository.PlayerRepository;
+import de.iits.elocalculatorbackend.ranking.model.dto.RankingResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,14 @@ public class RankingService {
 
     private PlayerRepository playerRepository;
 
-    public List<RankingResource> getTopPlayers(int top) {
+    public List<RankingResponseDto> getTopPlayers(int top) {
         var players = playerRepository.
                 findByOrderByEloDesc(Limit.of(top)).stream()
-                .map(PlayerResponseResource::new)
+                .map(PlayerResponseDto::new)
                 .toList();
 
         return IntStream.range(0, players.size())
-                .mapToObj(i -> new RankingResource(i, players.get(i)))
+                .mapToObj(index -> new RankingResponseDto(index + 1, players.get(index)))
                 .toList();
     }
 }

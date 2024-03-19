@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface PlayerRepository extends JpaRepository<Player, UUID> {
-    Optional<Player> findByUsername(String username);
-
+public interface PlayerRepository extends JpaRepository<Player, String> {
     List<Player> findByOrderByEloDesc(Limit limit);
 }

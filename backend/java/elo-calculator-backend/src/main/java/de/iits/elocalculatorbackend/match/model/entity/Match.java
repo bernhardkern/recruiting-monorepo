@@ -35,7 +35,7 @@ public class Match {
     @Enumerated(EnumType.STRING)
     private Outcome outcome;
 
-    @Column(name = "date")
-    private LocalDateTime date;
+    @Column(name = "played_on")
+    private LocalDateTime playedOn;
 
 }

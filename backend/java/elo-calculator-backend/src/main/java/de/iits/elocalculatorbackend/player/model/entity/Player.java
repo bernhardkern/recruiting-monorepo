@@ -1,5 +1,6 @@
 package de.iits.elocalculatorbackend.player.model.entity;
 
+import de.iits.elocalculatorbackend.player.model.dto.PlayerResponseDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,9 +19,6 @@ import java.util.UUID;
 public class Player {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-
     @Column(name = "user_name")
     private String username;
 
@@ -32,5 +30,4 @@ public class Player {
 
     @Column(name = "elo")
     private int elo = 100;
-
 }

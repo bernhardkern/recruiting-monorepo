@@ -2,6 +2,7 @@ package de.iits.elo.ranking.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import de.iits.elo.player.model.entity.Player
+import de.iits.elo.player.model.entity.toResponseDto
 import de.iits.elo.player.persistence.PlayerRepository
 import de.iits.elo.ranking.model.dto.RankingResponseDto
 import org.junit.jupiter.api.Nested
@@ -14,6 +15,7 @@ import org.springframework.test.web.servlet.get
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
+
 class RankingControllerIntegrationTest {
 
     @Autowired
@@ -34,8 +36,9 @@ class RankingControllerIntegrationTest {
                 .sortedBy(Player::elo)
                 .reversed()
                 .take(5)
-                .mapIndexed { index, user -> RankingResponseDto(index + 1, user) }
+                .mapIndexed { index, user -> RankingResponseDto(index + 1, user.toResponseDto()) }
             val top5playersAsJson = objectMapper.writeValueAsString(top5players)
+
             val requestResponse = mockMvc.get("/rankings?top=5")
 
             requestResponse.andExpectAll {
@@ -50,13 +53,13 @@ class RankingControllerIntegrationTest {
                 .sortedBy(Player::elo)
                 .reversed()
                 .take(1)
-                .mapIndexed { index, user -> RankingResponseDto(index + 1, user) }
-            val top5playersAsJson = objectMapper.writeValueAsString(topPlayer)
+                .mapIndexed { index, user -> RankingResponseDto(index + 1, user.toResponseDto()) }
+            val topPlayerAsJson = objectMapper.writeValueAsString(topPlayer)
             val requestResponse = mockMvc.get("/rankings?top=1")
 
             requestResponse.andExpectAll {
                 status { isOk() }
-                content { json(top5playersAsJson) }
+                content { json(topPlayerAsJson) }
             }
         }
 

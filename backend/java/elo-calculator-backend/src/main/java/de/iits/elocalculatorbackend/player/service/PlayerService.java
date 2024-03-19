@@ -1,8 +1,8 @@
 package de.iits.elocalculatorbackend.player.service;
 
+import de.iits.elocalculatorbackend.player.model.dto.PlayerCreateOrUpdateRequestDto;
+import de.iits.elocalculatorbackend.player.model.dto.PlayerResponseDto;
 import de.iits.elocalculatorbackend.player.model.entity.Player;
-import de.iits.elocalculatorbackend.player.model.resource.PlayerResponseResource;
-import de.iits.elocalculatorbackend.player.model.resource.PlayerUpsertResource;
 import de.iits.elocalculatorbackend.player.repository.PlayerRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -18,40 +17,33 @@ public class PlayerService {
 
     private PlayerRepository repository;
 
-    public PlayerResponseResource createPlayer(PlayerUpsertResource playerUpsertResource) {
-        Player player = new Player();
-        update(player, playerUpsertResource);
-        return new PlayerResponseResource(repository.save(player));
+    public PlayerResponseDto createPlayer(PlayerCreateOrUpdateRequestDto playerUpsertResource) {
+        return new PlayerResponseDto(repository.save(playerUpsertResource.toEntity()));
     }
 
-    public List<PlayerResponseResource> findAll() {
+    public List<PlayerResponseDto> findAll() {
         return repository.findAll()
                 .stream()
-                .map(PlayerResponseResource::new)
+                .map(PlayerResponseDto::new)
                 .toList();
     }
 
-    public Optional<PlayerResponseResource> findByUsername(String username) {
-        return repository.findByUsername(username)
-                .map(PlayerResponseResource::new);
+    public Optional<PlayerResponseDto> findByUsername(String username) {
+        return repository.findById(username)
+                .map(PlayerResponseDto::new);
     }
 
     @Transactional
-    public PlayerResponseResource updatePlayer(PlayerUpsertResource playerUpsertResource) {
+    public PlayerResponseDto updatePlayer(PlayerCreateOrUpdateRequestDto playerUpsertResource) {
         Player playerToUpdate = repository
-                .findById(playerUpsertResource.id())
-                .orElseThrow(() -> new IllegalStateException(String.format("no playerUpsertResource with id %s found",
-                        playerUpsertResource.id())));
+                .findById(playerUpsertResource.username())
+                .orElseThrow(() -> new IllegalStateException(String.format("No player exists with user name " + playerUpsertResource.username())));
 
         update(playerToUpdate, playerUpsertResource);
-        return new PlayerResponseResource(playerToUpdate);
+        return new PlayerResponseDto(repository.save(playerToUpdate));
     }
 
-    public boolean existsById(UUID playerId) {
-        return repository.existsById(playerId);
-    }
-
-    private void update(Player player, PlayerUpsertResource upsertResource) {
+    private void update(Player player, PlayerCreateOrUpdateRequestDto upsertResource) {
         player.setDisplayName(upsertResource.displayName());
         player.setEmail(upsertResource.email());
         player.setUsername(upsertResource.username());

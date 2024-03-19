@@ -1,7 +1,7 @@
-package de.iits.elocalculatorbackend.player.controller;
+package de.iits.elocalculatorbackend.ranking.controller;
 
-import de.iits.elocalculatorbackend.player.model.resource.RankingResource;
-import de.iits.elocalculatorbackend.player.service.RankingService;
+import de.iits.elocalculatorbackend.ranking.model.dto.RankingResponseDto;
+import de.iits.elocalculatorbackend.ranking.service.RankingService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class RankingController {
     private RankingService rankingService;
 
     @GetMapping("/rankings")
-    public ResponseEntity<List<RankingResource>> getRankings(@RequestParam int top) {
+    public ResponseEntity<List<RankingResponseDto>> getRankings(@RequestParam int top) {
         return ResponseEntity.ok(rankingService.getTopPlayers(top));
     }
 

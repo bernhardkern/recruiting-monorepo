@@ -1,7 +1,7 @@
 package de.iits.elocalculatorbackend.player.controller;
 
-import de.iits.elocalculatorbackend.player.model.resource.PlayerResponseResource;
-import de.iits.elocalculatorbackend.player.model.resource.PlayerUpsertResource;
+import de.iits.elocalculatorbackend.player.model.dto.PlayerCreateOrUpdateRequestDto;
+import de.iits.elocalculatorbackend.player.model.dto.PlayerResponseDto;
 import de.iits.elocalculatorbackend.player.service.PlayerService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -24,37 +24,35 @@ public class PlayerController {
     private PlayerService playerService;
 
     @GetMapping("/players")
-    public ResponseEntity<List<PlayerResponseResource>> getAllPlayers() {
+    public ResponseEntity<List<PlayerResponseDto>> getAllPlayers() {
         return ResponseEntity.ok(playerService.findAll());
     }
 
     @PutMapping("/players")
-    public ResponseEntity<PlayerResponseResource> updatePlayer(@RequestBody @Valid PlayerUpsertResource playerUpsertResource) {
-        if (!playerService.existsById(playerUpsertResource.id())) {
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<PlayerResponseDto> updatePlayer(@RequestBody(required = false) @Valid PlayerCreateOrUpdateRequestDto playerUpsertResource) {
+        if (playerUpsertResource == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for update, but no player was found in request body");
         }
-        PlayerResponseResource updatedPlayer = playerService.updatePlayer(playerUpsertResource);
-        return ResponseEntity.ok(updatedPlayer);
+        try {
+            return ResponseEntity.ok(playerService.updatePlayer(playerUpsertResource));
+        } catch (IllegalStateException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
     }
 
     @PostMapping("/players")
-    public ResponseEntity<PlayerResponseResource> createNewPlayer(@RequestBody @Valid PlayerUpsertResource playerUpsertResource) {
+    public ResponseEntity<PlayerResponseDto> createNewPlayer(@RequestBody(required = false) @Valid PlayerCreateOrUpdateRequestDto playerUpsertResource) {
+        if (playerUpsertResource == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Player required for creation, but no player was found in request body");
+        }
         return ResponseEntity.ok(playerService.createPlayer(playerUpsertResource));
     }
 
     @GetMapping("/players/{username}")
-    public ResponseEntity<PlayerResponseResource> getPlayerByUsername(@PathVariable String username) {
-        PlayerResponseResource player = playerService.findByUsername(username)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    public ResponseEntity<PlayerResponseDto> getPlayerByUsername(@PathVariable String username) {
+        PlayerResponseDto player = playerService.findByUsername(username)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Could not find player with user name " + username));
 
         return ResponseEntity.ok(player);
-    }
-
-    @GetMapping("/players/{username}/elo")
-    public ResponseEntity<Integer> getEloByUsername(@PathVariable String username) {
-        PlayerResponseResource player = playerService.findByUsername(username)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-
-        return ResponseEntity.ok(player.elo());
     }
 }

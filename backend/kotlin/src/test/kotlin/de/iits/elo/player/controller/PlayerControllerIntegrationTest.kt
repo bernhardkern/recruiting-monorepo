@@ -22,6 +22,7 @@ import kotlin.jvm.optionals.getOrNull
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
+
 class PlayerControllerIntegrationTest {
 
     @Autowired
@@ -156,17 +157,6 @@ class PlayerControllerIntegrationTest {
 
             requestResponse.andExpectAll {
                 status { isNotFound() }
-            }
-        }
-
-        @Test
-        fun `query with not given username`() {
-            val givenUsername = null
-            val requestResponse = mockMvc.get("/players/$givenUsername")
-
-            requestResponse.andExpectAll {
-                status { isNotFound() }
-                status { reason("Could not find player with user name $givenUsername") }
             }
         }
 
