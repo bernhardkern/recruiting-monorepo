@@ -28,11 +28,10 @@ Beim speichern eines 'Match' wird ein leerer String als Datum übergeben. Füge 
 ---
 
 ```
-Es können ungültige Emails eingegeben werden. Füge eine Validierung hinzu.
+Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl und benutze sie für den weißen und den schwarzen Spieler.∆
 ```
 
 ---
-
 ```
-Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl und benutze sie für den weißen und den schwarzen spieler.∆
+Es können ungültige Emails eingegeben werden. Füge eine Validierung hinzu. (Simple Umsetzung reicht erst einmal)
 ```
