@@ -6,24 +6,16 @@
   }
 </mat-toolbar>
 
-<form
-  #playerForm="ngForm"
-  class="app-content app-content__form"
->
+<form [formGroup]="playerForm" (ngSubmit)="submit()" class="app-content app-content__form">
   <!-- Username -->
   <mat-form-field>
     <mat-label>Username</mat-label>
     <input
       matInput
-      placeholder="Username"
-      name="username"
-      #usernameInput="ngModel"
-      [(ngModel)]="player.username"
-      required
-      [disabled]="isEditForm()"
+      formControlName="username"
     />
     <mat-error>
-      @if (usernameInput.errors && usernameInput.errors['required']) { Username is required }
+      @if (playerForm.get('username')?.errors?.['required']) { Username is required }
     </mat-error>
   </mat-form-field>
 
@@ -32,14 +24,10 @@
     <mat-label>Display Name</mat-label>
     <input
       matInput
-      placeholder="Display Name"
-      name="displayName"
-      #displayNameInput="ngModel"
-      [(ngModel)]="player.displayName"
-      required
+      formControlName="displayName"
     />
     <mat-error>
-      @if (displayNameInput.errors && !displayNameInput.errors['required']) { Display Name is required }
+      @if (playerForm.get('displayName')?.errors?.['required']) { Display Name is required }
     </mat-error>
   </mat-form-field>
 
@@ -48,16 +36,12 @@
     <mat-label>E-Mail</mat-label>
     <input
       matInput
-      type="email"
-      placeholder="Email"
-      name="email"
-      #emailInput="ngModel"
-      [(ngModel)]="player.email"
+      formControlName="email"
       required
     />
     <mat-error>
-      @if (emailInput.errors && !emailInput.errors['required']) { Email is required }
-      @else if (emailInput.dirty && player.email && !isValidEmail(player.email)) { Invalid email format }
+      @if (playerForm.get('email')?.errors?.['required']) { Email is required }
+      @else if (playerForm.get('email')?.errors?.['invalidEmail']) { Invalid email format }
     </mat-error>
   </mat-form-field>
   @if (isEditForm()) {
@@ -66,11 +50,8 @@
       <mat-label>Elo</mat-label>
       <input
         matInput
-        type="elo"
-        placeholder="Elo"
-        name="elo"
-        [(ngModel)]="elo"
-        disabled
+        type="number"
+        formControlName="elo"
       />
     </mat-form-field>
   }
@@ -78,5 +59,5 @@
 
 <app-footer
   [saveDisabled]="playerForm.invalid!"
-  [save]="submit()"
+  [save]="submit"
 ></app-footer>

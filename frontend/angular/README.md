@@ -4,34 +4,46 @@ This project serves as a tool for coding interviews, featuring a user interface 
 
 ## Development server
 
-Run `yarn run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+First install all dependencies with the package tool of your choice. E.g. `yarn install` or `npm install`
+
+Run `yarn run start` or `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 You can proxy to every backend. Just use these commands for the different beackends
-- `yarn run start:mock` -> Mock Server Backend
+- `yarn run start:mock` -> Mock Server Backend (this is the default Backend)
 - `yarn run start:spring:kotlin` -> Spring Boot Kotlin Backend
 - `yarn run start:spring:java` -> Spring Boot Java Backend
 - `yarn run start:csharp` -> C# Backend
+
+
+- `npm run start:mock` -> Mock Server Backend (this is the default Backend)
+- `npm run start:spring:kotlin` -> Spring Boot Kotlin Backend
+- `npm run start:spring:java` -> Spring Boot Java Backend
+- `npm run start:csharp` -> C# Backend
 
 ## Specific angular exercises
 
 
 ```
-Das Bearbeiten eines Players geht nicht. Finde raus was das Problem ist.
+Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und identifiziere und behebe die Ursache des Problems.
 ```
 
 ---
 
 ```
-Beim speichern eines 'Match' wird ein leerer String als Datum übergeben. Füge eine Möglichkeit hinzu, ein Datum einzugeben. Der Standardwert soll heute sein.
+Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend.
 ```
 
 ---
 
 ```
-Betrachte 'match-form.component.html'. Schreibe eine Komponente für die Spielerauswahl und benutze sie für den weißen und den schwarzen Spieler.∆
+Bitte ergänze eine Datumeingabekomponente aus dem material-Framework beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert.
 ```
 
 ---
+
 ```
-Es können ungültige Emails eingegeben werden. Füge eine Validierung hinzu. (Simple Umsetzung reicht erst einmal)
+Schau dir die Datei 'match-form.component.html' an. Erstelle eine wiederverwendbare Komponente für die Auswahl von Spielern und verwende sie sowohl für den weißen als auch für den schwarzen Spieler.
 ```
+
+---
+

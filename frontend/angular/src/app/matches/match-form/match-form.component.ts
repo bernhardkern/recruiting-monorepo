@@ -1,6 +1,6 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {NgForOf, NgIf} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
@@ -13,25 +13,25 @@ import {FooterComponent} from '../../_shared/footer/footer.component';
 import {ApiService} from "../../services/api.service";
 import {Player} from "../../models/player.model";
 import {Match} from "../../models/match.model";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
 
 @Component({
   selector: 'app-match-form',
   standalone: true,
   imports: [
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    NgIf,
-    MatSelectModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    RouterModule,
-    MatNativeDateModule,
-    MatToolbarModule,
     FooterComponent,
-    NgForOf
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatToolbarModule,
+    NgForOf,
+    NgIf,
+    ReactiveFormsModule,
+    RouterModule,
   ],
   templateUrl: './match-form.component.html',
   styleUrl: './match-form.component.scss',
@@ -39,18 +39,39 @@ import {Observable} from "rxjs";
 })
 export class MatchFormComponent {
   @Input() id = '';
-  constructor(private apiService: ApiService) {}
+  matchForm: FormGroup;
 
-  match: Match = {whitePlayerUsername: '', blackPlayerUsername: '', outcome: '', date: ''};
   players: string[] = [];
-
   outcomes: string[] = ['WHITE_WINS', 'BLACK_WINS', 'DRAW'];
 
-  submit = (): Observable<Match> => this.apiService.createMatch(this.match)
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
+    this.matchForm = this.fb.group({
+      whitePlayerUsername: ['', Validators.required],
+      blackPlayerUsername: ['', Validators.required],
+      outcome: ['', Validators.required]
+    });
+  }
+
+  touchAllFields(): void {
+    this.matchForm.markAllAsTouched();
+  }
+
+  submit = (): Observable<Match> => {
+    if (this.matchForm.valid) {
+
+      return this.apiService.createMatch(this.matchForm.value);
+    } else {
+      this.touchAllFields()
+      return throwError(() => new Error('The form is invalid'));
+    }
+  }
 
   ngOnInit() {
+
     this.apiService.getPlayers().subscribe((data: Player[]) => {
       this.players = data.map((player) => player.displayName).sort();
     });
   }
+
+  protected readonly JSON = JSON;
 }

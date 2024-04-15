@@ -3,5 +3,5 @@ export interface Match {
   whitePlayerUsername: string,
   blackPlayerUsername: string,
   outcome: string,
-  date: string,
+  date?: string,
 }

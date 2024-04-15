@@ -84,14 +84,11 @@ describe('PlayerFormComponent', () => {
 
     component.username = expectedUsername;
 
-
-    component.ngOnChanges({
-      username: new SimpleChange(null, expectedUsername, true)
-    });
+    component.ngOnInit();
 
     component.submit();
 
-    expect(component.player).toEqual(expectedPlayer)
+    expect(component.playerForm.value).toEqual(expectedPlayer)
     expect(mockApiService.getPlayer).toHaveBeenCalledWith(expectedUsername);
     expect(mockApiService.getPlayerElo).toHaveBeenCalledWith(expectedUsername);
     expect(mockApiService.updatePlayer).toHaveBeenCalledWith(expectedPlayer);

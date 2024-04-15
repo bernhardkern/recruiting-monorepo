@@ -72,10 +72,9 @@ describe('MatchFormComponent', () => {
       whitePlayerUsername: 'SunshineHeart',
       blackPlayerUsername: 'RainbowHug',
       outcome: 'WHITE_WINS',
-      date: new Date().toString()
     };
 
-    component.match = matchToSubmit;
+    component.matchForm.patchValue(matchToSubmit);
     mockApiService.createMatch.and.returnValue(of(matchToSubmit));
 
     component.ngOnInit()

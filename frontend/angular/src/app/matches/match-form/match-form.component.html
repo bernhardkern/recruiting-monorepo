@@ -1,62 +1,38 @@
-<mat-toolbar color="secondary"> Create new match </mat-toolbar>
+<mat-toolbar color="secondary">Create new match</mat-toolbar>
 
-<form #matchForm="ngForm" class="app-content app-content__form">
+<form [formGroup]="matchForm" class="app-content app-content__form" (ngSubmit)="submit()">
   <!-- Player 1 -->
   <mat-form-field>
     <mat-label>White Player</mat-label>
-    <mat-select
-      required
-      [(ngModel)]="match.whitePlayerUsername"
-      name="whitePlayerUsername"
-      #whitePlayerInput="ngModel"
-    >
-      <mat-option *ngFor="let player of players" [value]="player">{{
-        player
-      }}</mat-option>
+    <mat-select formControlName="whitePlayerUsername">
+      <mat-option *ngFor="let player of players" [value]="player">{{ player }}</mat-option>
     </mat-select>
-    <mat-error>
-      @if (whitePlayerInput.errors && whitePlayerInput.errors['required']) {
-      White Player is required }
+    <mat-error *ngIf="matchForm.get('whitePlayerUsername')?.errors?.['required']">
+      White Player is required
     </mat-error>
   </mat-form-field>
 
   <!-- Player 2 -->
   <mat-form-field>
     <mat-label>Black Player</mat-label>
-    <mat-select
-      required
-      [(ngModel)]="match.blackPlayerUsername"
-      name="blackPlayerUsername"
-      #blackPlayerInput="ngModel"
-    >
-      <mat-option *ngFor="let player of players" [value]="player">{{
-        player
-      }}</mat-option>
+    <mat-select formControlName="blackPlayerUsername">
+      <mat-option *ngFor="let player of players" [value]="player">{{ player }}</mat-option>
     </mat-select>
-    <mat-error>
-      @if (blackPlayerInput.errors && blackPlayerInput.errors['required']) {
-      Black Player is required }
+    <mat-error *ngIf="matchForm.get('blackPlayerUsername')?.errors?.['required']">
+      Black Player is required
     </mat-error>
   </mat-form-field>
 
   <!-- Outcome -->
   <mat-form-field>
     <mat-label>Outcome</mat-label>
-    <mat-select
-      required
-      [(ngModel)]="match.outcome"
-      name="outcome"
-      #outcomeInput="ngModel"
-    >
-      <mat-option *ngFor="let outcome of outcomes" [value]="outcome">{{
-        outcome
-      }}</mat-option>
+    <mat-select formControlName="outcome">
+      <mat-option *ngFor="let outcome of outcomes" [value]="outcome">{{ outcome }}</mat-option>
     </mat-select>
-    <mat-error>
-      @if (outcomeInput.errors && outcomeInput.errors['required']) { Outcome is
-      required }
+    <mat-error *ngIf="matchForm.get('outcome')?.errors?.['required']">
+      Outcome is required
     </mat-error>
   </mat-form-field>
 </form>
 
-<app-footer [saveDisabled]="matchForm.invalid!" [save]="submit()"></app-footer>
+<app-footer [saveDisabled]="matchForm.invalid" [save]="submit"></app-footer>

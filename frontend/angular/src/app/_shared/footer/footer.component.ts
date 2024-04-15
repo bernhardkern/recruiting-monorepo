@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FooterComponent {
   @Input() isGridComponent = false;
   @Input() saveDisabled = false;
-  @Input() save: Observable<any> = EMPTY;
+  @Input() save: (() => Observable<any>) = () => EMPTY;
 
   constructor(
     private router: Router,
@@ -45,7 +45,7 @@ export class FooterComponent {
   }
 
   private emitSave() {
-    this.save.subscribe({
+    this.save().subscribe({
       next: () => {
         this.navigateBack();
         this.toastrService.success('Saved successfully');

@@ -1,45 +1,54 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { FooterComponent } from '../../_shared/footer/footer.component';
+import {Component, Input} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {NgForOf, NgIf} from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {FooterComponent} from '../../_shared/footer/footer.component';
 import {ApiService} from "../../services/api.service";
 import {Player} from "../../models/player.model";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {throwError} from "rxjs";
 
 @Component({
   selector: 'app-player-form',
   standalone: true,
   templateUrl: './player-form.component.html',
   styleUrl: './player-form.component.scss',
-  host: { class: 'app-wrapper' },
+  host: {class: 'app-wrapper'},
   imports: [
-    NgIf,
-    MatCardModule,
-    MatInputModule,
+    FooterComponent,
     FormsModule,
     MatButtonModule,
-    ReactiveFormsModule,
-    RouterLink,
+    MatCardModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSelectModule,
     MatToolbarModule,
-    FooterComponent,
+    NgForOf,
+    NgIf,
+    ReactiveFormsModule,
+    RouterModule,
   ],
 })
 export class PlayerFormComponent {
   @Input() username = '';
-
-  constructor(private apiService: ApiService) {}
-
   elo: number | null = null
-  player: Player = {
-    id: '',
-    username: '',
-    displayName: '',
-    email: '',
-    elo: 0
+  playerForm: FormGroup;
+
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
+    this.playerForm = this.fb.group({
+      id: [''],
+      username: [{value: '', disabled: this.isEditForm()}, Validators.required],
+      displayName: ['', Validators.required],
+      email: ['', [Validators.required]],
+      elo: [{value: 0, disabled: this.isEditForm()}]
+    });
   }
 
   isValidEmail(email: string): boolean {
@@ -48,18 +57,35 @@ export class PlayerFormComponent {
 
   isEditForm = () => !!this.username
 
-  submit = () => this.isEditForm() ? this.apiService.updatePlayer(this.player) : this.apiService.createPlayer(this.player)
+  touchAllFields(): void {
+    this.playerForm.markAllAsTouched();
+  }
 
-  ngOnChanges(changes: SimpleChanges) {
-    const newUsername = changes['username'].currentValue
-    if (changes['username'].currentValue) {
+  submit = () => {
+    if (this.playerForm.valid) {
 
-      this.apiService.getPlayer(newUsername).subscribe((data: Player) => {
-        this.player = data;
+      return this.isEditForm() ? this.apiService.updatePlayer({...this.playerForm.value, username: this.username}) : this.apiService.createPlayer(this.playerForm.value)
+    }
+    else {
+      this.touchAllFields()
+      return throwError(() => new Error('The form is invalid'));
+    }
+  }
+
+  ngOnInit() {
+    if (this.username) {
+      this.apiService.getPlayer(this.username).subscribe((data: Player) => {
+        this.playerForm.patchValue({
+          id: data.id,
+          username: data.username,
+          displayName: data.displayName,
+          email: data.email
+        });
       });
-      this.apiService.getPlayerElo(newUsername).subscribe((data: number) => {
+
+      this.apiService.getPlayerElo(this.username).subscribe((data: number) => {
         this.elo = data;
-        this.player.elo = data
+        this.playerForm.get('elo')?.setValue(data);
       });
     }
   }
