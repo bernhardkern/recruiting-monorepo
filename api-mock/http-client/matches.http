@@ -11,7 +11,7 @@ Content-Type: application/json
   "whitePlayerUsername": "careBear3000",
   "blackPlayerUsername": "lovingAndCaring4Bears",
   "outcome": "TWO_WINS",
-  "timestamp": 1602329862
+  "playedOn": "2024-04-01T20:15:30Z"
 }
 
 ### create match java/kotlin

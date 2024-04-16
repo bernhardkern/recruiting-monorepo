@@ -9,8 +9,8 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
-    url: 'https://iits-consulting.de/wp-content/uploads/2021/08/iits-logo-2021-red-square-xl.png'
-  
+    url: 'https://iits-consulting.de/wp-content/uploads/2024/03/logo-iits-2024-final-filled.svg'
+
   description: |
     Hello World!
 
@@ -18,7 +18,7 @@ paths:
   '/players':
     get:
       tags:
-        - Player
+      - Player
       summary: Get all registered players
       operationId: getAllPlayers
       responses:
@@ -32,7 +32,7 @@ paths:
                   $ref: '#/components/schemas/Player'
     put:
       tags:
-        - Player
+      - Player
       summary: Update data of a player
       operationId: updatePlayer
       requestBody:
@@ -71,7 +71,7 @@ paths:
           description: Player not found in database
     post:
       tags:
-        - Player
+      - Player
       summary: Create a new player
       operationId: createNewPlayer
       requestBody:
@@ -108,16 +108,16 @@ paths:
   '/players/{username}':
     get:
       tags:
-        - Player
+      - Player
       summary: Get player by username
       operationId: getPlayerByUsername
       parameters:
-        - name: username
-          in: path
-          description: The username of the player
-          required: true
-          schema:
-            type: string
+      - name: username
+        in: path
+        description: The username of the player
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Success
@@ -131,7 +131,7 @@ paths:
   '/matches':
     get:
       tags:
-        - Match
+      - Match
       summary: Get all matches
       operationId: getAllMatches
       responses:
@@ -145,7 +145,7 @@ paths:
                   $ref: '#/components/schemas/Match'
     post:
       tags:
-        - Match
+      - Match
       summary: Create a new match
       operationId: createNewMatch
       requestBody:
@@ -167,7 +167,7 @@ paths:
                 outcome:
                   description: Result of the match
                   type: string
-                  enum: [ BLACK_WINS, WHITE_WINS, DRAW ]
+                  enum: [BLACK_WINS, WHITE_WINS, DRAW]
         description: Updated match object
         required: true
       responses:
@@ -183,16 +183,16 @@ paths:
   '/rankings':
     get:
       tags:
-        - Ranking
+      - Ranking
       summary: Get the top x players
       operationId: getRankings
       parameters:
-        - name: top
-          in: query
-          description: Number of top players
-          required: true
-          schema:
-            type: integer
+      - name: top
+        in: query
+        description: Number of top players
+        required: true
+        schema:
+          type: integer
       responses:
         '200':
           description: Success
@@ -248,7 +248,7 @@ components:
         outcome:
           description: Result of the match
           type: string
-          enum: [ BLACK_WINS, WHITE_WINS, DRAW ]
+          enum: [BLACK_WINS, WHITE_WINS, DRAW]
         playedOn:
           description: Date of the match
           type: string

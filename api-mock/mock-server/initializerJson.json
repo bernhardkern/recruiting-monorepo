@@ -398,133 +398,133 @@
           "whitePlayerUsername": "careBear3000",
           "blackPlayerUsername": "lovingAndCaring4Bears",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "707fa739-f8c9-420e-8753-aafe4f57d223",
           "whitePlayerUsername": "lovingAndCaring4Bears",
           "blackPlayerUsername": "careBear3000",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "3ec5e4fe-a0d4-4489-bd7c-e50e2f1ee163",
           "whitePlayerUsername": "careBear3000",
           "blackPlayerUsername": "lovingAndCaring4Bears",
           "outcome": "DRAW",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "ea8c63ad-a4ed-4960-b685-78442e10d345",
           "whitePlayerUsername": "careBear3000",
           "blackPlayerUsername": "lovingAndCaring4Bears",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
           "whitePlayerUsername": "tenderHearted",
           "blackPlayerUsername": "gentleGiggler",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
           "whitePlayerUsername": "grizzleGazer",
           "blackPlayerUsername": "laughingLullaby",
           "outcome": "DRAW",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "c3d4e5f6-7890-abcd-efghijklmno",
           "whitePlayerUsername": "cheerUpCharlie",
           "blackPlayerUsername": "harmonyHarper",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
           "whitePlayerUsername": "wishBearDreams",
           "blackPlayerUsername": "cuddleBug",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
           "whitePlayerUsername": "shareABear",
           "blackPlayerUsername": "shareASnuggle",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
           "whitePlayerUsername": "grumpyGrins",
           "blackPlayerUsername": "compassionCub",
           "outcome": "DRAW",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
           "whitePlayerUsername": "harmonyHarbor",
           "blackPlayerUsername": "gentleGlow",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
           "whitePlayerUsername": "caringCartoons",
           "blackPlayerUsername": "gratefulGiggles",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
           "whitePlayerUsername": "gratefulGumdrop",
           "blackPlayerUsername": "heartfeltHugs",
           "outcome": "DRAW",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "j0k1l2m3-defg-hijk-lmnopqrstuvw",
           "whitePlayerUsername": "sunshineBearHug",
           "blackPlayerUsername": "tenderTwinkle",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "k1l2m3n4-efgh-ijkl-mnopqrstuvwx",
           "whitePlayerUsername": "joyfulJamboree",
           "blackPlayerUsername": "warmWishes",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "l2m3n4o5-fghi-jklm-nopq-rstuvwxy",
           "whitePlayerUsername": "careFreeCrafter",
           "blackPlayerUsername": "sincereSnuggler",
           "outcome": "DRAW",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "m3n4o5p6-ijkl-mnop-qrst-uvwxyzab",
           "whitePlayerUsername": "gentleGleam",
           "blackPlayerUsername": "gratitudeGazer",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "n4o5p6q7-klm-nopq-rstu-vwxyzabcde",
           "whitePlayerUsername": "gratitudeGazer",
           "blackPlayerUsername": "caringComet",
           "outcome": "BLACK_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         },
         {
           "id": "o5p6q7r8-mnop-qrst-uvw-xyzabcdefgh",
           "whitePlayerUsername": "caringComet",
           "blackPlayerUsername": "beamOfLove",
           "outcome": "WHITE_WINS",
-          "timestamp": 1602329862
+          "playedOn": "2024-04-01T20:15:30Z"
         }
       ]
     }
@@ -540,7 +540,7 @@
         "whitePlayerUsername": "careBear3000",
         "blackPlayerUsername": "lovingAndCaring4Bears",
         "outcome": "WHITE_WINS",
-        "timestamp": 1602329862
+        "playedOn": "2024-04-01T20:15:30Z"
       }
     }
   },
@@ -551,9 +551,7 @@
       "queryStringParameters": [
         {
           "name": "top",
-          "values": [
-            "3"
-          ]
+          "values": ["3"]
         }
       ]
     },
@@ -593,9 +591,7 @@
       "queryStringParameters": [
         {
           "name": "top",
-          "values": [
-            "15"
-          ]
+          "values": ["15"]
         }
       ]
     },

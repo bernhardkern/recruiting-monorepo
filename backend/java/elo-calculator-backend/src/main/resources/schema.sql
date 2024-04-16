@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS match
     white_player_user_name   VARCHAR(255) NOT NULL,
     black_player_user_name   VARCHAR(255) NOT NULL,
     outcome                  VARCHAR(10) NOT NULL,
-    date                     TIMESTAMP NOT NULL,
+    played_on                     TIMESTAMP NOT NULL,
     PRIMARY KEY (id)
 );

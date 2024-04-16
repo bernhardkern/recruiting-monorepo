@@ -1,8 +1,11 @@
-import {TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {ApiService} from './api.service';
-import {Player, RankedPlayer} from "../models/player.model";
-import {Match} from "../models/match.model"; // Correct the path as necessary
+import { TestBed } from '@angular/core/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+import { ApiService } from './api.service';
+import { Player, RankedPlayer } from '../models/player.model';
+import { Match } from '../models/match.model'; // Correct the path as necessary
 
 describe('ApiService', () => {
   let service: ApiService;
@@ -11,7 +14,7 @@ describe('ApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ApiService]
+      providers: [ApiService],
     });
 
     service = TestBed.inject(ApiService);
@@ -20,15 +23,27 @@ describe('ApiService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  })
+  });
 
   it('should fetch players', () => {
     const mockPlayers: Player[] = [
-      {id: '1', username: 'SunshineBear', displayName: 'Sunny Bear', email: 'sunny@carebears.com', elo: 1000},
-      {id: '2', username: 'MoonlightBear', displayName: 'Moon Bear', email: 'moon@carebears.com', elo: 1200},
+      {
+        id: '1',
+        username: 'SunshineBear',
+        displayName: 'Sunny Bear',
+        email: 'sunny@carebears.com',
+        elo: 1000,
+      },
+      {
+        id: '2',
+        username: 'MoonlightBear',
+        displayName: 'Moon Bear',
+        email: 'moon@carebears.com',
+        elo: 1200,
+      },
     ];
 
-    service.getPlayers().subscribe(players => {
+    service.getPlayers().subscribe((players) => {
       expect(players.length).toBe(2);
       expect(players).toEqual(mockPlayers);
     });
@@ -44,10 +59,10 @@ describe('ApiService', () => {
       username: 'RainbowBear',
       displayName: 'Rainbow Bear',
       email: 'rainbow@carebears.com',
-      elo: 1100
+      elo: 1100,
     };
 
-    service.createPlayer(newPlayer).subscribe(player => {
+    service.createPlayer(newPlayer).subscribe((player) => {
       expect(player).toEqual(newPlayer);
     });
 
@@ -63,14 +78,16 @@ describe('ApiService', () => {
       username: 'StarshineBear',
       displayName: 'Starshine Bear',
       email: 'starshine@carebears.com',
-      elo: 1300
+      elo: 1300,
     };
 
-    service.updatePlayer(updatedPlayer).subscribe(player => {
+    service.updatePlayer(updatedPlayer).subscribe((player) => {
       expect(player).toEqual(updatedPlayer);
     });
 
-    const req = httpMock.expectOne(`${service.apiUrl}/players/${updatedPlayer.username}`);
+    const req = httpMock.expectOne(
+      `${service.apiUrl}/players/${updatedPlayer.username}`
+    );
     expect(req.request.method).toBe('PUT');
     expect(req.request.body).toEqual(updatedPlayer);
     req.flush(updatedPlayer);
@@ -83,10 +100,10 @@ describe('ApiService', () => {
       username: 'SunshineBear',
       displayName: 'Sunny Bear',
       email: 'sunny@carebears.com',
-      elo: 1000
+      elo: 1000,
     };
 
-    service.getPlayer(username).subscribe(player => {
+    service.getPlayer(username).subscribe((player) => {
       expect(player).toEqual(expectedPlayer);
     });
 
@@ -99,7 +116,7 @@ describe('ApiService', () => {
     const username = 'MoonlightBear';
     const expectedElo = 1200;
 
-    service.getPlayerElo(username).subscribe(elo => {
+    service.getPlayerElo(username).subscribe((elo) => {
       expect(elo).toBe(expectedElo);
     });
 
@@ -108,14 +125,25 @@ describe('ApiService', () => {
     req.flush(expectedElo);
   });
 
-
   it('should fetch matches', () => {
     const mockMatches: Match[] = [
-      {id: '1', whitePlayerUsername: 'SunshineBear', blackPlayerUsername: 'MoonlightBear', outcome: 'DRAW', date: '2024-05-04T00:00:00'},
-      {id: '2', whitePlayerUsername: 'RainbowBear', blackPlayerUsername: 'StarshineBear', outcome: 'DRAW', date: '2024-05-04T00:00:00'},
+      {
+        id: '1',
+        whitePlayerUsername: 'SunshineBear',
+        blackPlayerUsername: 'MoonlightBear',
+        outcome: 'DRAW',
+        playedOn: '2024-05-04T00:00:00Z',
+      },
+      {
+        id: '2',
+        whitePlayerUsername: 'RainbowBear',
+        blackPlayerUsername: 'StarshineBear',
+        outcome: 'DRAW',
+        playedOn: '2024-05-04T00:00:00Z',
+      },
     ];
 
-    service.getMatches().subscribe(matches => {
+    service.getMatches().subscribe((matches) => {
       expect(matches.length).toBe(2);
       expect(matches).toEqual(mockMatches);
     });
@@ -130,10 +158,10 @@ describe('ApiService', () => {
       whitePlayerUsername: 'RainbowBear',
       blackPlayerUsername: 'StarshineBear',
       outcome: 'RainbowBear',
-      date: '2024-05-04T00:00:00'
+      playedOn: '2024-05-04T00:00:00Z',
     };
 
-    service.createMatch(newMatch).subscribe(match => {
+    service.createMatch(newMatch).subscribe((match) => {
       expect(match).toEqual(newMatch);
     });
 
@@ -146,11 +174,29 @@ describe('ApiService', () => {
   it('should fetch player rankings', () => {
     const top = 10;
     const mockRankings: RankedPlayer[] = [
-      {rank: 1, player: {id: '1', username: 'SunshineBear', elo: 1500, displayName: 'Sunny Bear', email: 'sunny@carebears.com'}},
-      {rank: 2, player: {id: '2', username: 'RainbowBear', elo: 1450, displayName: 'Rainbow Bear', email: 'rainbow@carebears.com'}},
+      {
+        rank: 1,
+        player: {
+          id: '1',
+          username: 'SunshineBear',
+          elo: 1500,
+          displayName: 'Sunny Bear',
+          email: 'sunny@carebears.com',
+        },
+      },
+      {
+        rank: 2,
+        player: {
+          id: '2',
+          username: 'RainbowBear',
+          elo: 1450,
+          displayName: 'Rainbow Bear',
+          email: 'rainbow@carebears.com',
+        },
+      },
     ];
 
-    service.getRankings(top).subscribe(rankings => {
+    service.getRankings(top).subscribe((rankings) => {
       expect(rankings.length).toBe(2);
       expect(rankings).toEqual(mockRankings);
     });

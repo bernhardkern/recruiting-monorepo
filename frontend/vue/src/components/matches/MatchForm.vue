@@ -2,7 +2,6 @@
 import { ErrorMessage, useForm } from 'vee-validate'
 import { onBeforeMount, ref } from 'vue'
 // @ts-ignore
-import Calendar from 'primevue/calendar'
 import Dropdown from 'primevue/dropdown'
 import * as yup from 'yup'
 
@@ -25,8 +24,7 @@ const { showError, showSuccess } = useToaster()
 const validationRules = yup.object<Partial<MatchFrontend>>({
   whitePlayerUsername: yup.string().required().label('White Player'),
   blackPlayerUsername: yup.string().required().label('Black Player'),
-  outcome: yup.string().required().label('Outcome'),
-  timestamp: yup.string().required().label('Date')
+  outcome: yup.string().required().label('Outcome')
 })
 
 const { defineField, isFieldDirty, errors, handleSubmit } = useForm<MatchFrontend>({
@@ -36,7 +34,6 @@ const { defineField, isFieldDirty, errors, handleSubmit } = useForm<MatchFronten
 const [whitePlayerUsername, whitePlayerUsernameAttrs] = defineField('whitePlayerUsername')
 const [blackPlayerUsername, blackPlayerUsernameAttrs] = defineField('blackPlayerUsername')
 const [outcome, outcomeAttrs] = defineField('outcome')
-const [timestamp, timestampAttrs] = defineField('timestamp')
 
 const { navigateToParentRoute } = useNavigate()
 function onCancel() {
@@ -75,8 +72,7 @@ onBeforeMount(async () => {
 defineExpose({
   whitePlayerUsername, //
   blackPlayerUsername,
-  outcome,
-  timestamp
+  outcome
 })
 </script>
 
@@ -136,22 +132,6 @@ defineExpose({
         </template>
         <template #errorMessage>
           <ErrorMessage name="outcome" />
-        </template>
-      </FormField>
-      <FormField>
-        <template #default>
-          <Calendar
-            v-model="timestamp"
-            showIcon
-            iconDisplay="input"
-            placeholder="Date*"
-            class="w-full md:w-14rem"
-            v-bind="timestampAttrs"
-            :class="{ 'p-invalid': !!errors.timestamp, 'p-dirty': isFieldDirty('timestamp') }"
-          />
-        </template>
-        <template #errorMessage>
-          <ErrorMessage name="timestamp" />
         </template>
       </FormField>
     </ScrollableLayout>

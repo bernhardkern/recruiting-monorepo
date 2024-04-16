@@ -23,7 +23,7 @@ const createMatchResponse: MatchResource = {
   whitePlayerUsername: 'White Mustermann',
   blackPlayerUsername: 'Black Mustermann',
   outcome: Outcome.DRAW,
-  timestamp: 1602329862
+  playedOn: '2024-04-01T20:00:00Z'
 }
 const getPlayersResponse: Array<Player> = [
   {
@@ -158,7 +158,7 @@ describe('MatchForm.vue', () => {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
         outcome: Outcome.DRAW,
-        timestamp: new Date(1706137200000).toUTCString()
+        playedOn: '2024-04-01T20:00:00Z'
       }
       await setDropdownValueByPlaceholder(
         wrapper,
@@ -171,7 +171,6 @@ describe('MatchForm.vue', () => {
         matchFormData.blackPlayerUsername
       )
       await setDropdownValueByPlaceholder(wrapper, 'Outcome*', matchFormData.outcome)
-      await setCalendarValueByPlaceholder(wrapper, 'Date*', matchFormData.timestamp)
 
       const actionBarElement = wrapper.find('action-bar-stub')
       const actionBarButtons = actionBarElement.findAllComponents(
@@ -194,7 +193,7 @@ describe('MatchForm.vue', () => {
       wrapper = shallowMount(sut, {
         global: {
           renderStubDefaultSlot: true,
-          components: { AnimatedButton, Calendar, Dropdown },
+          components: { AnimatedButton, Dropdown },
           plugins: [mockRouterPlugin]
         }
       })
@@ -202,14 +201,12 @@ describe('MatchForm.vue', () => {
       const matchFormData: MatchFrontend = {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
-        outcome: Outcome.DRAW,
-        timestamp: new Date(1706137200000).toUTCString()
+        outcome: Outcome.DRAW
       }
       const matchResource: MatchResource = {
         whitePlayerUsername: matchFormData.whitePlayerUsername,
         blackPlayerUsername: matchFormData.blackPlayerUsername,
-        outcome: matchFormData.outcome,
-        timestamp: 1706137200000
+        outcome: matchFormData.outcome
       }
       await setDropdownValueByPlaceholder(
         wrapper,
@@ -222,7 +219,6 @@ describe('MatchForm.vue', () => {
         matchFormData.blackPlayerUsername
       )
       await setDropdownValueByPlaceholder(wrapper, 'Outcome*', matchFormData.outcome)
-      await setCalendarValueByPlaceholder(wrapper, 'Date*', matchFormData.timestamp)
 
       const actionBarElement = wrapper.find('action-bar-stub')
       const actionBarButtons = actionBarElement.findAllComponents(

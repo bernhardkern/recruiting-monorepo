@@ -6,7 +6,7 @@ export function matchResourceToMatchFrontend(matchResource: MatchResource): Matc
     whitePlayerUsername: matchResource.whitePlayerUsername,
     blackPlayerUsername: matchResource.blackPlayerUsername,
     outcome: matchResource.outcome,
-    timestamp: matchResource.timestamp ? new Date(matchResource.timestamp).toUTCString() : ''
+    playedOn: matchResource.playedOn ? new Date(matchResource.playedOn).toUTCString() : ''
   }
 }
 
@@ -16,6 +16,6 @@ export function matchFrontendToMatchResource(matchFrontend: MatchFrontend): Matc
     whitePlayerUsername: matchFrontend.whitePlayerUsername,
     blackPlayerUsername: matchFrontend.blackPlayerUsername,
     outcome: matchFrontend.outcome,
-    timestamp: matchFrontend.timestamp ? new Date(matchFrontend.timestamp).getTime() : undefined
+    playedOn: matchFrontend.playedOn ? new Date(matchFrontend.playedOn).toISOString() : undefined
   }
 }

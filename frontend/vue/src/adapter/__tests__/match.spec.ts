@@ -11,14 +11,14 @@ describe('match.ts', () => {
     whitePlayerUsername: 'White Mustermann',
     blackPlayerUsername: 'Black Mustermann',
     outcome: Outcome.DRAW,
-    timestamp: new Date(1706137200000).toUTCString()
+    playedOn: '2024-04-01T20:00:00Z'
   }
   const matchResource: MatchResource = {
     id: undefined,
     whitePlayerUsername: matchFrontend.whitePlayerUsername,
     blackPlayerUsername: matchFrontend.blackPlayerUsername,
     outcome: matchFrontend.outcome,
-    timestamp: 1706137200000
+    playedOn: '2024-04-01T20:00:00Z'
   }
 
   describe('matchFrontendToMatchResource', () => {

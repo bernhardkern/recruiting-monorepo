@@ -5,7 +5,7 @@ export interface MatchResource {
   whitePlayerUsername: string
   blackPlayerUsername: string
   outcome: Outcome
-  timestamp?: number
+  playedOn?: string
 }
 
 export interface MatchFrontend {
@@ -13,5 +13,5 @@ export interface MatchFrontend {
   whitePlayerUsername: string
   blackPlayerUsername: string
   outcome: Outcome
-  timestamp?: string
+  playedOn?: string
 }

@@ -26,7 +26,7 @@ describe('matches.ts', () => {
           whitePlayerUsername: 'White Mustermann',
           blackPlayerUsername: 'Black Mustermann',
           outcome: Outcome.DRAW,
-          timestamp: 1602329862
+          playedOn: new Date().toISOString()
         }
       ]
       const requestGetSpy = request.get as Mock<any, any>
@@ -58,7 +58,7 @@ describe('matches.ts', () => {
         whitePlayerUsername: 'White Mustermann',
         blackPlayerUsername: 'Black Mustermann',
         outcome: Outcome.DRAW,
-        timestamp: 1602329862
+        playedOn: new Date().toISOString()
       }
       const requestPostSpy = request.post as Mock<any, any>
       requestPostSpy.mockResolvedValueOnce(testResponse)
