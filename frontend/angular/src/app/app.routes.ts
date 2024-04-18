@@ -22,7 +22,7 @@ export const routes: Routes = [
         component: PlayerGridComponent,
       },
       {
-        path: ':playerName/edit',
+        path: ':playerName/edit', // mapped with @Input('playerName')
         component: PlayerFormComponent,
       },
       {

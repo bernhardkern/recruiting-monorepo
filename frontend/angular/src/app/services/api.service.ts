@@ -22,7 +22,7 @@ export class ApiService {
   }
 
   updatePlayer(player: Player): Observable<Player> {
-    return this.http.put<Player>(`${this.apiUrl}/players/${player.username}`, player);
+    return this.http.put<Player>(`${this.apiUrl}/players`, player);
   }
 
   getPlayer(username: string): Observable<Player> {

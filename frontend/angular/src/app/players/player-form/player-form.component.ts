@@ -37,17 +37,19 @@ import {throwError} from "rxjs";
   ],
 })
 export class PlayerFormComponent {
-  @Input() username = '';
+  @Input("player") username = '';
   elo: number | null = null
   playerForm: FormGroup;
 
   constructor(private apiService: ApiService, private fb: FormBuilder) {
+    console.log(this.isEditForm())
+    console.log(this.username)
     this.playerForm = this.fb.group({
       id: [''],
-      username: [{value: '', disabled: this.isEditForm()}, Validators.required],
+      username: ['', Validators.required],
       displayName: ['', Validators.required],
       email: ['', [Validators.required]],
-      elo: [{value: 0, disabled: this.isEditForm()}]
+      elo: [0]
     });
   }
 
@@ -64,9 +66,8 @@ export class PlayerFormComponent {
   submit = () => {
     if (this.playerForm.valid) {
 
-      return this.isEditForm() ? this.apiService.updatePlayer({...this.playerForm.value, username: this.username}) : this.apiService.createPlayer(this.playerForm.value)
-    }
-    else {
+      return this.isEditForm() ? this.apiService.updatePlayer(this.playerForm.value) : this.apiService.createPlayer(this.playerForm.value)
+    } else {
       this.touchAllFields()
       return throwError(() => new Error('The form is invalid'));
     }
@@ -74,6 +75,8 @@ export class PlayerFormComponent {
 
   ngOnInit() {
     if (this.username) {
+      this.playerForm.get("username")?.disable()
+      this.playerForm.get("elo")?.disable()
       this.apiService.getPlayer(this.username).subscribe((data: Player) => {
         this.playerForm.patchValue({
           id: data.id,
