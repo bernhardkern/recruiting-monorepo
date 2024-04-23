@@ -42,8 +42,6 @@ export class PlayerFormComponent {
   playerForm: FormGroup;
 
   constructor(private apiService: ApiService, private fb: FormBuilder) {
-    console.log(this.isEditForm())
-    console.log(this.username)
     this.playerForm = this.fb.group({
       id: [''],
       username: ['', Validators.required],
