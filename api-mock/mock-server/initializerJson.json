@@ -749,14 +749,5 @@
         }
       ]
     }
-  },
-  {
-    "httpRequest": {
-      "path": "/rankings",
-      "method": "GET"
-    },
-    "httpResponse": {
-      "statusCode": 400
-    }
   }
 ]
