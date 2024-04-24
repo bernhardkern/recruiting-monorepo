@@ -37,7 +37,7 @@ import {throwError} from "rxjs";
   ],
 })
 export class PlayerFormComponent {
-  @Input("playerName") username = '';
+  @Input("player") username = '';
   elo: number | null = null
   playerForm: FormGroup;
 
