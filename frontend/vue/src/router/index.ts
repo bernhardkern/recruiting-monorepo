@@ -27,7 +27,8 @@ const router = createRouter({
         {
           path: ':playerName/edit',
           name: 'players.edit',
-          component: () => import('@/views/players/PlayerFormView.vue')
+          component: () => import('@/views/players/PlayerFormView.vue'),
+          props: true
         },
         {
           path: 'new',

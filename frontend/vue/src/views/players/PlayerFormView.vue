@@ -10,9 +10,13 @@ import type { Nullable } from '@/types/utility'
 import PlayerForm from '@/components/players/PlayerForm.vue'
 import PageHeading from '@/components/ui/PageHeading.vue'
 
-const props = {
-  username: null
+interface Props {
+  username: string
 }
+
+const props = withDefaults(defineProps<Props>(), {
+  username: '',
+})
 
 const player = ref<Nullable<Player>>(null)
 

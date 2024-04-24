@@ -50,3 +50,30 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Specific vue exercises
+
+
+```
+Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und identifiziere und behebe die Ursache des Problems.
+```
+
+---
+
+```
+Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend. (Du kannst hierfür die Funktion yup.matches(/...REGEX.../) verwenden)
+```
+
+---
+
+```
+Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel vue-datepicker-next verwenden)
+```
+
+---
+
+```
+Schau dir die Datei 'components/matches/MatchForm.vue' an. Erstelle eine wiederverwendbare Komponente für die Auswahl von Spielern und verwende sie sowohl für den weißen als auch für den schwarzen Spieler.
+```
+
+---

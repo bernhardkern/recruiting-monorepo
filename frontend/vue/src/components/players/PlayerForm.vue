@@ -13,6 +13,7 @@ import AnimatedButton from '@/components/ui/AnimatedButton.vue'
 import ScrollableLayout from '@/components/ui/ScrollableLayout.vue'
 import FormField from '@/components/ui/FormField.vue'
 import { getResponseBodyOrError, throwError } from '@/api/response-helper'
+import {watch} from "vue";
 
 interface Props {
   player?: Nullable<Player>
@@ -50,6 +51,15 @@ function onCancel() {
   navigateToParentRoute()
 }
 
+watch(() => props.player, (newVal) => {
+  if (newVal) {
+    username.value = newVal.username
+    displayName.value = newVal.displayName
+    email.value = newVal.email
+    elo.value = newVal.elo
+  }
+});
+
 const onSubmit = handleSubmit.withControlled(async (player) => {
   if (props.isEditForm) {
     await api.players.updatePlayer(player)
@@ -78,6 +88,7 @@ const onSubmit = handleSubmit.withControlled(async (player) => {
             v-bind="usernameAttrs"
             placeholder="Username*"
             :class="{ invalid: !!errors.username, dirty: isFieldDirty('username') }"
+            :disabled="isEditForm"
           />
         </template>
         <template #errorMessage>
@@ -153,5 +164,12 @@ form {
 
 #player-form__action-bar {
   grid-area: actionBar;
+}
+
+input:disabled {
+  background-color: #524f4f;
+  color: #9c9c9c;
+  cursor: not-allowed;
+  border: 1px solid #524f4f;
 }
 </style>
