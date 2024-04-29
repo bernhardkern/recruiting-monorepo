@@ -1,28 +1,36 @@
-const mockServer = require('mockserver-node');
-const mockServerClient = require('mockserver-client').mockServerClient;
-const fs = require('fs');
+const fs = require('fs')
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const middlewares = jsonServer.defaults()
 
-// Pfad zur Konfigurationsdatei
-const configPath = './initializerJson.json';
+server.use(middlewares)
 
-// MockServer starten
-mockServer.start_mockserver({
-    serverPort: 1080,
-    verbose: true
-}).then(() => {
-    console.log('MockServer is running on port 1080');
-    loadExpectations();
+const configPath = './initializerJson.json'
+
+const PORT = 1080
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on http://localhost:${PORT}`)
+})
+
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
+
+config.forEach(expectation => {
+  const httpRequest = expectation.httpRequest
+  const queryStringParameters = httpRequest.queryStringParameters ? httpRequest.queryStringParameters.map((param) => (param.name + '=' + param.values[0])).join('&') : ''
+  const pathQuery =  queryStringParameters ? '?' + queryStringParameters : ''
+  const path = httpRequest.path.replace('[a-zA-Z0-9]+', ':id') + pathQuery
+  const method = httpRequest.method.toLowerCase()
+  const body = expectation.httpResponse.body
+  server[method](path, (req, res, next) => {
+    res.json(body)
+    res.status(200)
+    next()
+  })
+  console.log(`create mock api for ${method} ${path} with response`)
+  console.log(JSON.stringify(body))
+})
+
+server.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`);
+  next();
 });
-
-// Erwartungen aus der Konfigurationsdatei laden
-function loadExpectations() {
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    const client = mockServerClient("localhost", 1080);
-
-    config.forEach(expectation => {
-        client.mockAnyResponse(expectation).then(
-            () => console.log(`Expectation for ${expectation.httpRequest.path} created successfully`),
-            error => console.error('Error creating expectation: ', error)
-        );
-    });
-}

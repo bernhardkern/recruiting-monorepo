@@ -4,8 +4,8 @@ export function useNavigate() {
   const router = useRouter()
   const route = useRoute()
 
-  async function navigateToEditPlayer(username: string) {
-    await router.push({ name: 'players.edit', params: { username } })
+  async function navigateToEditPlayer(playerName: string) {
+    await router.push({ name: 'players.edit', params: { playerName } })
   }
 
   async function navigateToNewPlayer() {

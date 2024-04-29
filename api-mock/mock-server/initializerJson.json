@@ -371,14 +371,6 @@
   },
   {
     "httpRequest": {
-      "path": "/secondExampleExpectation"
-    },
-    "httpResponse": {
-      "body": "some response"
-    }
-  },
-  {
-    "httpRequest": {
       "path": "/players/[a-zA-Z0-9]+/elo",
       "method": "GET"
     },
@@ -594,6 +586,166 @@
           "values": ["15"]
         }
       ]
+    },
+    "httpResponse": {
+      "body": [
+        {
+          "player": {
+            "id": "3e532304-a2fc-4040-ac0f-a619e241f172",
+            "username": "careBear3000",
+            "displayName": "Carey Bar",
+            "email": "care4bears@barbar.com",
+            "elo": 2400
+          },
+          "rank": 1
+        },
+        {
+          "player": {
+            "id": "d4e5f6g7-890a-bcde-fghijklmnopq",
+            "username": "wishBearDreams",
+            "displayName": "Wish Bear Dreams",
+            "email": "dreamy@wishbear.com",
+            "elo": 2300
+          },
+          "rank": 2
+        },
+        {
+          "player": {
+            "id": "g7h8i9j0-abcd-efgh-ijklmnopqrst",
+            "username": "harmonyHarbor",
+            "displayName": "Harmony Harbor",
+            "email": "harbor@harmonybear.com",
+            "elo": 2200
+          },
+          "rank": 3
+        },
+        {
+          "player": {
+            "id": "i9j0k1l2-cdef-ghij-klmnopqrstuv",
+            "username": "gratefulGumdrop",
+            "displayName": "Grateful Gumdrop",
+            "email": "gumdrop@gratefulbear.com",
+            "elo": 2100
+          },
+          "rank": 4
+        },
+        {
+          "player": {
+            "id": "f6g7h8i9-0abc-defg-hijklmnopqrs",
+            "username": "grumpyGrins",
+            "displayName": "Grumpy Grins",
+            "email": "grinsngrumps@grumpybear.com",
+            "elo": 2000
+          },
+          "rank": 5
+        },
+        {
+          "player": {
+            "id": "a1b2c3d4-5678-90ab-cdefghijklmn",
+            "username": "tenderHearted",
+            "displayName": "Tender Heart",
+            "email": "tenderheart@caremail.com",
+            "elo": 1900
+          },
+          "rank": 6
+        },
+        {
+          "player": {
+            "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+            "username": "grizzleGazer",
+            "displayName": "Grizzle Gazer",
+            "email": "gaze4grizzles@bearmail.com",
+            "elo": 1800
+          },
+          "rank": 7
+        },
+        {
+          "player": {
+            "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+            "username": "caringCartoons",
+            "displayName": "Caring Cartoons",
+            "email": "cartoons@careland.com",
+            "elo": 1700
+          },
+          "rank": 8
+        },
+        {
+          "player": {
+            "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+            "username": "AppleBearCare",
+            "displayName": "Apple Carebear",
+            "email": "keepAppleAway@care.de",
+            "elo": 1600
+          },
+          "rank": 9
+        },
+        {
+          "player": {
+            "id": "e5f6g7h8-90ab-cdef-ghijklmnopqr",
+            "username": "shareABear",
+            "displayName": "Share A. Bear",
+            "email": "sharelove@bearshare.com",
+            "elo": 1500
+          },
+          "rank": 10
+        },
+        {
+          "player": {
+            "id": "f01bd6e3-6670-4abd-8823-37ea70acda12",
+            "username": "BearChessCare",
+            "displayName": "Bartholomaeus Baer",
+            "email": "bartholomaeus@bear.de",
+            "elo": 1400
+          },
+          "rank": 11
+        },
+        {
+          "player": {
+            "id": "b2c3d4e5-6789-0abcd-efghijklmnop",
+            "username": "lovingAndCaring4Bears",
+            "displayName": "Berthold Kehr",
+            "email": "bearthold@care.de",
+            "elo": 1300
+          },
+          "rank": 12
+        },
+        {
+          "player": {
+            "id": "c3d4e5f6-7890-abcd-efghijklmno",
+            "username": "cheerUpCharlie",
+            "displayName": "Cheer Up Charlie",
+            "email": "charlie@careandcheer.com",
+            "elo": 1200
+          },
+          "rank": 13
+        },
+        {
+          "player": {
+            "id": "h8i9j0k1-bcde-fghi-jklmnopqrstu",
+            "username": "KenningBaerAlter",
+            "displayName": "Kenning Bär",
+            "email": "kenningBärRecords@carebär.de",
+            "elo": 1100
+          },
+          "rank": 14
+        },
+        {
+          "player": {
+            "id": "c32c6df3-3a8f-4898-88f7-6c446cd52593",
+            "username": "AppleBearCare",
+            "displayName": "Apple Carebear",
+            "email": "keepAppleAway@care.de",
+            "elo": 1000
+          },
+          "rank": 15
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/rankings",
+      "method": "GET"
     },
     "httpResponse": {
       "body": [
