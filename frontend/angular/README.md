@@ -30,7 +30,7 @@ Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und i
 ---
 
 ```
-Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend.
+Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur E-Mail-Adressen eingegeben werden können, welche die Begrigge 'bear', 'care' oder 'teddy' enthält. 
 ```
 
 ---
