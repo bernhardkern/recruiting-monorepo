@@ -61,7 +61,7 @@ Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und i
 ---
 
 ```
-Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend. (Du kannst hierfür die Funktion yup.matches(/...REGEX.../) verwenden)
+Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend. 
 ```
 
 ---

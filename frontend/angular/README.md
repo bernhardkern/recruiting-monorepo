@@ -30,7 +30,7 @@ Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und i
 ---
 
 ```
-Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur E-Mail-Adressen eingegeben werden können, welche die Begrigge 'bear', 'care' oder 'teddy' enthält. 
+Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur E-Mail-Adressen eingegeben werden können, welche die Begriffe 'bear', 'care' oder 'teddy' enthält. 
 ```
 
 ---
