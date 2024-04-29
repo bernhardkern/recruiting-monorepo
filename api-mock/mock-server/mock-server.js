@@ -27,7 +27,9 @@ config.forEach(expectation => {
     next()
   })
   console.log(`create mock api for ${method} ${path} with response`)
-  console.log(JSON.stringify(body))
+  JSON.stringify(body, null, 2).split('\n').forEach((line) => console.log(line))
+  console.log('')
+
 })
 
 server.use((req, res, next) => {
