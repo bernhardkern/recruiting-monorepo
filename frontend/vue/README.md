@@ -67,7 +67,7 @@ Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, 
 ---
 
 ```
-Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel vue-datepicker-next verwenden)
+Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel primevue datepicker verwenden)
 ```
 
 ---
