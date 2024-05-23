@@ -13,7 +13,7 @@ import AnimatedButton from '@/components/ui/AnimatedButton.vue'
 import ScrollableLayout from '@/components/ui/ScrollableLayout.vue'
 import FormField from '@/components/ui/FormField.vue'
 import { getResponseBodyOrError, throwError } from '@/api/response-helper'
-import {watch} from "vue";
+import { watch } from 'vue'
 
 interface Props {
   player?: Nullable<Player>
@@ -51,14 +51,17 @@ function onCancel() {
   navigateToParentRoute()
 }
 
-watch(() => props.player, (newVal) => {
-  if (newVal) {
-    username.value = newVal.username
-    displayName.value = newVal.displayName
-    email.value = newVal.email
-    elo.value = newVal.elo
+watch(
+  () => props.player,
+  (newVal) => {
+    if (newVal) {
+      username.value = newVal.username
+      displayName.value = newVal.displayName
+      email.value = newVal.email
+      elo.value = newVal.elo
+    }
   }
-});
+)
 
 const onSubmit = handleSubmit.withControlled(async (player) => {
   if (props.isEditForm) {

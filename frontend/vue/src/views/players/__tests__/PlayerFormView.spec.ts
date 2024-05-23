@@ -1,15 +1,11 @@
 import { afterEach, describe, expect, it, vi, type Mock } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 
-import { useMockToaster } from '@/__tests__/_helpers/toaster'
-
 import playersApi from '@/api/resources/players'
 
 import sut from '@/views/players/PlayerFormView.vue'
 
 vi.mock('@/api/resources/players')
-
-const { showErrorMock } = useMockToaster()
 
 describe('PlayerFormView.vue', () => {
   let wrapper: any

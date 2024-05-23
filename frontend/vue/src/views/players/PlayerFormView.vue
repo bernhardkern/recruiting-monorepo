@@ -3,7 +3,6 @@ import { computed, onBeforeMount, ref } from 'vue'
 
 import api from '@/api'
 import { getResponseBodyOrError, throwError } from '@/api/response-helper'
-import { useToaster } from '@/composables/ui/toaster'
 import type { Player } from '@/models/player'
 import type { Nullable } from '@/types/utility'
 
@@ -15,7 +14,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  username: '',
+  username: ''
 })
 
 const player = ref<Nullable<Player>>(null)
@@ -25,8 +24,6 @@ onBeforeMount(async () => {
     await loadPlayer(props.username)
   }
 })
-
-const { showError } = useToaster()
 
 async function loadPlayer(username: string) {
   const response = await api.players.getPlayerByUsername(username)
