@@ -327,6 +327,26 @@
   {
     "httpRequest": {
       "path": "/players",
+      "method": "POST",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "displayName": "13",
+          "username": "${json-unit.ignore-element}",
+          "email": "${json-unit.ignore-element}"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": {
+          "reason": "13 is bad luck and should not be claimed!"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/players",
       "method": "POST"
     },
     "httpResponse": {
@@ -336,6 +356,18 @@
         "displayName": "Berthold Kehr",
         "email": "bearthold@care.de",
         "elo": 1200
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "path": "/players/warmWishes",
+      "method": "GET"
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": {
+          "reason": "Warm wishes ain't sent from the mock server today!"
       }
     }
   },
