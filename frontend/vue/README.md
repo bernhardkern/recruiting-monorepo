@@ -39,20 +39,13 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Run Linter, Style Checks and Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm run qa
 ```
 
 ## Specific vue exercises
-
 
 ```
 Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und identifiziere und behebe die Ursache des Problems.
@@ -67,7 +60,7 @@ Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, 
 ---
 
 ```
-Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel primevue datepicker verwenden)
+Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel [Primevue calendar](https://primevue.org/calendar/) verwenden)
 ```
 
 ---
