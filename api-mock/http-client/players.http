@@ -12,7 +12,7 @@ Content-Type: application/json
   "email": "bearthold@care.de"
 }
 
-### create user with 500 error
+### create user with 500 error against mockserver
 POST {{host}}:{{port}}/players
 Content-Type: application/json
 
@@ -25,7 +25,7 @@ Content-Type: application/json
 ### get user by name
 GET {{host}}:{{port}}/players/careBear3000
 
-### get user by name with 500 error
+### get user by name with 500 error against mockserver
 GET {{host}}:{{port}}/players/warmWishes
 
 ### update user
