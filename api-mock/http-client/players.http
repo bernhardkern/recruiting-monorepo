@@ -12,8 +12,21 @@ Content-Type: application/json
   "email": "bearthold@care.de"
 }
 
+### create user with 500 error
+POST {{host}}:{{port}}/players
+Content-Type: application/json
+
+{
+  "username": "luckyThirteen",
+  "displayName": "13",
+  "email": "l13@errors.net"
+}
+
 ### get user by name
 GET {{host}}:{{port}}/players/careBear3000
+
+### get user by name with 500 error
+GET {{host}}:{{port}}/players/warmWishes
 
 ### update user
 PUT {{host}}:{{port}}/players
