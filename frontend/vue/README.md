@@ -13,10 +13,23 @@ Then install the packages:
 npm install
 ```
 
+### Start the mock server
+In the folder "api-mock/mock-server" you'll find an API mock server configuration.
+You can start it using the provided `docker-compose.yml`
+```sh
+docker compose up
+```
+
+or you use the node version in that directory
+```sh
+npm install
+npm run start
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+npm run dev:mock
 ```
 
 ### Type-Check, Compile and Minify for Production
@@ -30,29 +43,3 @@ npm run build
 ```sh
 npm run qa
 ```
-
-## Specific vue exercises
-
-```
-Bitte überprüfe, warum die Bearbeitung eines Players nicht funktioniert, und identifiziere und behebe die Ursache des Problems.
-```
-
----
-
-```
-Bitte implementiere eine grundlegende Validierungsfunktion, um sicherzustellen, dass nur gültige E-Mail-Adressen eingegeben werden können. Eine einfache Lösung ist vorerst ausreichend. 
-```
-
----
-
-```
-Bitte ergänze eine Datumeingabekomponente beim Speichern eines 'Match', sodass ein Datum an das Backend übergeben werden kann. Setze das heutige Datum als Standardwert. (du kannst zum Beispiel [Primevue calendar](https://primevue.org/calendar/) verwenden)
-```
-
----
-
-```
-Schau dir die Datei 'components/matches/MatchForm.vue' an. Erstelle eine wiederverwendbare Komponente für die Auswahl von Spielern und verwende sie sowohl für den weißen als auch für den schwarzen Spieler.
-```
-
----
