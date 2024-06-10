@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-10T11:44:43" hostname="Bernhards-MacBook-Pro.local" time="0.021">
+  <properties/>
+  <testcase name="queryWithNotExistingUsername()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername" time="0.009"/>
+  <testcase name="forgetToQueryWithUsername()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername" time="0.004"/>
+  <testcase name="sendValidUsername()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername" time="0.007"/>
+  <system-out><![CDATA[2024-06-10T13:44:43.675+02:00  INFO 25918 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername]: GetPlayerByUsername does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-10T13:44:43.676+02:00  INFO 25918 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration de.iits.elocalculatorbackend.EloBackendJavaApplication for test class de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$GetPlayerByUsername
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-10T11:44:43" hostname="Bernhards-MacBook-Pro.local" time="0.011">
+  <properties/>
+  <testcase name="doNotSendPlayerForUpdate()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer" time="0.002"/>
+  <testcase name="sendValidPlayerForUpdate()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer" time="0.005"/>
+  <testcase name="sendInvalidPlayerForUpdate()" classname="de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer" time="0.004"/>
+  <system-out><![CDATA[2024-06-10T13:44:43.716+02:00  INFO 25918 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer]: UpdatePlayer does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-10T13:44:43.717+02:00  INFO 25918 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration de.iits.elocalculatorbackend.EloBackendJavaApplication for test class de.iits.elocalculatorbackend.player.controller.PlayerControllerIntegrationTest$UpdatePlayer
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
