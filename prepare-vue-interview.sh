@@ -1,6 +1,5 @@
 #!/bin/bash
 
-CWD=$(pwd)
 cd "$(dirname $0)"
 
 TODAY=$(date +%F)
@@ -19,7 +18,6 @@ git remote add origin git@gitlab.iits.tech:pub/${INTERVIEW_PROJECT_FOLDER}.git
 git add .
 git commit -m "Initial commit"
 
+echo "The prepared project is in: $(pwd)"
 echo "Create an empty repo '${INTERVIEW_PROJECT_FOLDER}' in https://gitlab.iits.tech/pub and push the local preconfigured repo '${INTERVIEW_PROJECT_FOLDER}' with:"
-echo "git push --set-upstream origin main"
-
-cd "${CWD}"
+echo "Ready to push using: 'git push --set-upstream origin main'"
