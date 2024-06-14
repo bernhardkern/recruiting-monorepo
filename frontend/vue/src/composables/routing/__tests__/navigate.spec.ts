@@ -28,7 +28,7 @@ describe('navigate.ts', () => {
         expect(pushSpy).toHaveBeenCalledWith({
           name: 'players.edit',
           params: {
-            playerName: username
+            username: username
           }
         })
       })

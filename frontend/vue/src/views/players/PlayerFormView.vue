@@ -13,9 +13,9 @@ interface Props {
   username: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props: Props = {
   username: ''
-})
+}
 
 const player = ref<Nullable<Player>>(null)
 
