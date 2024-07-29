@@ -25,13 +25,13 @@ import org.springframework.test.web.servlet.post
 class MatchControllerIntegrationTest {
 
     @Autowired
-    lateinit var mockMvc: MockMvc
+    private lateinit var mockMvc: MockMvc
 
     @Autowired
-    lateinit var objectMapper: ObjectMapper
+    private lateinit var objectMapper: ObjectMapper
 
     @Autowired
-    lateinit var matchRepository: MatchRepository
+    private lateinit var matchRepository: MatchRepository
 
     @Nested
     inner class GetAllMatches {

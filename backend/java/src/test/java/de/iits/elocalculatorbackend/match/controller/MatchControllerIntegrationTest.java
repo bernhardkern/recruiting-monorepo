@@ -1,12 +1,10 @@
 package de.iits.elocalculatorbackend.match.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.iits.elocalculatorbackend.match.model.dto.MatchRequestDto;
 import de.iits.elocalculatorbackend.match.model.entity.Match;
 import de.iits.elocalculatorbackend.match.model.enumeration.Outcome;
 import de.iits.elocalculatorbackend.match.repository.MatchRepository;
-import jakarta.validation.constraints.NotNull;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +27,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class MatchControllerIntegrationTest {
 
     @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @Autowired
-    ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Autowired
-    MatchRepository matchRepository;
+    private MatchRepository matchRepository;
 
     @Nested
     class GetAllMatches {
